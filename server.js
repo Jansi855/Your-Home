@@ -654,6 +654,18 @@ app.get('/rent-vs-buy-calculator', (req, res) => {
   res.sendFile(path.join(__dirname, 'buy-vs-rent-calculator.html'));
 });
 
+app.get('/tools', (req, res) => {
+  res.sendFile(path.join(__dirname, 'tools.html'));
+});
+
+app.get('/about', (req, res) => {
+  res.sendFile(path.join(__dirname, 'about.html'));
+});
+
+app.get('/about-us', (req, res) => {
+  res.sendFile(path.join(__dirname, 'about.html'));
+});
+
 // Start Server
 app.listen(PORT, () => {
   console.log(`=======================================================`);
