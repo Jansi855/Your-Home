@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Home - True Cost Calculator | Plan • Analyze • Invest</title>
+  <meta name="description" content="Know the complete cost of buying a property. Calculate Stamp Duty, Registration, GST and other hidden charges with Your Home's True Cost Calculator." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="logo-icon.svg" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP NAVIGATION BAR
+       ========================================================================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand">
+        <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="brand-logo-img" />
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        
+        <!-- Dropdown with all 6 Calculators -->
+        <div class="nav-dropdown active" id="nav-calc-dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="calc-dropdown-btn">
+            <span>Calculators</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <span class="active-indicator"></span>
+
+          <!-- Dropdown Menu items -->
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              <span class="dropdown-item-icon">💰</span>
+              <div class="dropdown-item-text">
+                <strong>EMI Calculator</strong>
+                <span>Calculate loan payments & interest</span>
+              </div>
+            </a>
+            <a href="true-cost-calculator.html" class="dropdown-item active-item">
+              <span class="dropdown-item-icon">🏷️</span>
+              <div class="dropdown-item-text">
+                <strong>True Cost Calculator</strong>
+                <span>Stamp duty, GST & hidden costs</span>
+              </div>
+            </a>
+            <a href="affordability-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">📊</span>
+              <div class="dropdown-item-text">
+                <strong>Affordability Check</strong>
+                <span>Know how much home you can afford</span>
+              </div>
+            </a>
+            <a href="rental-roi-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">📈</span>
+              <div class="dropdown-item-text">
+                <strong>Rental ROI Calculator</strong>
+                <span>Estimate rental returns & yields</span>
+              </div>
+            </a>
+            <a href="risk-analysis-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">🛡️</span>
+              <div class="dropdown-item-text">
+                <strong>Risk Analysis</strong>
+                <span>Property & builder risk scoring</span>
+              </div>
+            </a>
+            <a href="buy-vs-rent-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">⚖️</span>
+              <div class="dropdown-item-text">
+                <strong>Buy vs Rent Calculator</strong>
+                <span>Compare financial impact of renting</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            <span>Property</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+        </div>
+
+        <a href="#" class="nav-link">Insights</a>
+        <a href="#" class="nav-link">Schemes</a>
+
+        <a href="tools.html" class="nav-link">Tools</a>
+
+        <a href="about.html" class="nav-link">About Us</a>
+      </nav>
+
+      <!-- Right Action Icons -->
+      <div class="nav-actions">
+        <button class="icon-btn" title="Saved Properties & Calculators" aria-label="Bookmarks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn profile-btn" title="User Profile" aria-label="Profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================= -->
+  <main class="page-container">
+
+    <!-- BREADCRUMBS -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="crumb-separator">&gt;</span>
+      <a href="#">Calculators</a>
+      <span class="crumb-separator">&gt;</span>
+      <span class="current-crumb">True Cost Calculator</span>
+    </nav>
+
+    <!-- HERO / TITLE SECTION WITH ILLUSTRATION -->
+    <section class="hero-banner">
+      <div class="hero-text">
+        <h1 class="hero-title">True Cost <span class="text-green-title">Calculator</span></h1>
+        <p class="hero-subtitle">
+          Know the complete cost of buying a property. We include all essential charges so there are no surprises later.
+        </p>
+      </div>
+
+      <!-- Hero Header Illustration (True Cost House & Calculator Vector) -->
+      <div class="hero-illustration">
+        <svg viewBox="0 0 340 160" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
+          <!-- Background soft ambient circles -->
+          <circle cx="95" cy="130" r="65" fill="#eaf7ed" opacity="0.65"/>
+          <circle cx="285" cy="120" r="50" fill="#f0fdf4" opacity="0.8"/>
+          
+          <!-- Trees Left & Right -->
+          <rect x="42" y="100" width="6" height="32" rx="2" fill="#86efac"/>
+          <ellipse cx="45" cy="85" rx="15" ry="22" fill="#22c55e" opacity="0.85"/>
+          <rect x="68" y="108" width="5" height="24" rx="2" fill="#86efac"/>
+          <ellipse cx="70" cy="96" rx="12" ry="18" fill="#16a34a" opacity="0.75"/>
+          <rect x="296" y="112" width="5" height="22" rx="2" fill="#86efac"/>
+          <ellipse cx="298" cy="100" rx="12" ry="16" fill="#22c55e" opacity="0.7"/>
+
+          <!-- House Structure -->
+          <path d="M85 135V78L145 38L205 78V135H85Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M75 80L145 32L215 80" stroke="#86efac" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M82 80L145 36L208 80" stroke="#16a34a" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- House Door -->
+          <rect x="130" y="98" width="30" height="37" rx="3" fill="#15803d"/>
+          <circle cx="152" cy="116" r="2" fill="#ffffff"/>
+          <!-- Windows -->
+          <rect x="98" y="88" width="22" height="22" rx="2" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+          <path d="M109 88V110M98 99H120" stroke="#86efac" stroke-width="1.5"/>
+          <rect x="170" y="88" width="22" height="22" rx="2" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+          <path d="M181 88V110M170 99H192" stroke="#86efac" stroke-width="1.5"/>
+
+          <!-- 3D Calculator Device -->
+          <g transform="translate(205, 42)">
+            <rect x="0" y="0" width="64" height="96" rx="10" fill="#ffffff" stroke="#334155" stroke-width="2.5"/>
+            <!-- Screen -->
+            <rect x="8" y="10" width="48" height="22" rx="4" fill="#15803d"/>
+            <rect x="12" y="18" width="28" height="3" rx="1.5" fill="#86efac"/>
+            <!-- Keypad -->
+            <rect x="8" y="40" width="12" height="10" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            <rect x="26" y="40" width="12" height="10" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            <rect x="44" y="40" width="12" height="10" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            
+            <rect x="8" y="55" width="12" height="10" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            <rect x="26" y="55" width="12" height="10" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            <rect x="44" y="55" width="12" height="10" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            
+            <rect x="8" y="70" width="12" height="10" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            <rect x="26" y="70" width="12" height="10" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            <rect x="44" y="70" width="12" height="20" rx="3" fill="#16a34a"/>
+            <path d="M48 78H52M48 82H52" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+
+          <!-- Floating Rupee Document -->
+          <g transform="translate(280, 26)">
+            <rect x="0" y="0" width="46" height="64" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+            <!-- Fold corner -->
+            <path d="M34 0L46 12H34V0Z" fill="#e2e8f0"/>
+            <line x1="8" y1="38" x2="38" y2="38" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+            <line x1="8" y1="46" x2="30" y2="46" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+            <line x1="8" y1="54" x2="24" y2="54" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+            <!-- Rupee Symbol -->
+            <circle cx="16" cy="18" r="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+            <text x="16" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="bold" fill="#15803d" text-anchor="middle">₹</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         TRUE COST CALCULATOR TWO-COLUMN MAIN GRID
+         ========================================================================= -->
+    <div class="calculator-grid true-cost-grid">
+
+      <!-- LEFT COLUMN: PROPERTY DETAILS INPUT PANEL -->
+      <aside class="panel-card property-details-panel">
+        
+        <div class="panel-header">
+          <h2 class="panel-title">Property Details</h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <form id="true-cost-form" class="inputs-container" onsubmit="event.preventDefault();">
+          
+          <!-- INPUT 1: PROPERTY PRICE -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="prop-price-input" class="input-label">Property Price (₹)</label>
+            </div>
+
+            <div class="input-box-wrapper">
+              <input 
+                type="text" 
+                id="prop-price-input" 
+                class="currency-input" 
+                value="50,00,000" 
+                autocomplete="off"
+              />
+              <span class="input-adornment">₹</span>
+            </div>
+
+            <div class="slider-wrapper">
+              <input 
+                type="range" 
+                id="prop-price-slider" 
+                class="range-slider" 
+                min="1000000" 
+                max="50000000" 
+                step="50000" 
+                value="5000000" 
+              />
+            </div>
+
+            <div class="slider-minmax-row">
+              <span>₹ 10,00,000</span>
+              <span>₹ 5,00,00,000</span>
+            </div>
+          </div>
+
+          <!-- INPUT 2: PROPERTY LOCATION -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="prop-location-select" class="input-label">Property Location</label>
+            </div>
+
+            <div class="custom-select-wrapper">
+              <select id="prop-location-select" class="custom-select">
+                <option value="delhi" selected>New Delhi, Delhi</option>
+                <option value="mumbai">Mumbai, Maharashtra</option>
+                <option value="bengaluru">Bengaluru, Karnataka</option>
+                <option value="hyderabad">Hyderabad, Telangana</option>
+                <option value="chennai">Chennai, Tamil Nadu</option>
+                <option value="pune">Pune, Maharashtra</option>
+                <option value="kolkata">Kolkata, West Bengal</option>
+              </select>
+              <div class="select-chevron">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- INPUT 3: TYPE OF PROPERTY (PILLS) -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label class="input-label">Type of Property</label>
+            </div>
+
+            <div class="property-type-pills" role="radiogroup" aria-label="Type of Property">
+              <button type="button" class="type-pill active" data-type="residential" role="radio" aria-checked="true">
+                <span class="type-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
+                    <path d="M9 21V12h6v9"/>
+                  </svg>
+                </span>
+                <span>Residential</span>
+              </button>
+
+              <button type="button" class="type-pill" data-type="commercial" role="radio" aria-checked="false">
+                <span class="type-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                    <path d="M9 22v-4h6v4"></path>
+                    <line x1="8" y1="6" x2="8" y2="6"></line>
+                    <line x1="16" y1="6" x2="16" y2="6"></line>
+                    <line x1="8" y1="10" x2="8" y2="10"></line>
+                    <line x1="16" y1="10" x2="16" y2="10"></line>
+                    <line x1="8" y1="14" x2="8" y2="14"></line>
+                    <line x1="16" y1="14" x2="16" y2="14"></line>
+                  </svg>
+                </span>
+                <span>Commercial</span>
+              </button>
+
+              <button type="button" class="type-pill" data-type="land" role="radio" aria-checked="false">
+                <span class="type-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </span>
+                <span>Land</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- INPUT 4: CARPET AREA -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="carpet-area-input" class="input-label">Carpet Area (sq.ft.)</label>
+            </div>
+
+            <div class="input-box-wrapper">
+              <input 
+                type="number" 
+                id="carpet-area-input" 
+                class="numeric-input" 
+                value="1200" 
+                min="100" 
+                max="50000" 
+                step="10"
+                autocomplete="off"
+              />
+              <span class="input-adornment unit-text">sq.ft.</span>
+            </div>
+          </div>
+
+          <!-- INPUT 5: BUYER CATEGORY -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="buyer-category-select" class="input-label">Buyer Category</label>
+            </div>
+
+            <div class="custom-select-wrapper">
+              <select id="buyer-category-select" class="custom-select">
+                <option value="general" selected>General</option>
+                <option value="female">Female / Joint (Female)</option>
+                <option value="senior">Senior Citizen</option>
+              </select>
+              <div class="select-chevron">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- ACTION BUTTONS -->
+          <div class="form-actions-stack">
+            <button type="button" id="btn-calc-true-cost" class="btn-primary-action">
+              <span>Calculate True Cost</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+            <button type="button" id="btn-reset-true-cost" class="btn-secondary-action">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+              </svg>
+              <span>Reset</span>
+            </button>
+          </div>
+
+        </form>
+
+      </aside>
+
+      <!-- RIGHT COLUMN: YOUR TRUE COST SUMMARY PANEL -->
+      <section class="panel-card results-summary-panel">
+        
+        <div class="panel-header">
+          <h2 class="panel-title">Your True Cost Summary</h2>
+        </div>
+
+        <!-- TOP 4 METRIC STAT CARDS -->
+        <div class="true-cost-stats-grid">
+          
+          <!-- Stat 1: Total True Cost (Hero Card) -->
+          <div class="true-cost-stat-card hero-stat-card">
+            <span class="stat-card-label">Total True Cost</span>
+            <div class="stat-card-main-val text-green" id="stat-total-true-cost">₹ 56,38,000</div>
+            <div class="stat-card-subtext">
+              <span class="subtext-label">Effective Price / sq.ft.</span>
+              <span class="subtext-value font-bold" id="stat-effective-rate">₹ 4,698</span>
+            </div>
+          </div>
+
+          <!-- Stat 2: Base Price -->
+          <div class="true-cost-stat-card">
+            <span class="stat-card-label">Base Price</span>
+            <div class="stat-card-main-val" id="stat-base-price">₹ 50,00,000</div>
+          </div>
+
+          <!-- Stat 3: Total Additional Cost -->
+          <div class="true-cost-stat-card">
+            <span class="stat-card-label">Total Additional Cost</span>
+            <div class="stat-card-main-val" id="stat-additional-cost">₹ 6,38,000</div>
+          </div>
+
+          <!-- Stat 4: Additional Cost % Badge Card -->
+          <div class="true-cost-stat-card highlight-percentage-card">
+            <span class="stat-card-label">Additional Cost</span>
+            <div class="stat-card-main-val text-green" id="stat-additional-pct">12.76%</div>
+            <div class="stat-card-subtext">
+              <span class="subtext-label text-muted">of Property Price</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- MIDDLE ROW: COST BREAKUP TABLE & DONUT CHART SIDE BY SIDE -->
+        <div class="cost-analysis-split-row">
+          
+          <!-- LEFT: COST BREAKUP TABLE -->
+          <div class="cost-breakup-card">
+            <h3 class="breakup-section-title">Cost Breakup</h3>
+            
+            <div class="table-responsive">
+              <table class="cost-breakup-table">
+                <thead>
+                  <tr>
+                    <th>Particulars</th>
+                    <th class="text-right">Amount (₹)</th>
+                    <th class="text-right">% of Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span class="legend-dot dot-base"></span>
+                      <span class="particulars-name">Base Property Price</span>
+                    </td>
+                    <td class="text-right font-medium" id="row-base-amount">₹ 50,00,000</td>
+                    <td class="text-right" id="row-base-pct">88.89%</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <span class="legend-dot dot-stamp"></span>
+                      <span class="particulars-name">Stamp Duty</span>
+                    </td>
+                    <td class="text-right font-medium" id="row-stamp-amount">₹ 3,00,000</td>
+                    <td class="text-right" id="row-stamp-pct">5.33%</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <span class="legend-dot dot-registration"></span>
+                      <span class="particulars-name">Registration Charges</span>
+                    </td>
+                    <td class="text-right font-medium" id="row-reg-amount">₹ 50,00,00</td>
+                    <td class="text-right" id="row-reg-pct">0.89%</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <span class="legend-dot dot-gst"></span>
+                      <span class="particulars-name">GST</span>
+                    </td>
+                    <td class="text-right font-medium" id="row-gst-amount">₹ 2,50,000</td>
+                    <td class="text-right" id="row-gst-pct">4.44%</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <span class="legend-dot dot-other"></span>
+                      <span class="particulars-name">Other Charges <span class="info-tooltip-trigger" title="Includes legal scrutiny, electricity/water meters, advance maintenance deposit & society share">ⓘ</span></span>
+                    </td>
+                    <td class="text-right font-medium" id="row-other-amount">₹ 38,000</td>
+                    <td class="text-right" id="row-other-pct">0.67%</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr class="total-row">
+                    <td class="font-bold">Total True Cost</td>
+                    <td class="text-right font-bold text-green" id="row-total-amount">₹ 56,38,000</td>
+                    <td class="text-right font-bold" id="row-total-pct">100%</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+
+          <!-- RIGHT: COST DISTRIBUTION DONUT CHART -->
+          <div class="cost-chart-card">
+            <h3 class="breakup-section-title">Cost Distribution</h3>
+
+            <div class="chart-center-wrapper">
+              <div class="donut-chart-container">
+                <svg viewBox="0 0 160 160" class="donut-svg" id="true-cost-donut-svg">
+                  <!-- Segments rendered dynamically / with precision fallback -->
+                  <circle cx="80" cy="80" r="58" class="chart-track-bg"/>
+                  <circle cx="80" cy="80" r="58" id="slice-base" class="chart-segment slice-base-color"/>
+                  <circle cx="80" cy="80" r="58" id="slice-stamp" class="chart-segment slice-stamp-color"/>
+                  <circle cx="80" cy="80" r="58" id="slice-reg" class="chart-segment slice-reg-color"/>
+                  <circle cx="80" cy="80" r="58" id="slice-gst" class="chart-segment slice-gst-color"/>
+                  <circle cx="80" cy="80" r="58" id="slice-other" class="chart-segment slice-other-color"/>
+                </svg>
+
+                <div class="donut-inner-content">
+                  <div class="donut-center-amount" id="chart-center-total-val">₹ 56,38,000</div>
+                  <div class="donut-center-sub">Total</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CHART LEGEND (2-COLUMN WRAP) -->
+            <div class="chart-legend-grid">
+              <div class="legend-item">
+                <span class="legend-dot dot-base"></span>
+                <span class="legend-label">Base Price (<span id="leg-base-pct">88.89%</span>)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot dot-gst"></span>
+                <span class="legend-label">GST (<span id="leg-gst-pct">4.44%</span>)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot dot-stamp"></span>
+                <span class="legend-label">Stamp Duty (<span id="leg-stamp-pct">5.33%</span>)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot dot-other"></span>
+                <span class="legend-label">Other Charges (<span id="leg-other-pct">0.67%</span>)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot dot-registration"></span>
+                <span class="legend-label">Registration (<span id="leg-reg-pct">0.89%</span>)</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- BOTTOM 2 INFO CARDS: WHAT'S INCLUDED & DID YOU KNOW -->
+        <div class="info-callouts-grid">
+          
+          <!-- Card 1: What's Included -->
+          <div class="info-card whats-included-card">
+            <div class="info-card-header">
+              <div class="info-icon-badge green-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
+              </div>
+              <h4 class="info-card-title">What's Included?</h4>
+            </div>
+            
+            <p class="info-card-text">
+              All mandatory costs while buying the property are included in True Cost.
+            </p>
+
+            <div class="features-checklist">
+              <div class="checklist-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>No hidden charges</span>
+              </div>
+              <div class="checklist-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Up-to-date rates</span>
+              </div>
+              <div class="checklist-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Location specific</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Did You Know? -->
+          <div class="info-card did-you-know-card">
+            <div class="info-card-header">
+              <div class="info-icon-badge yellow-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ca8a04" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 18h6"></path>
+                  <path d="M10 22h4"></path>
+                  <path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"></path>
+                </svg>
+              </div>
+              <h4 class="info-card-title">Did You Know?</h4>
+            </div>
+
+            <p class="info-card-text">
+              The true cost of a property is typically <strong class="text-highlight">8% - 15% higher</strong> than the base price.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- =========================================================================
+         BOTTOM DISCLAIMER NOTICE BANNER
+         ========================================================================= -->
+    <div class="bottom-notice-banner">
+      <div class="notice-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+      </div>
+      <p class="notice-text">
+        <strong>Note:</strong> The rates shown are approximate and may vary based on actual property, location and applicable government rules.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       COMPACT SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-compact-container">
+      <div class="footer-compact-top">
+        <!-- Brand -->
+        <a href="index.html" class="footer-brand">
+          <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="footer-brand-img" />
+        </a>
+
+        <!-- Quick Nav Calculators -->
+        <nav class="footer-compact-nav" aria-label="Calculators">
+          <a href="index.html">EMI</a>
+          <a href="true-cost-calculator.html">True Cost</a>
+          <a href="affordability-calculator.html">Affordability</a>
+          <a href="rental-roi-calculator.html">Rental ROI</a>
+          <a href="buy-vs-rent-calculator.html">Buy vs Rent</a>
+          <a href="risk-analysis-calculator.html">Risk Analysis</a>
+          <a href="tools.html">Tools</a>
+          <a href="about.html">About Us</a>
+        </nav>
+
+        <!-- Back to top -->
+        <button type="button" class="footer-compact-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+          <span>Top</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="footer-compact-bottom">
+        <p class="footer-compact-copy">
+          © 2026 Your Home. Calculations are estimates for reference only.
+        </p>
+        <div class="footer-compact-links">
+          <a href="about.html">About Us</a>
+          <span>•</span>
+          <a href="#">Privacy</a>
+          <span>•</span>
+          <a href="#">Terms</a>
+          <span>•</span>
+          <a href="mailto:support@yourhome.in">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- True Cost Calculation Logic Script -->
+  <script src="true-cost.js"></script>
+
+</body>
+</html>
