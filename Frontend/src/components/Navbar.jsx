@@ -25,7 +25,7 @@ export default function Navbar({ bookmarkCount = 0, onOpenBookmarks, onOpenUser 
       {/* Nav Links Desktop */}
       <ul className="nav-menu">
         <li>
-          <a href="#home" className="nav-link active">
+          <a href="/" className="nav-link active">
             Home
           </a>
         </li>
@@ -151,7 +151,7 @@ export default function Navbar({ bookmarkCount = 0, onOpenBookmarks, onOpenUser 
           borderRadius: 'var(--radius-lg)', padding: '20px', marginTop: '10px',
           boxShadow: 'var(--shadow-lg)', display: 'flex', flexDirection: 'column', gap: '12px'
         }}>
-          <a href="#home" className="nav-link active" onClick={() => setMobileOpen(false)}>Home</a>
+          <a href="/" className="nav-link active" onClick={() => setMobileOpen(false)}>Home</a>
           <a href="#popular-tools" className="nav-link" onClick={() => setMobileOpen(false)}>Calculators</a>
           <a href="#browse-properties" className="nav-link" onClick={() => setMobileOpen(false)}>Property</a>
           <a href="/insights" className="nav-link" onClick={() => setMobileOpen(false)}>Insights</a>

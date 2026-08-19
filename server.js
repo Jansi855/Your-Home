@@ -598,14 +598,11 @@ app.post('/api/calculate/buy-vs-rent', (req, res) => {
 });
 
 
-app.get('/tools', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'tools.html'));
-});
 // --------------------------------------------------------------------------
 // HTML CALCULATOR ROUTES (Your-Home Original Calculators)
 // --------------------------------------------------------------------------
 app.get(['/emi-calculator', '/emi-calculator.html'], (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'emi-calculator.html'));
 });
 
 app.get(['/true-cost', '/true-cost-calculator.html'], (req, res) => {
@@ -616,20 +613,12 @@ app.get(['/rental-roi', '/rental-roi-calculator.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'rental-roi-calculator.html'));
 });
 
-app.get('/about', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'about.html'));
-});
-
 app.get(['/affordability', '/affordability-calculator.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'affordability-calculator.html'));
 });
 
 app.get(['/risk-analysis', '/risk-analysis-calculator.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'risk-analysis-calculator.html'));
-});
-
-app.get('/about-us', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'about.html'));
 });
 
 app.get(['/buy-vs-rent', '/buy-vs-rent-calculator.html'], (req, res) => {
@@ -652,13 +641,16 @@ app.get(['/about', '/about-us', '/about.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'about.html'));
 });
 
-// React Frontend main home route fallback
-app.get('/', (req, res) => {
+// --------------------------------------------------------------------------
+// React Frontend Home Route — serves the React SPA for '/' and '/home'
+// --------------------------------------------------------------------------
+app.get(['/', '/home'], (req, res) => {
   const reactIndex = path.join(frontendDist, 'index.html');
   if (fs.existsSync(reactIndex)) {
     return res.sendFile(reactIndex);
   }
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  // Fallback: redirect to EMI calculator if React build is missing
+  res.redirect('/emi-calculator');
 });
 
 // Start Server
