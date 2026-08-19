@@ -10,7 +10,13 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static frontend files from public/
+const fs = require('fs');
+
+// Serve static frontend files from Frontend/dist if built, otherwise from public/
+const frontendDist = path.join(__dirname, 'Frontend', 'dist');
+if (fs.existsSync(frontendDist)) {
+  app.use(express.static(frontendDist));
+}
 app.use(express.static(path.join(__dirname, 'public')));
 
 // --------------------------------------------------------------------------
@@ -592,16 +598,48 @@ app.post('/api/calculate/buy-vs-rent', (req, res) => {
 });
 
 
-app.get('/tools', (req, res) => {
-  res.sendFile(path.join(__dirname, 'tools.html'));
+// --------------------------------------------------------------------------
+// HTML CALCULATOR ROUTES (Your-Home Original Calculators)
+// --------------------------------------------------------------------------
+app.get(['/emi-calculator', '/emi-calculator.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get('/about', (req, res) => {
-  res.sendFile(path.join(__dirname, 'about.html'));
+app.get(['/true-cost', '/true-cost-calculator.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'true-cost-calculator.html'));
 });
 
-app.get('/about-us', (req, res) => {
-  res.sendFile(path.join(__dirname, 'about.html'));
+app.get(['/rental-roi', '/rental-roi-calculator.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'rental-roi-calculator.html'));
+});
+
+app.get(['/affordability', '/affordability-calculator.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'affordability-calculator.html'));
+});
+
+app.get(['/risk-analysis', '/risk-analysis-calculator.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'risk-analysis-calculator.html'));
+});
+
+app.get(['/buy-vs-rent', '/buy-vs-rent-calculator.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'buy-vs-rent-calculator.html'));
+});
+
+app.get(['/tools', '/tools.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'tools.html'));
+});
+
+app.get(['/about', '/about-us', '/about.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'about.html'));
+});
+
+// React Frontend main home route fallback
+app.get('/', (req, res) => {
+  const reactIndex = path.join(frontendDist, 'index.html');
+  if (fs.existsSync(reactIndex)) {
+    return res.sendFile(reactIndex);
+  }
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Start Server
