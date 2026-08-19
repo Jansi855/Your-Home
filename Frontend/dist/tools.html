@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tools - Your Home | Smart Real Estate Planning Toolkit</title>
+  <meta name="description" content="Explore smart real estate calculators and financial tools: EMI Calculator, True Cost, Affordability, Rental ROI, Stamp Duty, and Property Comparisons." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="logo-icon.svg" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="tools-page-body">
+
+  <!-- =========================================================================
+       TOP NAVIGATION BAR
+       ========================================================================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand" aria-label="Your Home Homepage">
+        <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="brand-logo-img" />
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            <span>Calculators</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+
+          <!-- Dropdown Menu items -->
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              <span class="dropdown-item-icon">💰</span>
+              <div class="dropdown-item-text">
+                <strong>EMI Calculator</strong>
+                <span>Calculate loan payments & interest</span>
+              </div>
+            </a>
+            <a href="true-cost-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">🏷️</span>
+              <div class="dropdown-item-text">
+                <strong>True Cost Calculator</strong>
+                <span>Stamp duty, GST & hidden costs</span>
+              </div>
+            </a>
+            <a href="affordability-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">📊</span>
+              <div class="dropdown-item-text">
+                <strong>Affordability Check</strong>
+                <span>Know how much home you can afford</span>
+              </div>
+            </a>
+            <a href="rental-roi-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">📈</span>
+              <div class="dropdown-item-text">
+                <strong>Rental ROI Calculator</strong>
+                <span>Estimate rental returns & yields</span>
+              </div>
+            </a>
+            <a href="risk-analysis-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">🛡️</span>
+              <div class="dropdown-item-text">
+                <strong>Risk Analysis</strong>
+                <span>Property & builder risk scoring</span>
+              </div>
+            </a>
+            <a href="buy-vs-rent-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">⚖️</span>
+              <div class="dropdown-item-text">
+                <strong>Buy vs Rent Calculator</strong>
+                <span>Compare financial impact of renting</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            <span>Property</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+        </div>
+
+        <a href="#" class="nav-link">Insights</a>
+        <a href="#" class="nav-link">Schemes</a>
+
+        <!-- Active Tools Nav Item -->
+        <div class="nav-item-active-wrap">
+          <a href="tools.html" class="nav-link active">Tools</a>
+          <span class="active-indicator"></span>
+        </div>
+
+        <a href="about.html" class="nav-link">About Us</a>
+      </nav>
+
+      <!-- Right Action Icons -->
+      <div class="nav-actions">
+        <button class="icon-btn" title="Saved Properties & Calculators" aria-label="Bookmarks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn profile-btn" title="User Profile" aria-label="Profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Ambient Glow Elements -->
+  <div class="ambient-glow-orb ambient-orb-1" aria-hidden="true"></div>
+  <div class="ambient-glow-orb ambient-orb-2" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================= -->
+  <main class="page-container tools-page-container">
+
+    <!-- =========================================================================
+         HERO SECTION: Tools Banner + Vector Illustration
+         ========================================================================= -->
+    <section class="tools-hero-section">
+      <div class="tools-hero-grid">
+        
+        <!-- Left Text Content -->
+        <div class="tools-hero-left animate-fade-in-up">
+          <h1 class="tools-hero-title">Tools</h1>
+          <p class="tools-hero-subtitle">
+            Smart tools to help you plan, calculate and make better real estate decisions.
+          </p>
+        </div>
+
+        <!-- Right Illustration -->
+        <div class="tools-hero-right animate-fade-in-right">
+          <div class="tools-illustration-wrapper">
+            <svg class="tools-hero-svg" viewBox="0 0 380 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="toolsSkyGrad" x1="190" y1="0" x2="190" y2="180" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#f0fdf4" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#dcfce7" stop-opacity="0.8"/>
+                </linearGradient>
+                <linearGradient id="toolsDocGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#f8fafc"/>
+                </linearGradient>
+                <linearGradient id="toolsCalcGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#f1f5f9"/>
+                </linearGradient>
+                <filter id="toolsShadow" x="-10%" y="-10%" width="120%" height="120%">
+                  <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.06"/>
+                </filter>
+              </defs>
+
+              <!-- Background Landscape Arch -->
+              <path d="M30 170 C30 70, 350 70, 350 170 Z" fill="url(#toolsSkyGrad)" />
+
+              <!-- Subtle Ambient Ring & Clouds -->
+              <circle cx="280" cy="55" r="28" fill="#86efac" opacity="0.35" />
+              <path d="M80 60 Q90 50 105 55 Q118 45 132 55 Q145 60 140 68 H75 Q70 65 80 60 Z" fill="#ffffff" opacity="0.8" />
+
+              <!-- Background House Structure -->
+              <g filter="url(#toolsShadow)">
+                <path d="M70 160 V105 L125 65 L180 105 V160 H70 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.8" stroke-linejoin="round"/>
+                <polygon points="62,108 125,60 188,108" fill="#334155" />
+                <circle cx="125" cy="88" r="6" fill="#86efac" stroke="#16a34a" stroke-width="1.2"/>
+                <!-- Windows -->
+                <rect x="86" y="118" width="18" height="18" rx="2" fill="#0284c7" opacity="0.8" stroke="#ffffff" stroke-width="1.5"/>
+                <rect x="146" y="118" width="18" height="18" rx="2" fill="#0284c7" opacity="0.8" stroke="#ffffff" stroke-width="1.5"/>
+                <rect x="114" y="128" width="22" height="32" rx="2" fill="#15803d" />
+              </g>
+
+              <!-- Pocket Calculator in Front -->
+              <g filter="url(#toolsShadow)" transform="translate(185, 80)">
+                <rect x="0" y="0" width="56" height="80" rx="8" fill="url(#toolsCalcGrad)" stroke="#64748b" stroke-width="1.8"/>
+                <!-- Screen -->
+                <rect x="7" y="8" width="42" height="16" rx="3" fill="#15803d"/>
+                <rect x="11" y="14" width="22" height="3" rx="1.5" fill="#86efac"/>
+                <!-- Keypad Buttons -->
+                <rect x="7" y="30" width="9" height="7" rx="2" fill="#e2e8f0"/>
+                <rect x="20" y="30" width="9" height="7" rx="2" fill="#e2e8f0"/>
+                <rect x="33" y="30" width="16" height="7" rx="2" fill="#16a34a"/>
+
+                <rect x="7" y="42" width="9" height="7" rx="2" fill="#e2e8f0"/>
+                <rect x="20" y="42" width="9" height="7" rx="2" fill="#e2e8f0"/>
+                <rect x="33" y="42" width="16" height="7" rx="2" fill="#e2e8f0"/>
+
+                <rect x="7" y="54" width="9" height="7" rx="2" fill="#e2e8f0"/>
+                <rect x="20" y="54" width="9" height="7" rx="2" fill="#e2e8f0"/>
+                <rect x="33" y="54" width="16" height="18" rx="2" fill="#15803d"/>
+                <rect x="7" y="65" width="22" height="7" rx="2" fill="#e2e8f0"/>
+              </g>
+
+              <!-- Financial Rupee Paper Document -->
+              <g filter="url(#toolsShadow)" transform="translate(245, 45)">
+                <!-- Folded Page Body -->
+                <path d="M0 0 H52 L68 16 V105 H0 Z" fill="url(#toolsDocGrad)" stroke="#cbd5e1" stroke-width="1.8"/>
+                <!-- Corner Fold -->
+                <polygon points="52,0 52,16 68,16" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.2"/>
+                <!-- Rupee Badge -->
+                <circle cx="34" cy="38" r="14" fill="#f0fdf4" stroke="#86efac" stroke-width="1.2"/>
+                <text x="34" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#15803d" text-anchor="middle">₹</text>
+                <!-- Document Text Lines -->
+                <rect x="12" y="62" width="44" height="4" rx="2" fill="#94a3b8" opacity="0.6"/>
+                <rect x="12" y="72" width="36" height="4" rx="2" fill="#94a3b8" opacity="0.6"/>
+                <rect x="12" y="82" width="40" height="4" rx="2" fill="#16a34a" opacity="0.7"/>
+              </g>
+
+              <!-- Lush Trees & Foreground Bushes -->
+              <!-- Left Tree -->
+              <rect x="52" y="130" width="6" height="35" rx="2" fill="#78350f"/>
+              <circle cx="55" cy="115" r="18" fill="#15803d"/>
+              <circle cx="48" cy="108" r="13" fill="#16a34a"/>
+              <!-- Right Bushes -->
+              <ellipse cx="320" cy="155" rx="22" ry="16" fill="#15803d" />
+              <ellipse cx="335" cy="152" rx="18" ry="14" fill="#22c55e" />
+              <ellipse cx="308" cy="158" rx="14" ry="10" fill="#166534" />
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8 TOOLS CARDS GRID (4x2 Matrix)
+         ========================================================================= -->
+    <section class="tools-grid-section">
+      <div class="tools-cards-grid">
+
+        <!-- Tool 1: EMI Calculator -->
+        <div class="tool-grid-card tilt-card" data-tilt>
+          <div class="tool-card-top">
+            <div class="tool-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                <line x1="8" y1="6" x2="16" y2="6"></line>
+                <line x1="16" y1="14" x2="16" y2="18"></line>
+                <path d="M8 10h.01"></path>
+                <path d="M12 10h.01"></path>
+                <path d="M16 10h.01"></path>
+                <path d="M8 14h.01"></path>
+                <path d="M12 14h.01"></path>
+                <path d="M8 18h.01"></path>
+                <path d="M12 18h.01"></path>
+              </svg>
+            </div>
+            <div class="tool-card-text">
+              <h2 class="tool-card-title">EMI Calculator</h2>
+              <p class="tool-card-desc">Calculate your loan EMI based on loan amount, interest rate and tenure.</p>
+            </div>
+          </div>
+          <a href="index.html" class="tool-card-btn">
+            <span>Calculate EMI</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="tool-card-shine"></div>
+        </div>
+
+        <!-- Tool 2: Home Affordability Calculator -->
+        <div class="tool-grid-card tilt-card" data-tilt>
+          <div class="tool-card-top">
+            <div class="tool-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <path d="M10 12h4"></path>
+                <path d="M10 15h4"></path>
+                <path d="M12 9v9"></path>
+              </svg>
+            </div>
+            <div class="tool-card-text">
+              <h2 class="tool-card-title">Home Affordability Calculator</h2>
+              <p class="tool-card-desc">Check how much home you can afford based on your income and expenses.</p>
+            </div>
+          </div>
+          <a href="affordability-calculator.html" class="tool-card-btn">
+            <span>Check Affordability</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="tool-card-shine"></div>
+        </div>
+
+        <!-- Tool 3: True Cost Calculator -->
+        <div class="tool-grid-card tilt-card" data-tilt>
+          <div class="tool-card-top">
+            <div class="tool-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <div class="tool-card-text">
+              <h2 class="tool-card-title">True Cost Calculator</h2>
+              <p class="tool-card-desc">Calculate total property cost including stamp duty, registration, legal fees and more.</p>
+            </div>
+          </div>
+          <a href="true-cost-calculator.html" class="tool-card-btn">
+            <span>Calculate True Cost</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="tool-card-shine"></div>
+        </div>
+
+        <!-- Tool 4: Rental ROI Calculator -->
+        <div class="tool-grid-card tilt-card" data-tilt>
+          <div class="tool-card-top">
+            <div class="tool-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            </div>
+            <div class="tool-card-text">
+              <h2 class="tool-card-title">Rental ROI Calculator</h2>
+              <p class="tool-card-desc">Estimate rental income, ROI and cash flow for investment properties.</p>
+            </div>
+          </div>
+          <a href="rental-roi-calculator.html" class="tool-card-btn">
+            <span>Calculate ROI</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="tool-card-shine"></div>
+        </div>
+
+        <!-- Tool 5: Loan Eligibility Checker -->
+        <div class="tool-grid-card tilt-card" data-tilt>
+          <div class="tool-card-top">
+            <div class="tool-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <polyline points="9 12 11 14 15 10"></polyline>
+              </svg>
+            </div>
+            <div class="tool-card-text">
+              <h2 class="tool-card-title">Loan Eligibility Checker</h2>
+              <p class="tool-card-desc">Check your home loan eligibility based on income, expenses and existing loans.</p>
+            </div>
+          </div>
+          <a href="affordability-calculator.html" class="tool-card-btn">
+            <span>Check Eligibility</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="tool-card-shine"></div>
+        </div>
+
+        <!-- Tool 6: Stamp Duty & Registration Calculator -->
+        <div class="tool-grid-card tilt-card" data-tilt>
+          <div class="tool-card-top">
+            <div class="tool-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="5" x2="5" y2="19"></line>
+                <circle cx="6.5" cy="6.5" r="2.5"></circle>
+                <circle cx="17.5" cy="17.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <div class="tool-card-text">
+              <h2 class="tool-card-title">Stamp Duty & Registration Calculator</h2>
+              <p class="tool-card-desc">Calculate stamp duty and registration charges for your property.</p>
+            </div>
+          </div>
+          <a href="true-cost-calculator.html" class="tool-card-btn">
+            <span>Calculate Charges</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="tool-card-shine"></div>
+        </div>
+
+        <!-- Tool 7: Property Comparison Tool -->
+        <div class="tool-grid-card tilt-card" data-tilt>
+          <div class="tool-card-top">
+            <div class="tool-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="3" x2="12" y2="21"></line>
+                <path d="M5 6l7-3 7 3"></path>
+                <path d="M2 14l3-7 3 7a3 3 0 0 1-6 0z"></path>
+                <path d="M16 14l3-7 3 7a3 3 0 0 1-6 0z"></path>
+                <line x1="4" y1="21" x2="20" y2="21"></line>
+              </svg>
+            </div>
+            <div class="tool-card-text">
+              <h2 class="tool-card-title">Property Comparison Tool</h2>
+              <p class="tool-card-desc">Compare properties side by side on price, ROI, EMI and other key factors.</p>
+            </div>
+          </div>
+          <a href="buy-vs-rent-calculator.html" class="tool-card-btn">
+            <span>Compare Now</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="tool-card-shine"></div>
+        </div>
+
+        <!-- Tool 8: Affidavit & Document Helper -->
+        <div class="tool-grid-card tilt-card" data-tilt>
+          <div class="tool-card-top">
+            <div class="tool-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </div>
+            <div class="tool-card-text">
+              <h2 class="tool-card-title">Affidavit & Document Helper</h2>
+              <p class="tool-card-desc">Get a list of required documents and create affidavits easily.</p>
+            </div>
+          </div>
+          <a href="risk-analysis-calculator.html" class="tool-card-btn">
+            <span>Explore Documents</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="tool-card-shine"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         TRUST & BENEFIT BAR (4 Items)
+         ========================================================================= -->
+    <section class="tools-trust-section">
+      <div class="tools-trust-bar">
+        
+        <!-- Trust 1 -->
+        <div class="trust-item">
+          <div class="trust-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
+          <div class="trust-text-wrap">
+            <h3 class="trust-title">100% Accurate</h3>
+            <p class="trust-desc">Our tools use verified data and smart calculations.</p>
+          </div>
+        </div>
+
+        <!-- Trust 2 -->
+        <div class="trust-item">
+          <div class="trust-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div class="trust-text-wrap">
+            <h3 class="trust-title">Save Time</h3>
+            <p class="trust-desc">Make quick calculations and better decisions in minutes.</p>
+          </div>
+        </div>
+
+        <!-- Trust 3 -->
+        <div class="trust-item">
+          <div class="trust-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <div class="trust-text-wrap">
+            <h3 class="trust-title">Secure & Private</h3>
+            <p class="trust-desc">Your data is safe with us. We value your privacy.</p>
+          </div>
+        </div>
+
+        <!-- Trust 4 -->
+        <div class="trust-item">
+          <div class="trust-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M4.93 4.93l4.24 4.24"></path>
+              <path d="M14.83 9.17l4.24-4.24"></path>
+              <path d="M14.83 14.83l4.24 4.24"></path>
+              <path d="M9.17 14.83l-4.24 4.24"></path>
+              <circle cx="12" cy="12" r="4"></circle>
+            </svg>
+          </div>
+          <div class="trust-text-wrap">
+            <h3 class="trust-title">Free to Use</h3>
+            <p class="trust-desc">All tools are free and always will be.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         FOOTER DISCLAIMER BAR
+         ========================================================================= -->
+    <div class="footer-disclaimer-bar">
+      <div class="disclaimer-inner">
+        <div class="disclaimer-shield-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <polyline points="9 12 11 14 15 10"></polyline>
+          </svg>
+        </div>
+        <p class="disclaimer-text">
+          All calculations and estimates are for informational planning purposes. Confirm final figures with your lending institution and legal registrar.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       COMPACT SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-compact-container">
+      <div class="footer-compact-top">
+        <!-- Brand -->
+        <a href="index.html" class="footer-brand" aria-label="Your Home Homepage">
+          <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="footer-brand-img" />
+        </a>
+
+        <!-- Quick Nav Calculators -->
+        <nav class="footer-compact-nav" aria-label="Calculators">
+          <a href="index.html">EMI</a>
+          <a href="true-cost-calculator.html">True Cost</a>
+          <a href="affordability-calculator.html">Affordability</a>
+          <a href="rental-roi-calculator.html">Rental ROI</a>
+          <a href="buy-vs-rent-calculator.html">Buy vs Rent</a>
+          <a href="risk-analysis-calculator.html">Risk Analysis</a>
+          <a href="tools.html" class="footer-nav-active">Tools</a>
+          <a href="about.html">About Us</a>
+        </nav>
+
+        <!-- Back to top -->
+        <button type="button" class="footer-compact-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+          <span>Top</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="footer-compact-bottom">
+        <p class="footer-compact-copy">
+          © 2026 Your Home. Calculations are estimates for reference only.
+        </p>
+        <div class="footer-compact-links">
+          <a href="tools.html">Tools</a>
+          <span>•</span>
+          <a href="about.html">About Us</a>
+          <span>•</span>
+          <a href="#">Privacy</a>
+          <span>•</span>
+          <a href="#">Terms</a>
+          <span>•</span>
+          <a href="mailto:support@yourhome.in">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       INTERACTIVE ANIMATIONS JAVASCRIPT (3D Card Tilt)
+       ========================================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 3D Card Tilt on Hover for 8 Tool Cards
+      const tiltCards = document.querySelectorAll('.tilt-card');
+      tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          const rotateX = ((y - centerY) / centerY) * -6;
+          const rotateY = ((x - centerX) / centerX) * 6;
+          
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+          
+          const shine = card.querySelector('.tool-card-shine');
+          if (shine) {
+            shine.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(22, 163, 74, 0.1), transparent 70%)`;
+          }
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+          const shine = card.querySelector('.tool-card-shine');
+          if (shine) {
+            shine.style.background = 'transparent';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
