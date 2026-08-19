@@ -78,11 +78,11 @@ export default function Navbar({ bookmarkCount = 0, onOpenBookmarks, onOpenUser 
         </li>
 
         <li>
-          <a href="#insights" className="nav-link">Insights</a>
+          <a href="/insights" className="nav-link">Insights</a>
         </li>
 
         <li>
-          <a href="#schemes" className="nav-link">Schemes</a>
+          <a href="/schemes" className="nav-link">Schemes</a>
         </li>
 
         {/* Tools Dropdown */}
@@ -154,10 +154,10 @@ export default function Navbar({ bookmarkCount = 0, onOpenBookmarks, onOpenUser 
           <a href="#home" className="nav-link active" onClick={() => setMobileOpen(false)}>Home</a>
           <a href="#popular-tools" className="nav-link" onClick={() => setMobileOpen(false)}>Calculators</a>
           <a href="#browse-properties" className="nav-link" onClick={() => setMobileOpen(false)}>Property</a>
-          <a href="#insights" className="nav-link" onClick={() => setMobileOpen(false)}>Insights</a>
-          <a href="#schemes" className="nav-link" onClick={() => setMobileOpen(false)}>Schemes</a>
-          <a href="#popular-tools" className="nav-link" onClick={() => setMobileOpen(false)}>Tools</a>
-          <a href="#about-us" className="nav-link" onClick={() => setMobileOpen(false)}>About Us</a>
+          <a href="/insights" className="nav-link" onClick={() => setMobileOpen(false)}>Insights</a>
+          <a href="/schemes" className="nav-link" onClick={() => setMobileOpen(false)}>Schemes</a>
+          <a href="/tools" className="nav-link" onClick={() => setMobileOpen(false)}>Tools</a>
+          <a href="/about-us" className="nav-link" onClick={() => setMobileOpen(false)}>About Us</a>
         </div>
       )}
     </nav>

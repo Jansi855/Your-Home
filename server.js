@@ -190,7 +190,7 @@ app.post('/api/calculate/true-cost', (req, res) => {
         breakup: {
           basePropertyPrice: { amount: basePrice, percentage: basePricePct, label: 'Base Property Price', color: '#15803d' },
           stampDuty: { amount: stampDuty, percentage: stampDutyPct, rate: stampRate, label: 'Stamp Duty', color: '#22c55e' },
-          registrationCharges: { amount: registrationCharges, percentage: registrationChargesPct, rate: registrationRate, label: 'Registration Charges', color: '#3b82f6' },
+          registrationCharges: { amount: registrationCharges, percentage: registrationChargesPct, rate: registrationRate, label: 'Registry Charges', color: '#3b82f6' },
           gst: { amount: gst, percentage: gstPct, rate: gstRate, label: 'GST', color: '#8b5cf6' },
           otherCharges: { amount: otherCharges, percentage: otherChargesPct, label: 'Other Charges', color: '#a855f7' }
         }
@@ -638,6 +638,14 @@ app.get(['/buy-vs-rent', '/buy-vs-rent-calculator.html'], (req, res) => {
 
 app.get(['/tools', '/tools.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'tools.html'));
+});
+
+app.get(['/schemes', '/schemes.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'schemes.html'));
+});
+
+app.get(['/insights', '/insights.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'insights.html'));
 });
 
 app.get(['/about', '/about-us', '/about.html'], (req, res) => {

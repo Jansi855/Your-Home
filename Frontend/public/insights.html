@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market Insights & Trends | Your Home - Plan • Analyze • Invest</title>
+  <meta name="description" content="Explore real-time Indian real estate market trends, property price appreciation, rental yields, supply vs demand data, and intelligent housing insights." />
+
+  <!-- Google Fonts: Outfit (Headings) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP NAVIGATION BAR
+       ========================================================================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand" aria-label="Your Home Homepage">
+        <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="brand-logo-img" />
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            <span>Calculators</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+
+          <!-- Dropdown Menu items -->
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              <span class="dropdown-item-icon">💰</span>
+              <div class="dropdown-item-text">
+                <strong>EMI Calculator</strong>
+                <span>Calculate loan payments & interest</span>
+              </div>
+            </a>
+            <a href="true-cost-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">🏷️</span>
+              <div class="dropdown-item-text">
+                <strong>True Cost Calculator</strong>
+                <span>Stamp duty, GST & hidden costs</span>
+              </div>
+            </a>
+            <a href="affordability-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">📊</span>
+              <div class="dropdown-item-text">
+                <strong>Affordability Check</strong>
+                <span>Know how much home you can afford</span>
+              </div>
+            </a>
+            <a href="rental-roi-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">📈</span>
+              <div class="dropdown-item-text">
+                <strong>Rental ROI Calculator</strong>
+                <span>Estimate rental returns & yields</span>
+              </div>
+            </a>
+            <a href="risk-analysis-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">🛡️</span>
+              <div class="dropdown-item-text">
+                <strong>Risk Analysis</strong>
+                <span>Property & builder risk scoring</span>
+              </div>
+            </a>
+            <a href="buy-vs-rent-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">⚖️</span>
+              <div class="dropdown-item-text">
+                <strong>Buy vs Rent Calculator</strong>
+                <span>Compare financial impact of renting</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            <span>Property</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html#browse-properties" class="dropdown-item">
+              <span class="dropdown-item-icon">🏠</span>
+              <div class="dropdown-item-text">
+                <strong>Buy Properties</strong>
+                <span>Explore verified homes & apartments</span>
+              </div>
+            </a>
+            <a href="index.html#browse-properties" class="dropdown-item">
+              <span class="dropdown-item-icon">🏢</span>
+              <div class="dropdown-item-text">
+                <strong>Rent Properties</strong>
+                <span>Find apartments with high yields</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Active Insights Nav Item -->
+        <div class="nav-item-active-wrap">
+          <a href="insights.html" class="nav-link active">Insights</a>
+          <span class="active-indicator"></span>
+        </div>
+
+        <a href="schemes.html" class="nav-link">Schemes</a>
+
+        <a href="tools.html" class="nav-link">Tools</a>
+
+        <a href="about.html" class="nav-link">About Us</a>
+      </nav>
+
+      <!-- Right Action Icons -->
+      <div class="nav-actions">
+        <button class="icon-btn" title="Saved Properties & Calculators" aria-label="Bookmarks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn profile-btn" title="User Profile" aria-label="Profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================= -->
+  <main class="insights-page-container">
+
+    <!-- Header Section -->
+    <div class="insights-header-wrapper">
+      <div class="insights-title-group">
+        <h1 class="insights-title">Insights</h1>
+        <p class="insights-subtitle">
+          Market trends, smart insights and data to help you make better real estate decisions.
+        </p>
+      </div>
+
+      <!-- Date Range Selector Pill Dropdown -->
+      <div class="date-selector-wrapper">
+        <button type="button" class="date-selector-btn" id="dateSelectorBtn" aria-expanded="false" aria-haspopup="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span id="dateSelectorLabel">Apr 2024 - Apr 2025</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+
+        <div class="date-dropdown-menu" id="dateDropdownMenu">
+          <button type="button" class="date-dropdown-item active" data-period="1y">
+            <span>Apr 2024 - Apr 2025</span>
+            <span style="font-size: 10px; color: #16a34a; font-weight: 700;">Latest</span>
+          </button>
+          <button type="button" class="date-dropdown-item" data-period="prev_1y">
+            <span>Apr 2023 - Mar 2024</span>
+          </button>
+          <button type="button" class="date-dropdown-item" data-period="3y">
+            <span>3-Year Trend (2022-2025)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         TOP 4 KPI STAT CARDS
+         ========================================================================= -->
+    <div class="insights-kpi-grid">
+      <!-- Card 1: Avg Property Price -->
+      <div class="kpi-card tilt-card" style="animation-delay: 0.05s;">
+        <div class="card-shine-layer"></div>
+        <div class="kpi-card-icon-box kpi-icon-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+            <polyline points="17 6 23 6 23 12"></polyline>
+          </svg>
+        </div>
+        <div class="kpi-card-content">
+          <span class="kpi-card-label">Avg. Property Price (India)</span>
+          <div class="kpi-card-value-wrap">
+            <span class="kpi-card-primary-val" id="kpiPriceVal">₹6,842</span>
+            <span class="kpi-card-unit">/ sq.ft.</span>
+          </div>
+          <span class="kpi-growth-badge growth-up" id="kpiPriceGrowth">↑ 6.4% vs last year</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Rental Yield -->
+      <div class="kpi-card tilt-card" style="animation-delay: 0.12s;">
+        <div class="card-shine-layer"></div>
+        <div class="kpi-card-icon-box kpi-icon-blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+            <path d="M9 22v-4h6v4"></path>
+            <path d="M8 6h.01"></path>
+            <path d="M16 6h.01"></path>
+            <path d="M8 10h.01"></path>
+            <path d="M16 10h.01"></path>
+            <path d="M8 14h.01"></path>
+            <path d="M16 14h.01"></path>
+          </svg>
+        </div>
+        <div class="kpi-card-content">
+          <span class="kpi-card-label">Rental Yield (Avg.)</span>
+          <div class="kpi-card-value-wrap">
+            <span class="kpi-card-primary-val" id="kpiYieldVal">4.2%</span>
+          </div>
+          <span class="kpi-growth-badge growth-up" id="kpiYieldGrowth">↑ 0.5% vs last year</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Sales Growth -->
+      <div class="kpi-card tilt-card" style="animation-delay: 0.19s;">
+        <div class="card-shine-layer"></div>
+        <div class="kpi-card-icon-box kpi-icon-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"></path>
+            <path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.8-2.8L16 13"></path>
+            <path d="m2 13 4 4"></path>
+            <path d="m14 7 3-3a2.4 2.4 0 0 1 3.4 0 2.4 2.4 0 0 1 0 3.4l-3 3"></path>
+          </svg>
+        </div>
+        <div class="kpi-card-content">
+          <span class="kpi-card-label">Sales Growth (YoY)</span>
+          <div class="kpi-card-value-wrap">
+            <span class="kpi-card-primary-val" id="kpiSalesVal">12.8%</span>
+          </div>
+          <span class="kpi-growth-badge growth-up" id="kpiSalesGrowth">↑ 2.1% vs last year</span>
+        </div>
+      </div>
+
+      <!-- Card 4: Top Performing City -->
+      <div class="kpi-card tilt-card" style="animation-delay: 0.26s;">
+        <div class="card-shine-layer"></div>
+        <div class="kpi-card-icon-box kpi-icon-orange">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 20V10"></path>
+            <path d="M12 20V4"></path>
+            <path d="M6 20v-6"></path>
+          </svg>
+        </div>
+        <div class="kpi-card-content">
+          <span class="kpi-card-label">Top Performing City</span>
+          <div class="kpi-card-value-wrap">
+            <span class="kpi-card-primary-val" id="kpiCityVal" style="font-size: 1.35rem;">Bengaluru</span>
+          </div>
+          <span class="kpi-growth-badge growth-up" id="kpiCityGrowth">↑ 7.9% price growth</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         MIDDLE SECTION: 3 COLUMNS (Trend Chart, City Growth, Demand vs Supply)
+         ========================================================================= -->
+    <div class="insights-row-grid">
+      
+      <!-- Card 1: Property Price Trend (India) -->
+      <div class="insight-card tilt-card" style="animation-delay: 0.33s;">
+        <div class="card-shine-layer"></div>
+        <div class="insight-card-header">
+          <div class="insight-card-title-group">
+            <h3 class="insight-card-title">Property Price Trend (India)</h3>
+            <span class="info-tooltip-badge" title="Historical weighted square-foot price appreciation trend across top Indian metro corridors">ⓘ</span>
+          </div>
+          <select class="card-action-select" id="trendMetricSelect" aria-label="Metric Type">
+            <option value="price">Price / sq.ft. ▾</option>
+            <option value="rental">Rental Yield %</option>
+            <option value="volume">Sales Activity</option>
+          </select>
+        </div>
+
+        <div class="chart-body-wrapper">
+          <!-- Floating dynamic hover tooltip -->
+          <div class="chart-hover-pill" id="chartHoverPill">
+            <span class="chart-hover-date" id="chartHoverDate">Apr 2025</span>
+            <span id="chartHoverVal">₹6,842 / sq.ft.</span>
+          </div>
+
+          <svg class="trend-svg-chart" id="trendSvgChart" viewBox="0 0 460 180" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="trendAreaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#16a34a" stop-opacity="0.22"/>
+                <stop offset="100%" stop-color="#16a34a" stop-opacity="0.00"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Horizontal Background Grid Lines -->
+            <line x1="35" y1="25" x2="435" y2="25" class="chart-grid-line" />
+            <line x1="35" y1="65" x2="435" y2="65" class="chart-grid-line" />
+            <line x1="35" y1="105" x2="435" y2="105" class="chart-grid-line" />
+            <line x1="35" y1="145" x2="435" y2="145" class="chart-grid-line" />
+
+            <!-- Y Axis Numbers -->
+            <text x="8" y="30" class="chart-axis-text">₹8k</text>
+            <text x="8" y="70" class="chart-axis-text">₹6k</text>
+            <text x="8" y="110" class="chart-axis-text">₹4k</text>
+            <text x="8" y="150" class="chart-axis-text">₹2k</text>
+
+            <!-- Gradient Area & Stroke Spline Paths -->
+            <path id="chartAreaFill" class="chart-area-fill" d="" />
+            <path id="chartCurvePath" class="chart-curve-path" d="" />
+
+            <!-- Interactive Hover Point Circles -->
+            <g id="chartPointsGroup"></g>
+
+            <!-- X Axis Month Labels -->
+            <g id="chartXAxisGroup"></g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Card 2: Top Cities by Price Growth -->
+      <div class="insight-card tilt-card" style="animation-delay: 0.40s;">
+        <div class="card-shine-layer"></div>
+        <div class="insight-card-header">
+          <h3 class="insight-card-title">Top Cities by Price Growth</h3>
+          <a href="tools.html" class="card-action-link">View All</a>
+        </div>
+
+        <div class="growth-cities-list" id="cityGrowthContainer">
+          <!-- Dynamically populated rows -->
+        </div>
+      </div>
+
+      <!-- Card 3: Demand vs Supply -->
+      <div class="insight-card tilt-card" style="animation-delay: 0.47s;">
+        <div class="card-shine-layer"></div>
+        <div class="insight-card-header">
+          <div class="insight-card-title-group">
+            <h3 class="insight-card-title">Demand vs Supply</h3>
+            <span class="info-tooltip-badge" title="Market absorption ratio comparing active buyer inquiries against available housing supply">ⓘ</span>
+          </div>
+        </div>
+
+        <div class="donut-center-group">
+          <!-- SVG Donut Chart -->
+          <div class="donut-svg-wrapper">
+            <svg class="donut-chart-svg" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="42" stroke="#f1f5f9" stroke-width="22" fill="none" />
+              <circle id="donutDemandSlice" cx="60" cy="60" r="42" stroke="#10b981" stroke-width="22" fill="none" class="donut-segment" />
+              <circle id="donutSupplySlice" cx="60" cy="60" r="42" stroke="#fb923c" stroke-width="22" fill="none" class="donut-segment" />
+            </svg>
+          </div>
+
+          <!-- Legend -->
+          <div class="donut-legend-col">
+            <div class="donut-legend-row">
+              <span class="legend-color-dot" style="background-color: #10b981;"></span>
+              <div class="legend-label-group">
+                <span class="legend-label-text">Demand</span>
+                <span class="legend-label-val" id="demandPctVal">68%</span>
+              </div>
+            </div>
+            <div class="donut-legend-row">
+              <span class="legend-color-dot" style="background-color: #fb923c;"></span>
+              <div class="legend-label-group">
+                <span class="legend-label-text">Supply</span>
+                <span class="legend-label-val" id="supplyPctVal">32%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Insight Bottom Callout -->
+        <div class="insight-callout-pill">
+          <svg class="callout-icon-green" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="17 1 21 5 17 9"></polyline>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+            <polyline points="7 23 3 19 7 15"></polyline>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+          </svg>
+          <span>Demand is higher than supply in major metro cities.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- =========================================================================
+         LOWER SECTION: 3 COLUMNS (Market Insights, Price Range, Popular Searches)
+         ========================================================================= -->
+    <div class="insights-row-grid">
+      
+      <!-- Card 1: Market Insights Interactive List -->
+      <div class="insight-card tilt-card" style="animation-delay: 0.54s;">
+        <div class="card-shine-layer"></div>
+        <div class="insight-card-header">
+          <h3 class="insight-card-title">Market Insights</h3>
+        </div>
+
+        <div class="market-insights-list">
+          <!-- Item 1 -->
+          <div class="market-insight-item" onclick="openInsightModal('residential-demand')">
+            <div class="insight-item-left">
+              <div class="insight-item-icon-box" style="background: #eaf5ee; color: #0f5237;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </div>
+              <div class="insight-item-texts">
+                <span class="insight-item-title">Residential demand rising</span>
+                <span class="insight-item-desc">3 BHK homes are in highest demand across metro cities.</span>
+              </div>
+            </div>
+            <svg class="insight-item-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="market-insight-item" onclick="openInsightModal('prices-moving-up')">
+            <div class="insight-item-left">
+              <div class="insight-item-icon-box" style="background: #f5f3ff; color: #7c3aed;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+              </div>
+              <div class="insight-item-texts">
+                <span class="insight-item-title">Prices moving up</span>
+                <span class="insight-item-desc">Average property prices increased by 6.4% compared to last year.</span>
+              </div>
+            </div>
+            <svg class="insight-item-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="market-insight-item" onclick="openInsightModal('rental-returns')">
+            <div class="insight-item-left">
+              <div class="insight-item-icon-box" style="background: #fff7ed; color: #ea580c;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <div class="insight-item-texts">
+                <span class="insight-item-title">Rental returns improving</span>
+                <span class="insight-item-desc">Rental yields improved by 0.5% on an average across India.</span>
+              </div>
+            </div>
+            <svg class="insight-item-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="market-insight-item" onclick="openInsightModal('loan-interest-stable')">
+            <div class="insight-item-left">
+              <div class="insight-item-icon-box" style="background: #ebf5ff; color: #2563eb;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                </svg>
+              </div>
+              <div class="insight-item-texts">
+                <span class="insight-item-title">Home loan interest stable</span>
+                <span class="insight-item-desc">Average home loan interest rate is around 8.65%.</span>
+              </div>
+            </div>
+            <svg class="insight-item-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Price Range Distribution (All India) -->
+      <div class="insight-card tilt-card" style="animation-delay: 0.61s;">
+        <div class="card-shine-layer"></div>
+        <div class="insight-card-header">
+          <div class="insight-card-title-group">
+            <h3 class="insight-card-title">Price Range Distribution (All India)</h3>
+            <span class="info-tooltip-badge" title="Percentage of all actively transacted inventory broken down across residential budget categories">ⓘ</span>
+          </div>
+        </div>
+
+        <div class="distribution-chart-wrapper">
+          <!-- Donut SVG -->
+          <div class="donut-svg-wrapper">
+            <svg class="donut-chart-svg" viewBox="0 0 120 120" id="priceDistSvg">
+              <!-- Dynamically populated SVG slices -->
+            </svg>
+          </div>
+
+          <!-- Colored Legend -->
+          <div class="distribution-legend-grid" id="priceDistLegend">
+            <!-- Dynamically populated legend rows -->
+          </div>
+        </div>
+
+        <!-- Insight Bottom Callout -->
+        <div class="insight-callout-pill">
+          <svg class="callout-icon-green" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18h6"></path>
+            <path d="M10 22h4"></path>
+            <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
+          </svg>
+          <span>Most properties fall in the ₹40 L - ₹80 L range.</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Popular Searches -->
+      <div class="insight-card tilt-card" style="animation-delay: 0.68s;">
+        <div class="card-shine-layer"></div>
+        <div class="insight-card-header">
+          <div class="insight-card-title-group">
+            <h3 class="insight-card-title">Popular Searches</h3>
+            <span class="info-tooltip-badge" title="Most searched residential keywords with week-on-week search volume velocity">ⓘ</span>
+          </div>
+          <a href="index.html#browse-properties" class="card-action-link">View All</a>
+        </div>
+
+        <div class="popular-searches-list">
+          <div class="popular-search-row">
+            <div class="search-rank-and-name">
+              <span class="search-rank-number">1</span>
+              <span class="search-query-text">2 BHK in Noida</span>
+            </div>
+            <span class="search-trend-badge">↑ 28%</span>
+          </div>
+
+          <div class="popular-search-row">
+            <div class="search-rank-and-name">
+              <span class="search-rank-number">2</span>
+              <span class="search-query-text">3 BHK in Bengaluru</span>
+            </div>
+            <span class="search-trend-badge">↑ 22%</span>
+          </div>
+
+          <div class="popular-search-row">
+            <div class="search-rank-and-name">
+              <span class="search-rank-number">3</span>
+              <span class="search-query-text">Plots in Hyderabad</span>
+            </div>
+            <span class="search-trend-badge">↑ 18%</span>
+          </div>
+
+          <div class="popular-search-row">
+            <div class="search-rank-and-name">
+              <span class="search-rank-number">4</span>
+              <span class="search-query-text">Villas in Pune</span>
+            </div>
+            <span class="search-trend-badge">↑ 15%</span>
+          </div>
+
+          <div class="popular-search-row">
+            <div class="search-rank-and-name">
+              <span class="search-rank-number">5</span>
+              <span class="search-query-text">Apartments in Mumbai</span>
+            </div>
+            <span class="search-trend-badge">↑ 12%</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- =========================================================================
+         BOTTOM CALLOUT: KEY TAKEAWAY
+         ========================================================================= -->
+    <div class="key-takeaway-banner tilt-card" style="animation-delay: 0.75s;">
+      <div class="card-shine-layer"></div>
+      <div class="takeaway-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="12" r="6"></circle>
+          <circle cx="12" cy="12" r="2"></circle>
+        </svg>
+      </div>
+      <div class="takeaway-content">
+        <h4 class="takeaway-label">Key Takeaway</h4>
+        <p class="takeaway-desc">
+          Property prices are rising steadily, rental yields are improving and demand continues to outpace supply in key cities.
+        </p>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         FOOTER DISCLAIMER BAR
+         ========================================================================= -->
+    <div class="footer-disclaimer-bar" style="margin-top: 3rem;">
+      <div class="disclaimer-inner">
+        <div class="disclaimer-shield-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <polyline points="9 12 11 14 15 10"></polyline>
+          </svg>
+        </div>
+        <p class="disclaimer-text">
+          Market insights and price trends are aggregated from verified registrar transactions and benchmark real estate indices for informational reference only.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       INSIGHT DETAIL DEEP DIVE MODAL
+       ========================================================================= -->
+  <div class="insights-modal-overlay" id="insightsModal" role="dialog" aria-modal="true">
+    <div class="insights-modal-card">
+      <button type="button" class="insights-modal-close" id="modalCloseBtn" aria-label="Close modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <span id="modalBadge" style="display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; margin-bottom: 8px;">
+        Market Trend
+      </span>
+      <h3 id="modalTitle" style="font-family: var(--font-display, 'Outfit', sans-serif); font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 10px;">
+        Insight Overview
+      </h3>
+      <p id="modalSummary" style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin-bottom: 20px;">
+        Detailed insight description.
+      </p>
+
+      <div style="font-size: 12px; font-weight: 700; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px;">
+        Key Market Indicators
+      </div>
+      <div id="modalStatsGrid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+        <!-- Injected stats -->
+      </div>
+
+      <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 12px; padding: 14px 16px;">
+        <div style="font-size: 12px; font-weight: 700; color: #0f5237; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+          💡 Strategic Recommendation
+        </div>
+        <p id="modalTakeaway" style="font-size: 0.84rem; color: #065f46; line-height: 1.5; margin: 0;">
+          Buyer takeaway advice.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       COMPACT SITE FOOTER (Black Background)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-compact-container">
+      <div class="footer-compact-top">
+        <!-- Brand -->
+        <a href="index.html" class="footer-brand" aria-label="Your Home Homepage">
+          <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="footer-brand-img" />
+        </a>
+
+        <!-- Quick Nav Calculators -->
+        <nav class="footer-compact-nav" aria-label="Calculators">
+          <a href="index.html">EMI</a>
+          <a href="true-cost-calculator.html">True Cost</a>
+          <a href="affordability-calculator.html">Affordability</a>
+          <a href="rental-roi-calculator.html">Rental ROI</a>
+          <a href="buy-vs-rent-calculator.html">Buy vs Rent</a>
+          <a href="risk-analysis-calculator.html">Risk Analysis</a>
+          <a href="insights.html" class="footer-nav-active">Insights</a>
+          <a href="schemes.html">Schemes</a>
+          <a href="tools.html">Tools</a>
+          <a href="about.html">About Us</a>
+        </nav>
+
+        <!-- Back to top -->
+        <button type="button" class="footer-compact-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+          <span>Top</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="footer-compact-bottom">
+        <p class="footer-compact-copy">
+          © 2026 Your Home. Real estate analytics and trends are for reference only.
+        </p>
+        <div class="footer-compact-links">
+          <a href="insights.html">Insights</a>
+          <span>•</span>
+          <a href="schemes.html">Schemes</a>
+          <span>•</span>
+          <a href="tools.html">Tools</a>
+          <span>•</span>
+          <a href="about.html">About Us</a>
+          <span>•</span>
+          <a href="#">Privacy</a>
+          <span>•</span>
+          <a href="#">Terms</a>
+          <span>•</span>
+          <a href="mailto:support@yourhome.in">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="insights.js"></script>
+</body>
+</html>
