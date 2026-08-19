@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Your Home | Building Trust in Real Estate</title>
+  <meta name="description" content="Learn about Your Home - India's intelligent real estate planning platform. Empowering home buyers and investors with transparent calculators and data-driven insights." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="logo-icon.svg" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="about-page-body">
+
+  <!-- =========================================================================
+       TOP NAVIGATION BAR
+       ========================================================================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand" aria-label="Your Home Homepage">
+        <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="brand-logo-img" />
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            <span>Calculators</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+
+          <!-- Dropdown Menu items -->
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              <span class="dropdown-item-icon">💰</span>
+              <div class="dropdown-item-text">
+                <strong>EMI Calculator</strong>
+                <span>Calculate loan payments & interest</span>
+              </div>
+            </a>
+            <a href="true-cost-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">🏷️</span>
+              <div class="dropdown-item-text">
+                <strong>True Cost Calculator</strong>
+                <span>Stamp duty, GST & hidden costs</span>
+              </div>
+            </a>
+            <a href="affordability-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">📊</span>
+              <div class="dropdown-item-text">
+                <strong>Affordability Check</strong>
+                <span>Know how much home you can afford</span>
+              </div>
+            </a>
+            <a href="rental-roi-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">📈</span>
+              <div class="dropdown-item-text">
+                <strong>Rental ROI Calculator</strong>
+                <span>Estimate rental returns & yields</span>
+              </div>
+            </a>
+            <a href="risk-analysis-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">🛡️</span>
+              <div class="dropdown-item-text">
+                <strong>Risk Analysis</strong>
+                <span>Property & builder risk scoring</span>
+              </div>
+            </a>
+            <a href="buy-vs-rent-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">⚖️</span>
+              <div class="dropdown-item-text">
+                <strong>Buy vs Rent Calculator</strong>
+                <span>Compare financial impact of renting</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            <span>Property</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+        </div>
+
+        <a href="#" class="nav-link">Insights</a>
+        <a href="#" class="nav-link">Schemes</a>
+
+        <a href="tools.html" class="nav-link">Tools</a>
+
+        <!-- Active About Us Nav Item -->
+        <div class="nav-item-active-wrap">
+          <a href="about.html" class="nav-link active">About Us</a>
+          <span class="active-indicator"></span>
+        </div>
+      </nav>
+
+      <!-- Right Action Icons -->
+      <div class="nav-actions">
+        <button class="icon-btn" title="Saved Properties & Calculators" aria-label="Bookmarks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn profile-btn" title="User Profile" aria-label="Profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Ambient Glow Elements -->
+  <div class="ambient-glow-orb ambient-orb-1" aria-hidden="true"></div>
+  <div class="ambient-glow-orb ambient-orb-2" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================= -->
+  <main class="page-container about-page-container">
+
+    <!-- =========================================================================
+         HERO SECTION: Building trust in every real estate decision.
+         ========================================================================= -->
+    <section class="about-hero-section">
+      <div class="about-hero-grid">
+        
+        <!-- Left Text & Features Column -->
+        <div class="about-hero-left animate-fade-in-up">
+          
+          <!-- Green Tag / Badge -->
+          <div class="about-tag-badge">
+            <span>ABOUT US</span>
+          </div>
+
+          <!-- Main Hero Headline -->
+          <h1 class="about-hero-title">
+            Building trust in<br />
+            every <span class="highlight-green-text">real estate</span> decision.
+          </h1>
+
+          <!-- Lead Subtitle -->
+          <p class="about-hero-description">
+            Your Home is an intelligent real estate planning platform that helps you analyze, compare and decide the right property with confidence.
+          </p>
+
+          <!-- 3 Feature Badges in Row -->
+          <div class="about-feature-pills">
+            
+            <!-- Pill 1: Smart Analysis -->
+            <div class="about-pill-card pill-smart-analysis">
+              <div class="pill-icon-box">
+                <span class="pill-currency-symbol">₹</span>
+              </div>
+              <div class="pill-content">
+                <h2 class="pill-title">Smart Analysis</h2>
+                <p class="pill-desc">Data-driven insights for smarter decisions.</p>
+              </div>
+            </div>
+
+            <!-- Pill 2: Complete Transparency -->
+            <div class="about-pill-card pill-transparency">
+              <div class="pill-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
+              </div>
+              <div class="pill-content">
+                <h2 class="pill-title">Complete Transparency</h2>
+                <p class="pill-desc">Clear breakdown of true cost, loans, risks and returns.</p>
+              </div>
+            </div>
+
+            <!-- Pill 3: User First -->
+            <div class="about-pill-card pill-user-first">
+              <div class="pill-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div class="pill-content">
+                <h2 class="pill-title">User First</h2>
+                <p class="pill-desc">Simple tools designed for everyone.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right Illustration Column with Floating Quote -->
+        <div class="about-hero-right animate-fade-in-right">
+          <div class="about-illustration-container">
+            
+            <!-- Ambient Backdrop Circle -->
+            <div class="illustration-backdrop-glow"></div>
+
+            <!-- Real Estate Vector SVG Scene -->
+            <div class="real-estate-svg-wrapper">
+              <svg class="about-hero-svg" viewBox="0 0 540 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <!-- Sky & Dome Gradient -->
+                  <linearGradient id="skyGrad" x1="270" y1="0" x2="270" y2="380" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#f0fdf4" stop-opacity="0.8"/>
+                    <stop offset="60%" stop-color="#e8f7ee" stop-opacity="0.95"/>
+                    <stop offset="100%" stop-color="#dcfce7" stop-opacity="1"/>
+                  </linearGradient>
+
+                  <!-- Modern Tower Gradient -->
+                  <linearGradient id="towerGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#f8fafc"/>
+                    <stop offset="100%" stop-color="#e2e8f0"/>
+                  </linearGradient>
+
+                  <linearGradient id="glassGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.45"/>
+                    <stop offset="100%" stop-color="#0284c7" stop-opacity="0.75"/>
+                  </linearGradient>
+
+                  <!-- Villa Roof Gradient -->
+                  <linearGradient id="roofSlate" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#334155"/>
+                    <stop offset="100%" stop-color="#1e293b"/>
+                  </linearGradient>
+
+                  <!-- Lawn Greens -->
+                  <linearGradient id="lawnGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#86efac"/>
+                    <stop offset="60%" stop-color="#4ade80"/>
+                    <stop offset="100%" stop-color="#22c55e"/>
+                  </linearGradient>
+
+                  <linearGradient id="sunGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#fef08a"/>
+                    <stop offset="100%" stop-color="#facc15"/>
+                  </linearGradient>
+
+                  <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+                    <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.08"/>
+                  </filter>
+                </defs>
+
+                <!-- Background Landscape Arch -->
+                <path d="M40 340 C40 160, 500 160, 500 340 Z" fill="url(#skyGrad)" />
+
+                <!-- Ambient Soft Sun / Ring -->
+                <circle cx="410" cy="110" r="38" fill="url(#sunGrad)" opacity="0.35" />
+                <circle cx="410" cy="110" r="28" fill="url(#sunGrad)" opacity="0.6" />
+
+                <!-- Background Subtle Clouds -->
+                <path d="M120 120 Q135 105 155 115 Q175 100 195 115 Q210 120 205 130 H115 Q110 125 120 120 Z" fill="#ffffff" opacity="0.85" />
+                <path d="M320 90 Q332 78 348 85 Q362 75 378 88 Q390 92 385 100 H315 Q310 95 320 90 Z" fill="#ffffff" opacity="0.8" />
+
+                <!-- ==================== BACKGROUND APARTMENT TOWER ==================== -->
+                <g filter="url(#softShadow)">
+                  <!-- Tower Main Body -->
+                  <rect x="290" y="80" width="115" height="240" rx="6" fill="url(#towerGrad)" stroke="#cbd5e1" stroke-width="1.5"/>
+                  <!-- Tower Rooftop Pergola / Garden -->
+                  <rect x="298" y="68" width="99" height="12" rx="2" fill="#15803d" opacity="0.9"/>
+                  <line x1="310" y1="68" x2="310" y2="80" stroke="#166534" stroke-width="2"/>
+                  <line x1="330" y1="68" x2="330" y2="80" stroke="#166534" stroke-width="2"/>
+                  <line x1="350" y1="68" x2="350" y2="80" stroke="#166534" stroke-width="2"/>
+                  <line x1="370" y1="68" x2="370" y2="80" stroke="#166534" stroke-width="2"/>
+                  <line x1="390" y1="68" x2="390" y2="80" stroke="#166534" stroke-width="2"/>
+
+                  <!-- Tower Central Recess Accent -->
+                  <rect x="340" y="88" width="16" height="232" fill="#e2e8f0" />
+
+                  <!-- Balconies & Windows Rows -->
+                  <!-- Floor 6 -->
+                  <rect x="302" y="96" width="30" height="18" rx="2" fill="#0284c7" opacity="0.85"/>
+                  <rect x="364" y="96" width="30" height="18" rx="2" fill="#0284c7" opacity="0.85"/>
+                  <line x1="300" y1="116" x2="334" y2="116" stroke="#94a3b8" stroke-width="2.5"/>
+                  <line x1="362" y1="116" x2="396" y2="116" stroke="#94a3b8" stroke-width="2.5"/>
+
+                  <!-- Floor 5 -->
+                  <rect x="302" y="128" width="30" height="18" rx="2" fill="#0284c7" opacity="0.85"/>
+                  <rect x="364" y="128" width="30" height="18" rx="2" fill="#0284c7" opacity="0.85"/>
+                  <line x1="300" y1="148" x2="334" y2="148" stroke="#94a3b8" stroke-width="2.5"/>
+                  <line x1="362" y1="148" x2="396" y2="148" stroke="#94a3b8" stroke-width="2.5"/>
+
+                  <!-- Floor 4 -->
+                  <rect x="302" y="160" width="30" height="18" rx="2" fill="#0284c7" opacity="0.85"/>
+                  <rect x="364" y="160" width="30" height="18" rx="2" fill="#0284c7" opacity="0.85"/>
+                  <line x1="300" y1="180" x2="334" y2="180" stroke="#94a3b8" stroke-width="2.5"/>
+                  <line x1="362" y1="180" x2="396" y2="180" stroke="#94a3b8" stroke-width="2.5"/>
+
+                  <!-- Floor 3 -->
+                  <rect x="302" y="192" width="30" height="18" rx="2" fill="#0284c7" opacity="0.85"/>
+                  <rect x="364" y="192" width="30" height="18" rx="2" fill="#0284c7" opacity="0.85"/>
+                  <line x1="300" y1="212" x2="334" y2="212" stroke="#94a3b8" stroke-width="2.5"/>
+                  <line x1="362" y1="212" x2="396" y2="212" stroke="#94a3b8" stroke-width="2.5"/>
+
+                  <!-- Floor 2 -->
+                  <rect x="302" y="224" width="30" height="18" rx="2" fill="#0284c7" opacity="0.85"/>
+                  <rect x="364" y="224" width="30" height="18" rx="2" fill="#0284c7" opacity="0.85"/>
+                </g>
+
+                <!-- Mid-ground Left Townhouse (Beige/Modern) -->
+                <g filter="url(#softShadow)">
+                  <rect x="110" y="220" width="85" height="100" rx="3" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+                  <!-- Roof Pitch -->
+                  <polygon points="104,222 152,185 200,222" fill="url(#roofSlate)" />
+                  <!-- Window -->
+                  <rect x="122" y="235" width="22" height="26" rx="2" fill="#38bdf8" opacity="0.75" stroke="#ffffff" stroke-width="1.5"/>
+                  <rect x="156" y="235" width="22" height="26" rx="2" fill="#38bdf8" opacity="0.75" stroke="#ffffff" stroke-width="1.5"/>
+                  <!-- Front Door & Porch -->
+                  <rect x="140" y="280" width="24" height="40" rx="2" fill="#b45309" />
+                  <circle cx="160" cy="300" r="1.5" fill="#fef08a" />
+                  <rect x="135" y="276" width="34" height="4" rx="1" fill="#475569" />
+                </g>
+
+                <!-- Foreground Contemporary Luxury House (Right/Center) -->
+                <g filter="url(#softShadow)">
+                  <!-- Base Structure -->
+                  <rect x="180" y="210" width="130" height="110" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+                  
+                  <!-- Wood Panel Accent Box -->
+                  <rect x="188" y="218" width="55" height="45" rx="3" fill="#fed7aa" stroke="#fb923c" stroke-width="1"/>
+                  <line x1="188" y1="228" x2="243" y2="228" stroke="#f97316" stroke-width="0.8" opacity="0.6"/>
+                  <line x1="188" y1="238" x2="243" y2="238" stroke="#f97316" stroke-width="0.8" opacity="0.6"/>
+                  <line x1="188" y1="248" x2="243" y2="248" stroke="#f97316" stroke-width="0.8" opacity="0.6"/>
+                  <rect x="196" y="225" width="38" height="30" rx="2" fill="#0284c7" opacity="0.8" stroke="#ffffff" stroke-width="1.5"/>
+
+                  <!-- Upper Story Section with Dark Slate Roof -->
+                  <polygon points="215,190 320,135 425,190" fill="url(#roofSlate)" />
+                  <rect x="235" y="190" width="170" height="130" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+                  
+                  <!-- Attic / 2nd Floor Large Picture Window -->
+                  <polygon points="248,190 320,148 392,190" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
+                  <rect x="295" y="172" width="50" height="38" rx="2" fill="url(#glassGrad)" stroke="#ffffff" stroke-width="2"/>
+                  <!-- Window dividers -->
+                  <line x1="320" y1="172" x2="320" y2="210" stroke="#ffffff" stroke-width="1.5"/>
+                  <line x1="295" y1="191" x2="345" y2="191" stroke="#ffffff" stroke-width="1.5"/>
+
+                  <!-- Ground Floor Large Sliding Glass Doors -->
+                  <rect x="252" y="240" width="68" height="80" rx="2" fill="url(#glassGrad)" stroke="#334155" stroke-width="2"/>
+                  <line x1="286" y1="240" x2="286" y2="320" stroke="#334155" stroke-width="2"/>
+
+                  <!-- Front Porch Pillar & Canopy -->
+                  <rect x="330" y="235" width="60" height="8" rx="2" fill="#334155" />
+                  <rect x="382" y="243" width="6" height="77" fill="#64748b" />
+                  <!-- Elegant Front Entrance Door -->
+                  <rect x="340" y="248" width="32" height="72" rx="2" fill="#92400e" stroke="#78350f" stroke-width="1"/>
+                  <rect x="346" y="254" width="8" height="30" rx="1" fill="#fef3c7" opacity="0.6"/>
+                  <circle cx="366" cy="285" r="2" fill="#fbbf24" />
+                </g>
+
+                <!-- ==================== LUSH GREENERY & LANDSCAPE ==================== -->
+                <!-- Front Lawn Waves -->
+                <path d="M40 320 C140 310, 220 330, 310 315 C410 300, 480 325, 520 335 L520 365 L40 365 Z" fill="url(#lawnGrad)" />
+                <path d="M20 335 C120 325, 260 345, 380 330 C460 320, 510 335, 530 350 L530 375 L20 375 Z" fill="#16a34a" />
+
+                <!-- Stone Paved Driveway / Pathway -->
+                <path d="M260 320 L240 365 L320 365 L300 320 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
+                <line x1="255" y1="332" x2="295" y2="332" stroke="#cbd5e1" stroke-dasharray="3 3"/>
+                <line x1="248" y1="348" x2="305" y2="348" stroke="#cbd5e1" stroke-dasharray="3 3"/>
+
+                <!-- Beautiful Trees & Shrubs -->
+                <!-- Left Pine/Ornamental Tree -->
+                <rect x="85" y="270" width="8" height="50" fill="#78350f" rx="2"/>
+                <circle cx="89" cy="245" r="28" fill="#15803d" />
+                <circle cx="82" cy="235" r="20" fill="#16a34a" />
+                <circle cx="98" cy="240" r="18" fill="#22c55e" />
+
+                <!-- Mid-ground Decorative Shrub -->
+                <ellipse cx="195" cy="320" rx="16" ry="12" fill="#15803d" />
+                <ellipse cx="202" cy="318" rx="12" ry="9" fill="#22c55e" />
+
+                <!-- Right Tall Tree -->
+                <rect x="445" y="230" width="10" height="90" fill="#78350f" rx="3"/>
+                <circle cx="450" cy="210" r="36" fill="#166534" />
+                <circle cx="440" cy="195" r="26" fill="#15803d" />
+                <circle cx="465" cy="200" r="24" fill="#22c55e" />
+                <circle cx="448" cy="180" r="18" fill="#4ade80" />
+
+                <!-- Small flower patches -->
+                <circle cx="160" cy="340" r="3" fill="#f43f5e" />
+                <circle cx="168" cy="342" r="3" fill="#fbbf24" />
+                <circle cx="176" cy="339" r="3" fill="#f43f5e" />
+                <circle cx="340" cy="340" r="3" fill="#38bdf8" />
+                <circle cx="348" cy="343" r="3" fill="#fbbf24" />
+              </svg>
+            </div>
+
+            <!-- =========================================================================
+                 FLOATING QUOTE CARD (Matches Image Exactly)
+                 ========================================================================= -->
+            <div class="floating-quote-card" id="floatingQuoteCard">
+              <div class="quote-icon-wrap">
+                <span class="quote-symbol">“</span>
+              </div>
+              <p class="quote-text">
+                Our mission is to make real estate planning simple, transparent and smarter for everyone.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         " — WHAT WE DO — " PILLARS SECTION (3 Interactive Mission/Vision Cards)
+         ========================================================================= -->
+    <section class="about-pillars-section">
+      
+      <!-- Section Header with Dashes -->
+      <div class="pillars-section-header">
+        <span class="dash-line"></span>
+        <h2 class="pillars-heading">What We Do</h2>
+        <span class="dash-line"></span>
+      </div>
+
+      <!-- 3 Cards Grid -->
+      <div class="pillars-grid">
+        
+        <!-- Card 1: Our Mission -->
+        <div class="pillar-card tilt-card" data-tilt>
+          <div class="pillar-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Our Mission</h3>
+          <p class="pillar-description">
+            To empower every home buyer and investor with the right information, smart tools and transparent insights to make confident real estate decisions.
+          </p>
+          <div class="pillar-card-shine"></div>
+        </div>
+
+        <!-- Card 2: Our Vision -->
+        <div class="pillar-card tilt-card" data-tilt>
+          <div class="pillar-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Our Vision</h3>
+          <p class="pillar-description">
+            To become India's most trusted real estate decision-making platform, simplifying the way people plan, analyze and invest in properties.
+          </p>
+          <div class="pillar-card-shine"></div>
+        </div>
+
+        <!-- Card 3: What We Do -->
+        <div class="pillar-card tilt-card" data-tilt>
+          <div class="pillar-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <h3 class="pillar-title">What We Do</h3>
+          <p class="pillar-description">
+            We provide smart calculators, real-time insights, risk analysis, government scheme information and property comparisons — all in one place.
+          </p>
+          <div class="pillar-card-shine"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         STATS & TRUST SECTION (5 Metrics Matching Screenshot)
+         ========================================================================= -->
+    <section class="about-stats-section">
+      <div class="stats-strip-container">
+        
+        <!-- Stat 1: 10K+ Properties Analyzed -->
+        <div class="stat-item-box">
+          <div class="stat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </div>
+          <div class="stat-text-wrap">
+            <div class="stat-number-row">
+              <span class="stat-number" data-target="10">10</span><span class="stat-suffix">K+</span>
+            </div>
+            <div class="stat-label-primary">Properties Analyzed</div>
+            <div class="stat-label-secondary">And counting</div>
+          </div>
+        </div>
+
+        <!-- Stat 2: 5K+ Happy Users -->
+        <div class="stat-item-box">
+          <div class="stat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <div class="stat-text-wrap">
+            <div class="stat-number-row">
+              <span class="stat-number" data-target="5">5</span><span class="stat-suffix">K+</span>
+            </div>
+            <div class="stat-label-primary">Happy Users</div>
+            <div class="stat-label-secondary">Growing every day</div>
+          </div>
+        </div>
+
+        <!-- Stat 3: 8+ Smart Tools -->
+        <div class="stat-item-box">
+          <div class="stat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+              <line x1="8" y1="6" x2="16" y2="6"></line>
+              <line x1="16" y1="14" x2="16" y2="18"></line>
+              <path d="M8 10h.01"></path>
+              <path d="M12 10h.01"></path>
+              <path d="M16 10h.01"></path>
+              <path d="M8 14h.01"></path>
+              <path d="M12 14h.01"></path>
+              <path d="M8 18h.01"></path>
+              <path d="M12 18h.01"></path>
+            </svg>
+          </div>
+          <div class="stat-text-wrap">
+            <div class="stat-number-row">
+              <span class="stat-number" data-target="8">8</span><span class="stat-suffix">+</span>
+            </div>
+            <div class="stat-label-primary">Smart Tools</div>
+            <div class="stat-label-secondary">For better decisions</div>
+          </div>
+        </div>
+
+        <!-- Stat 4: 100% Transparent -->
+        <div class="stat-item-box">
+          <div class="stat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
+          <div class="stat-text-wrap">
+            <div class="stat-number-row">
+              <span class="stat-number" data-target="100">100</span><span class="stat-suffix">%</span>
+            </div>
+            <div class="stat-label-primary">Transparent</div>
+            <div class="stat-label-secondary">No hidden charges</div>
+          </div>
+        </div>
+
+        <!-- Stat 5: Trusted by Thousands -->
+        <div class="stat-item-box">
+          <div class="stat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="7"></circle>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
+          </div>
+          <div class="stat-text-wrap">
+            <div class="stat-number-row">
+              <span class="stat-highlight-badge">Trusted by Thousands</span>
+            </div>
+            <div class="stat-label-secondary mt-1">For smart real estate planning</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         EXTRA UNIQUE SECTION 1: WHY CHOOSE YOUR HOME (Interactive Feature Grid)
+         ========================================================================= -->
+    <section class="about-why-us-section">
+      <div class="why-us-header">
+        <span class="pill-label">THE YOUR HOME DIFFERENCE</span>
+        <h2 class="why-us-title">Why Smart Buyers & Investors Choose Us</h2>
+        <p class="why-us-subtitle">We remove guesswork and high agent commissions with clear, algorithmic real estate clarity.</p>
+      </div>
+
+      <div class="why-us-grid">
+        
+        <!-- Feature 1 -->
+        <div class="why-card">
+          <div class="why-number">01</div>
+          <div class="why-icon-badge">🎯</div>
+          <h3 class="why-card-title">100% Unbiased Intelligence</h3>
+          <p class="why-card-desc">No broker affiliations or hidden incentives. You receive raw financial facts, accurate EMI schedules, and true costs.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="why-card">
+          <div class="why-number">02</div>
+          <div class="why-icon-badge">⚡</div>
+          <h3 class="why-card-title">Hidden Cost Calculator</h3>
+          <p class="why-card-desc">Uncover hidden stamp duties, registration fees, GST, maintenance deposits, and parking fees before signing agreements.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="why-card">
+          <div class="why-number">03</div>
+          <div class="why-icon-badge">🛡️</div>
+          <h3 class="why-card-title">Builder & Property Risk Score</h3>
+          <p class="why-card-desc">Evaluate builder delivery track records, litigation risks, and construction delay probabilities with our smart algorithm.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="why-card">
+          <div class="why-number">04</div>
+          <div class="why-icon-badge">📊</div>
+          <h3 class="why-card-title">Rent vs Buy Dynamic Matrix</h3>
+          <p class="why-card-desc">Compare opportunity costs of down payments versus equity market returns over 5, 10, 15, and 20-year horizons.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         EXTRA UNIQUE SECTION 2: INTERACTIVE CALCULATOR LAUNCHER CTA
+         ========================================================================= -->
+    <section class="about-cta-section">
+      <div class="about-cta-card">
+        <div class="cta-content">
+          <span class="cta-badge">READY TO PLAN YOUR DREAM HOME?</span>
+          <h2 class="cta-title">Start with our free financial tools today.</h2>
+          <p class="cta-description">
+            Join over 5,000+ smart Indian homebuyers making verified, risk-free real estate investments.
+          </p>
+
+          <div class="cta-buttons-wrap">
+            <a href="index.html" class="cta-btn primary-cta-btn">
+              <span>Launch EMI Calculator</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="true-cost-calculator.html" class="cta-btn secondary-cta-btn">
+              <span>True Cost Calculator</span>
+            </a>
+            <a href="affordability-calculator.html" class="cta-btn secondary-cta-btn">
+              <span>Affordability Check</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="cta-glow-decor" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         FOOTER DISCLAIMER BAR
+         ========================================================================= -->
+    <div class="footer-disclaimer-bar">
+      <div class="disclaimer-inner">
+        <div class="disclaimer-shield-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <polyline points="9 12 11 14 15 10"></polyline>
+          </svg>
+        </div>
+        <p class="disclaimer-text">
+          All calculations are approximate and for reference only. Please confirm with your bank and legal advisor for exact values.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       COMPACT SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-compact-container">
+      <div class="footer-compact-top">
+        <!-- Brand -->
+        <a href="index.html" class="footer-brand" aria-label="Your Home Homepage">
+          <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="footer-brand-img" />
+        </a>
+
+        <!-- Quick Nav Calculators -->
+        <nav class="footer-compact-nav" aria-label="Calculators">
+          <a href="index.html">EMI</a>
+          <a href="true-cost-calculator.html">True Cost</a>
+          <a href="affordability-calculator.html">Affordability</a>
+          <a href="rental-roi-calculator.html">Rental ROI</a>
+          <a href="buy-vs-rent-calculator.html">Buy vs Rent</a>
+          <a href="risk-analysis-calculator.html">Risk Analysis</a>
+          <a href="tools.html">Tools</a>
+          <a href="about.html" class="footer-nav-active">About Us</a>
+        </nav>
+
+        <!-- Back to top -->
+        <button type="button" class="footer-compact-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+          <span>Top</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="footer-compact-bottom">
+        <p class="footer-compact-copy">
+          © 2026 Your Home. Calculations are estimates for reference only.
+        </p>
+        <div class="footer-compact-links">
+          <a href="about.html">About Us</a>
+          <span>•</span>
+          <a href="#">Privacy</a>
+          <span>•</span>
+          <a href="#">Terms</a>
+          <span>•</span>
+          <a href="mailto:support@yourhome.in">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       INTERACTIVE ANIMATIONS JAVASCRIPT (Tilt, Counter, Parallax, Reveal)
+       ========================================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Number Counter Animation for Stats
+      const statNumbers = document.querySelectorAll('.stat-number');
+      let animated = false;
+
+      const animateCounters = () => {
+        statNumbers.forEach(counter => {
+          const target = +counter.getAttribute('data-target');
+          const duration = 1800; // ms
+          const stepTime = 25;
+          const steps = duration / stepTime;
+          const increment = target / steps;
+          let current = 0;
+
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              counter.textContent = target;
+              clearInterval(timer);
+            } else {
+              counter.textContent = Math.floor(current);
+            }
+          }, stepTime);
+        });
+      };
+
+      // Trigger counter animation on scroll
+      const statsSection = document.querySelector('.about-stats-section');
+      if (statsSection) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !animated) {
+              animated = true;
+              animateCounters();
+            }
+          });
+        }, { threshold: 0.25 });
+        observer.observe(statsSection);
+      }
+
+      // 2. Interactive 3D Tilt for Cards
+      const tiltCards = document.querySelectorAll('.tilt-card');
+      tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          const rotateX = ((y - centerY) / centerY) * -7;
+          const rotateY = ((x - centerX) / centerX) * 7;
+          
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+          
+          const shine = card.querySelector('.pillar-card-shine');
+          if (shine) {
+            shine.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(22, 163, 74, 0.12), transparent 70%)`;
+          }
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+          const shine = card.querySelector('.pillar-card-shine');
+          if (shine) {
+            shine.style.background = 'transparent';
+          }
+        });
+      });
+
+      // 3. Floating Quote Card Subtle Parallax on Mouse Move
+      const quoteCard = document.getElementById('floatingQuoteCard');
+      const heroRight = document.querySelector('.about-hero-right');
+      if (quoteCard && heroRight) {
+        heroRight.addEventListener('mousemove', (e) => {
+          const rect = heroRight.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          quoteCard.style.transform = `translate(${x * 12}px, ${y * 12}px)`;
+        });
+        heroRight.addEventListener('mouseleave', () => {
+          quoteCard.style.transform = `translate(0px, 0px)`;
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
