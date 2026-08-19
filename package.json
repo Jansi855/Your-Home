@@ -1,0 +1,24 @@
+{
+  "name": "your-home-calculators",
+  "version": "1.0.0",
+  "description": "Your Home - Real Estate Financial Calculators Portal (EMI, True Cost, and more)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "real-estate",
+    "calculator",
+    "emi",
+    "true-cost",
+    "property",
+    "finance"
+  ],
+  "author": "Your Home Team",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

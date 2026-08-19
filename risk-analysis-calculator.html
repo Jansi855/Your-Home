@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Home - Risk Analysis Calculator | Plan • Analyze • Invest</title>
+  <meta name="description" content="Evaluate potential risks associated with your property investment including location, builder track record, legal, market, construction, and financial risks." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP NAVIGATION BAR
+       ========================================================================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
+            <path d="M9 21V12h6v9"/>
+          </svg>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">Your Home</span>
+          <span class="brand-tagline">Plan • Analyze • Invest</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        
+        <div class="nav-dropdown active">
+          <a href="#" class="nav-link">
+            <span>Calculators</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <span class="active-indicator"></span>
+
+          <!-- Dropdown Menu items -->
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              <span class="dropdown-item-icon">💰</span>
+              <div class="dropdown-item-text">
+                <strong>EMI Calculator</strong>
+                <span>Calculate loan payments & interest</span>
+              </div>
+            </a>
+            <a href="true-cost-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">🏷️</span>
+              <div class="dropdown-item-text">
+                <strong>True Cost Calculator</strong>
+                <span>Stamp duty, GST & hidden costs</span>
+              </div>
+            </a>
+            <a href="affordability-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">📊</span>
+              <div class="dropdown-item-text">
+                <strong>Affordability Check</strong>
+                <span>Know how much home you can afford</span>
+              </div>
+            </a>
+            <a href="rental-roi-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">📈</span>
+              <div class="dropdown-item-text">
+                <strong>Rental ROI Calculator</strong>
+                <span>Estimate rental returns & yields</span>
+              </div>
+            </a>
+            <a href="risk-analysis-calculator.html" class="dropdown-item active-item">
+              <span class="dropdown-item-icon">🛡️</span>
+              <div class="dropdown-item-text">
+                <strong>Risk Analysis</strong>
+                <span>Property & builder risk scoring</span>
+              </div>
+            </a>
+            <a href="buy-vs-rent-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">⚖️</span>
+              <div class="dropdown-item-text">
+                <strong>Buy vs Rent Calculator</strong>
+                <span>Compare financial impact of renting</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            <span>Property</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+        </div>
+
+        <a href="#" class="nav-link">Insights</a>
+        <a href="#" class="nav-link">Schemes</a>
+
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            <span>Tools</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+        </div>
+
+        <a href="#" class="nav-link">About Us</a>
+      </nav>
+
+      <!-- Action Icons -->
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="Bookmarks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn" aria-label="User Account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================= -->
+  <main class="page-container">
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">›</span>
+      <a href="#">Calculators</a>
+      <span class="separator">›</span>
+      <span class="current">Risk Analysis</span>
+    </nav>
+
+    <!-- Page Header Hero Banner -->
+    <header class="page-header-row">
+      <div class="header-text-col">
+        <h1 class="page-title">Risk Analysis</h1>
+        <p class="page-subtitle">Evaluate potential risks associated with this property and make an informed decision.</p>
+      </div>
+      <div class="header-illustration-col">
+        <div class="illustration-graphic">
+          <svg viewBox="0 0 320 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg-art">
+            <!-- Background Soft City Silhouette -->
+            <path d="M20 120 V80 H45 V120 H70 V60 H105 V120 H130 V75 H165 V120 H200 V50 H240 V120 H290 V120 Z" fill="#e2e8f0" opacity="0.6"/>
+            <path d="M35 120 V90 H55 V120 H85 V70 H115 V120 H150 V85 H180 V120 H220 V65 H260 V120 Z" fill="#cbd5e1" opacity="0.5"/>
+            <!-- Green House Banner -->
+            <path d="M190 120 L220 90 L250 120 H190 Z" fill="#22c55e" opacity="0.2"/>
+            <rect x="200" y="100" width="40" height="20" fill="#15803d" opacity="0.3"/>
+            <!-- Magnifying Glass -->
+            <circle cx="215" cy="68" r="28" fill="#ffffff" stroke="#334155" stroke-width="4"/>
+            <circle cx="215" cy="68" r="22" fill="#e0f2fe" opacity="0.7"/>
+            <path d="M198 85 L180 103" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+            <path d="M208 60 L213 72 L225 58" stroke="#15803d" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Shield Badge -->
+            <g transform="translate(235, 30)">
+              <path d="M16 2 L30 8 V18 C30 27 23 34 16 38 C9 34 2 27 2 18 V8 L16 2 Z" fill="#22c55e"/>
+              <path d="M10 18 L14 22 L22 14" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================================================================
+         RISK ANALYSIS CALCULATOR GRID
+         ========================================================================= -->
+    <div class="calculator-grid risk-calculator-grid">
+      
+      <!-- LEFT FORM SIDEBAR PANEL -->
+      <aside class="calc-panel-left risk-form-panel">
+        <h2 class="panel-section-title">Property &amp; Location Details</h2>
+
+        <form id="risk-analysis-form" onsubmit="event.preventDefault();">
+          
+          <!-- Field 1: Property Name / Project -->
+          <div class="form-group">
+            <label for="risk-project-select" class="field-label">Property Name / Project</label>
+            <div class="input-with-icon">
+              <span class="field-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path></svg>
+              </span>
+              <select id="risk-project-select" class="form-select">
+                <option value="Green Residency" selected>Green Residency</option>
+                <option value="Skyline Heights">Skyline Heights</option>
+                <option value="Urban Greens">Urban Greens</option>
+                <option value="Royal Palms">Royal Palms</option>
+                <option value="Emerald Towers">Emerald Towers</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Field 2: Location -->
+          <div class="form-group">
+            <label for="risk-location-input" class="field-label">Location</label>
+            <div class="input-with-icon">
+              <span class="field-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </span>
+              <input type="text" id="risk-location-input" class="form-input" value="Sector 67, Gurgaon, Haryana" placeholder="City or locality name" />
+            </div>
+          </div>
+
+          <!-- Field 3: Property Type Pill Selectors -->
+          <div class="form-group">
+            <label class="field-label">Property Type</label>
+            <div class="property-type-pills" id="prop-type-pills">
+              <button type="button" class="type-pill-btn active" data-value="residential">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"></path></svg>
+                <span>Residential</span>
+              </button>
+              <button type="button" class="type-pill-btn" data-value="commercial">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 21V3L6 3v18M10 7h4M10 11h4M10 15h4"></path></svg>
+                <span>Commercial</span>
+              </button>
+              <button type="button" class="type-pill-btn" data-value="land">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg>
+                <span>Land</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Field 4: Property Status -->
+          <div class="form-group">
+            <label for="risk-status-select" class="field-label">Property Status</label>
+            <div class="input-with-icon">
+              <span class="field-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              </span>
+              <select id="risk-status-select" class="form-select">
+                <option value="under-construction" selected>Under Construction</option>
+                <option value="ready-to-move">Ready to Move</option>
+                <option value="new-launch">New Launch</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Field 5: Total Property Price (₹) -->
+          <div class="form-group">
+            <label for="risk-price-input" class="field-label">Total Property Price (₹)</label>
+            <div class="currency-input-wrap">
+              <span class="currency-symbol">₹</span>
+              <input type="text" id="risk-price-input" class="form-input formatted-currency" value="75,00,000" />
+            </div>
+          </div>
+
+          <!-- Field 6: Possession Date -->
+          <div class="form-group">
+            <label for="risk-possession-select" class="field-label">Possession Date</label>
+            <div class="input-with-icon">
+              <span class="field-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              </span>
+              <select id="risk-possession-select" class="form-select">
+                <option value="Dec 2026" selected>Dec 2026</option>
+                <option value="Dec 2025">Dec 2025</option>
+                <option value="Dec 2024">Dec 2024</option>
+                <option value="Ready">Ready</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="form-action-buttons">
+            <button type="button" id="btn-analyze-risk" class="btn-analyze">
+              <span>Analyze Risk</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+            <button type="button" id="btn-reset-risk" class="btn-reset">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+              <span>Reset</span>
+            </button>
+          </div>
+
+        </form>
+
+        <!-- Left Sidebar Bottom Info Card -->
+        <div class="risk-info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+          </div>
+          <p class="info-card-text">Our risk analysis is based on multiple factors including location, builder, legal, market trends and more.</p>
+        </div>
+
+      </aside>
+
+      <!-- RIGHT DASHBOARD RESULTS PANEL -->
+      <section class="calc-panel-right risk-results-panel">
+        
+        <!-- CARD 1: OVERALL RISK SCORE HEADER & GAUGE -->
+        <div class="overall-risk-card">
+          <h2 class="card-section-title">Overall Risk Score</h2>
+
+          <div class="overall-score-layout">
+            
+            <!-- Left: Semi-circle Gauge Meter SVG -->
+            <div class="score-gauge-col">
+              <div class="gauge-container">
+                <svg class="gauge-svg" viewBox="0 0 200 125">
+                  <defs>
+                    <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#22c55e" />
+                      <stop offset="33%" stop-color="#eab308" />
+                      <stop offset="66%" stop-color="#f97316" />
+                      <stop offset="100%" stop-color="#ef4444" />
+                    </linearGradient>
+                  </defs>
+                  
+                  <!-- Outer Background Track Arc -->
+                  <path class="gauge-bg-arc" d="M 20 110 A 80 80 0 0 1 180 110" fill="none" stroke="#e2e8f0" stroke-width="16" stroke-linecap="round" />
+                  
+                  <!-- Colored Meter Arc -->
+                  <path class="gauge-fill-arc" id="gauge-meter-fill" d="M 20 110 A 80 80 0 0 1 180 110" fill="none" stroke="url(#gaugeGradient)" stroke-width="16" stroke-linecap="round" stroke-dasharray="251.32" stroke-dashoffset="95.5" />
+                </svg>
+
+                <div class="gauge-center-text">
+                  <div class="score-number-row">
+                    <span class="score-value" id="risk-score-val">62</span>
+                    <span class="score-total"> / 100</span>
+                  </div>
+                  <div class="score-level-text" id="risk-level-badge">Moderate Risk</div>
+                  <div class="score-sub-note">Proceed with Caution <span class="info-dot" title="Proceed with caution based on evaluated metrics">ⓘ</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Middle: Description & Calculation link -->
+            <div class="score-desc-col">
+              <p class="score-summary-text" id="risk-summary-text">This property has a moderate risk level. Review the key risk factors below before making your decision.</p>
+              <a href="#how-calculated" class="how-calculated-link">
+                <span>How is this score calculated?</span>
+                <span class="info-circle">ⓘ</span>
+              </a>
+            </div>
+
+            <!-- Right: Risk Score Range Legend Box -->
+            <div class="score-legend-col">
+              <div class="legend-card-box">
+                <h3 class="legend-box-title">Risk Score Range</h3>
+                <ul class="legend-list">
+                  <li class="legend-item">
+                    <span class="legend-dot dot-low"></span>
+                    <span class="legend-range">0 - 30</span>
+                    <span class="legend-label">Low Risk</span>
+                  </li>
+                  <li class="legend-item">
+                    <span class="legend-dot dot-moderate"></span>
+                    <span class="legend-range">31 - 60</span>
+                    <span class="legend-label">Moderate Risk</span>
+                  </li>
+                  <li class="legend-item">
+                    <span class="legend-dot dot-high"></span>
+                    <span class="legend-range">61 - 80</span>
+                    <span class="legend-label">High Risk</span>
+                  </li>
+                  <li class="legend-item">
+                    <span class="legend-dot dot-very-high"></span>
+                    <span class="legend-range">81 - 100</span>
+                    <span class="legend-label">Very High Risk</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CARD 2: CATEGORY RISK CARDS (GRID OF 6) -->
+        <div class="category-risk-grid">
+          
+          <!-- 1. Location Risk -->
+          <div class="category-card">
+            <div class="cat-icon-wrap cat-icon-green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <h3 class="cat-title">Location Risk</h3>
+            <div class="cat-score-row">
+              <span class="cat-score-val" id="cat-score-location">55</span>
+              <span class="cat-score-total">/ 100</span>
+            </div>
+            <div class="cat-level-badge level-moderate-badge" id="cat-level-location">Moderate</div>
+            <div class="cat-factors-count" id="cat-factors-location">Factors: 5</div>
+          </div>
+
+          <!-- 2. Builder Risk -->
+          <div class="category-card">
+            <div class="cat-icon-wrap cat-icon-blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v8h20v-8a2 2 0 0 0-2-2h-2"></path><path d="M10 6h4M10 10h4M10 14h4M10 18h4"></path></svg>
+            </div>
+            <h3 class="cat-title">Builder Risk</h3>
+            <div class="cat-score-row">
+              <span class="cat-score-val" id="cat-score-builder">70</span>
+              <span class="cat-score-total">/ 100</span>
+            </div>
+            <div class="cat-level-badge level-high-badge" id="cat-level-builder">High</div>
+            <div class="cat-factors-count" id="cat-factors-builder">Factors: 6</div>
+          </div>
+
+          <!-- 3. Legal Risk -->
+          <div class="category-card">
+            <div class="cat-icon-wrap cat-icon-purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 7l9-4 9 4M5 13l4-8M19 13l-4-8M3 13c0 2 2 3 4 3s4-1 4-3M13 13c0 2 2 3 4 3s4-1 4-3"></path></svg>
+            </div>
+            <h3 class="cat-title">Legal Risk</h3>
+            <div class="cat-score-row">
+              <span class="cat-score-val" id="cat-score-legal">40</span>
+              <span class="cat-score-total">/ 100</span>
+            </div>
+            <div class="cat-level-badge level-low-badge" id="cat-level-legal">Low</div>
+            <div class="cat-factors-count" id="cat-factors-legal">Factors: 4</div>
+          </div>
+
+          <!-- 4. Market Risk -->
+          <div class="category-card">
+            <div class="cat-icon-wrap cat-icon-orange">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+            </div>
+            <h3 class="cat-title">Market Risk</h3>
+            <div class="cat-score-row">
+              <span class="cat-score-val" id="cat-score-market">60</span>
+              <span class="cat-score-total">/ 100</span>
+            </div>
+            <div class="cat-level-badge level-moderate-badge" id="cat-level-market">Moderate</div>
+            <div class="cat-factors-count" id="cat-factors-market">Factors: 5</div>
+          </div>
+
+          <!-- 5. Construction Risk -->
+          <div class="category-card">
+            <div class="cat-icon-wrap cat-icon-lightblue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 22h20M6 18v-4M10 18v-8M14 18v-6M18 18V6M10 6l8-4"></path></svg>
+            </div>
+            <h3 class="cat-title">Construction Risk</h3>
+            <div class="cat-score-row">
+              <span class="cat-score-val" id="cat-score-construction">65</span>
+              <span class="cat-score-total">/ 100</span>
+            </div>
+            <div class="cat-level-badge level-high-badge" id="cat-level-construction">High</div>
+            <div class="cat-factors-count" id="cat-factors-construction">Factors: 5</div>
+          </div>
+
+          <!-- 6. Financial Risk -->
+          <div class="category-card">
+            <div class="cat-icon-wrap cat-icon-rupee">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 7h8M8 11h8M8 11h4a3 3 0 0 1 0 6H8M11 17l4 4"></path></svg>
+            </div>
+            <h3 class="cat-title">Financial Risk</h3>
+            <div class="cat-score-row">
+              <span class="cat-score-val" id="cat-score-financial">58</span>
+              <span class="cat-score-total">/ 100</span>
+            </div>
+            <div class="cat-level-badge level-moderate-badge" id="cat-level-financial">Moderate</div>
+            <div class="cat-factors-count" id="cat-factors-financial">Factors: 4</div>
+          </div>
+
+        </div>
+
+        <!-- BOTTOM SPLIT ROW: KEY RISK FACTORS & RECOMMENDATIONS -->
+        <div class="bottom-split-row">
+          
+          <!-- LEFT COLUMN: KEY RISK FACTORS -->
+          <div class="bottom-card-col key-factors-card">
+            <h3 class="bottom-card-title">Key Risk Factors</h3>
+            
+            <div class="factors-table-wrap">
+              <table class="factors-table">
+                <thead>
+                  <tr>
+                    <th>Risk Factor</th>
+                    <th>Impact</th>
+                    <th>Risk Level</th>
+                  </tr>
+                </thead>
+                <tbody id="risk-factors-tbody">
+                  <tr>
+                    <td class="factor-name">Builder Track Record</td>
+                    <td class="factor-impact"><span class="impact-dot impact-high"></span> High</td>
+                    <td class="factor-level"><span class="table-badge badge-high">High Risk</span></td>
+                  </tr>
+                  <tr>
+                    <td class="factor-name">Construction Delay History</td>
+                    <td class="factor-impact"><span class="impact-dot impact-medium"></span> Medium</td>
+                    <td class="factor-level"><span class="table-badge badge-moderate">Moderate Risk</span></td>
+                  </tr>
+                  <tr>
+                    <td class="factor-name">Location Growth Potential</td>
+                    <td class="factor-impact"><span class="impact-dot impact-medium"></span> Medium</td>
+                    <td class="factor-level"><span class="table-badge badge-moderate">Moderate Risk</span></td>
+                  </tr>
+                  <tr>
+                    <td class="factor-name">Legal Approvals</td>
+                    <td class="factor-impact"><span class="impact-dot impact-low"></span> Low</td>
+                    <td class="factor-level"><span class="table-badge badge-low">Low Risk</span></td>
+                  </tr>
+                  <tr>
+                    <td class="factor-name">Market Demand</td>
+                    <td class="factor-impact"><span class="impact-dot impact-medium"></span> Medium</td>
+                    <td class="factor-level"><span class="table-badge badge-moderate">Moderate Risk</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="factors-card-footer">
+              <a href="#all-factors" class="view-all-factors-link">View All Risk Factors (30+) →</a>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: RECOMMENDATIONS -->
+          <div class="bottom-card-col recommendations-card">
+            <h3 class="bottom-card-title">Recommendations</h3>
+
+            <ul class="recommendations-list" id="recommendations-list">
+              <li class="rec-item">
+                <span class="rec-icon rec-icon-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span class="rec-text">Verify all legal documents and approvals before proceeding.</span>
+              </li>
+              <li class="rec-item">
+                <span class="rec-icon rec-icon-alert">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                </span>
+                <span class="rec-text">Check builder's past projects and delivery track record.</span>
+              </li>
+              <li class="rec-item">
+                <span class="rec-icon rec-icon-clock">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </span>
+                <span class="rec-text">Monitor construction progress regularly.</span>
+              </li>
+              <li class="rec-item">
+                <span class="rec-icon rec-icon-scale">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path><path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path></svg>
+                </span>
+                <span class="rec-text">Compare prices with similar properties in the area.</span>
+              </li>
+              <li class="rec-item">
+                <span class="rec-icon rec-icon-wallet">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path><path d="M18 12a2 2 0 0 0 0 4h4v-4z"></path></svg>
+                </span>
+                <span class="rec-text">Keep a buffer in your budget for unexpected delays.</span>
+              </li>
+            </ul>
+
+            <div class="recommendations-card-footer">
+              <a href="#detailed-report" class="view-report-link">View Detailed Report →</a>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- =========================================================================
+         FOOTER DISCLAIMER BANNER
+         ========================================================================= -->
+    <footer class="risk-disclaimer-banner">
+      <div class="disclaimer-inner">
+        <span class="disclaimer-info-icon">ⓘ</span>
+        <p class="disclaimer-text"><strong>Disclaimer:</strong> Risk scores are AI-generated based on available data and market research. Please do your own due diligence before making any investment decision.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- JavaScript Script -->
+  <script src="risk-analysis.js"></script>
+</body>
+</html>
