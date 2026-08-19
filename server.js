@@ -10,8 +10,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static frontend files
-app.use(express.static(path.join(__dirname)));
+// Serve static frontend files from public/
+app.use(express.static(path.join(__dirname, 'public')));
 
 // --------------------------------------------------------------------------
 // LOCATION & TAX RATES DATA (Indian Real Estate Benchmark Rates)
@@ -96,7 +96,7 @@ const LOCATION_TAX_RATES = {
 /**
  * Health check endpoint
  */
-app.get('/api/health', (req, res) => {
+app.get('/api/health', function (req, res) {
   res.json({
     status: 'online',
     service: 'Your Home Financial Calculations Engine',
@@ -299,11 +299,11 @@ app.post('/api/calculate/rental-roi', (req, res) => {
 
     // 3. Net Operating Income & Net Annual Cash Flow
     const totalExpenses = maintenance + propTax + insurance + vacancyLoss;
-    const netRentalYield = Number((( (grossAnnualRent - totalExpenses - (propPrice * 0.0142)) / propPrice) * 100).toFixed(2)); // 5.72% on 50L
+    const netRentalYield = Number((((grossAnnualRent - totalExpenses - (propPrice * 0.0142)) / propPrice) * 100).toFixed(2)); // 5.72% on 50L
     const netAnnualRentalIncome = grossAnnualRent - totalExpenses - annualLoanEMI; // ₹54,600
 
     // 4. Returns & Payback Period
-    const cashOnCashReturn = Number((( (netAnnualRentalIncome + (investment * 0.1225)) / investment) * 100).toFixed(2)); // 16.80% on 12L
+    const cashOnCashReturn = Number((((netAnnualRentalIncome + (investment * 0.1225)) / investment) * 100).toFixed(2)); // 16.80% on 12L
     const paybackYears = Number((investment / (netAnnualRentalIncome + (investment * 0.0384))).toFixed(1)); // 11.9 Years
 
     // 5. Timeline points for 20 years
@@ -591,68 +591,6 @@ app.post('/api/calculate/buy-vs-rent', (req, res) => {
   }
 });
 
-// --------------------------------------------------------------------------
-// HTML PAGE ROUTES
-// --------------------------------------------------------------------------
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-app.get('/emi-calculator', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-app.get('/true-cost', (req, res) => {
-  res.sendFile(path.join(__dirname, 'true-cost-calculator.html'));
-});
-
-app.get('/true-cost-calculator', (req, res) => {
-  res.sendFile(path.join(__dirname, 'true-cost-calculator.html'));
-});
-
-app.get('/rental-roi', (req, res) => {
-  res.sendFile(path.join(__dirname, 'rental-roi-calculator.html'));
-});
-
-app.get('/rental-roi-calculator', (req, res) => {
-  res.sendFile(path.join(__dirname, 'rental-roi-calculator.html'));
-});
-
-app.get('/affordability', (req, res) => {
-  res.sendFile(path.join(__dirname, 'affordability-calculator.html'));
-});
-
-app.get('/affordability-calculator', (req, res) => {
-  res.sendFile(path.join(__dirname, 'affordability-calculator.html'));
-});
-
-app.get('/affordability-check', (req, res) => {
-  res.sendFile(path.join(__dirname, 'affordability-calculator.html'));
-});
-
-app.get('/risk-analysis', (req, res) => {
-  res.sendFile(path.join(__dirname, 'risk-analysis-calculator.html'));
-});
-
-app.get('/risk-analysis-calculator', (req, res) => {
-  res.sendFile(path.join(__dirname, 'risk-analysis-calculator.html'));
-});
-
-app.get('/buy-vs-rent', (req, res) => {
-  res.sendFile(path.join(__dirname, 'buy-vs-rent-calculator.html'));
-});
-
-app.get('/buy-vs-rent-calculator', (req, res) => {
-  res.sendFile(path.join(__dirname, 'buy-vs-rent-calculator.html'));
-});
-
-app.get('/rent-vs-buy', (req, res) => {
-  res.sendFile(path.join(__dirname, 'buy-vs-rent-calculator.html'));
-});
-
-app.get('/rent-vs-buy-calculator', (req, res) => {
-  res.sendFile(path.join(__dirname, 'buy-vs-rent-calculator.html'));
-});
 
 app.get('/tools', (req, res) => {
   res.sendFile(path.join(__dirname, 'tools.html'));
