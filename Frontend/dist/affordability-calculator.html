@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Home - Affordability Check | Plan • Analyze • Invest</title>
+  <meta name="description" content="Check how much property you can afford and get a personalized budget recommendation based on your financial profile with Your Home's Affordability Check." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="logo-icon.svg" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Affordability-specific component styles -->
+  <style>
+    /* Savings mode toggle */
+    .savings-toggle {
+      display: flex;
+      gap: 0;
+      background: #f1f5f9;
+      border-radius: 8px;
+      padding: 3px;
+      flex-shrink: 0;
+    }
+    .savings-toggle .toggle-btn {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border: none;
+      border-radius: 6px;
+      background: transparent;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+    .savings-toggle .toggle-btn.active {
+      background: #ffffff;
+      color: #15803d;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .savings-toggle .toggle-btn:hover:not(.active) {
+      color: #334155;
+    }
+    .savings-computed-display {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: #64748b;
+      font-weight: 500;
+      padding-left: 2px;
+      min-height: 1.2em;
+    }
+    .savings-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    /* Loan parameters section */
+    .loan-params-divider {
+      margin: 8px 0 4px;
+      padding-top: 12px;
+      border-top: 1px dashed #e2e8f0;
+    }
+    .loan-params-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .loan-params-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .loan-params-row .input-group {
+      margin-bottom: 0;
+    }
+    .param-input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #1e293b;
+      background: #ffffff;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .param-input:focus {
+      outline: none;
+      border-color: #16a34a;
+      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+    }
+
+    /* Additional donut slice colors */
+    .slice-purple-color { stroke: #8b5cf6; }
+    .slice-gray-color   { stroke: #94a3b8; }
+    .dot-purple { background-color: #8b5cf6; }
+    .dot-gray   { background-color: #94a3b8; }
+
+    /* Income waterfall breakdown */
+    .waterfall-breakdown {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .waterfall-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      font-size: 0.82rem;
+      color: #475569;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .waterfall-row:last-child { border-bottom: none; }
+    .waterfall-row .wf-label { font-weight: 500; }
+    .waterfall-row .wf-value {
+      font-weight: 600;
+      color: #1e293b;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .waterfall-row.wf-deduction .wf-value { color: #dc2626; }
+    .waterfall-row.wf-subtotal {
+      border-top: 1.5px solid #e2e8f0;
+      border-bottom: 1.5px solid #e2e8f0;
+      font-weight: 700;
+      color: #1e293b;
+      padding: 9px 0;
+    }
+    .waterfall-row.wf-subtotal .wf-value { color: #15803d; font-weight: 800; }
+    .waterfall-row.wf-highlight {
+      background: #f0fdf4;
+      border-radius: 8px;
+      padding: 9px 10px;
+      margin: 4px -10px;
+    }
+    .waterfall-row.wf-highlight .wf-label { font-weight: 700; color: #15803d; }
+    .waterfall-row.wf-highlight .wf-value { font-weight: 800; color: #15803d; font-size: 0.95rem; }
+    .waterfall-row.wf-meta {
+      font-size: 0.76rem;
+      color: #94a3b8;
+      padding: 4px 0;
+    }
+    .waterfall-row.wf-meta .wf-value { color: #94a3b8; font-weight: 500; }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP NAVIGATION BAR
+       ========================================================================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand">
+        <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="brand-logo-img" />
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        
+        <!-- Dropdown with all 6 Calculators -->
+        <div class="nav-dropdown active" id="nav-calc-dropdown">
+          <a href="#" class="nav-link dropdown-toggle">
+            <span>Calculators</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <span class="active-indicator"></span>
+
+          <!-- Dropdown Menu items -->
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              <span class="dropdown-item-icon">💰</span>
+              <div class="dropdown-item-text">
+                <strong>EMI Calculator</strong>
+                <span>Calculate loan payments & interest</span>
+              </div>
+            </a>
+            <a href="true-cost-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">🏷️</span>
+              <div class="dropdown-item-text">
+                <strong>True Cost Calculator</strong>
+                <span>Stamp duty, GST & hidden costs</span>
+              </div>
+            </a>
+            <a href="affordability-calculator.html" class="dropdown-item active-item">
+              <span class="dropdown-item-icon">📊</span>
+              <div class="dropdown-item-text">
+                <strong>Affordability Check</strong>
+                <span>Know how much home you can afford</span>
+              </div>
+            </a>
+            <a href="rental-roi-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">📈</span>
+              <div class="dropdown-item-text">
+                <strong>Rental ROI Calculator</strong>
+                <span>Estimate rental returns & yields</span>
+              </div>
+            </a>
+            <a href="risk-analysis-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">🛡️</span>
+              <div class="dropdown-item-text">
+                <strong>Risk Analysis</strong>
+                <span>Property & builder risk scoring</span>
+              </div>
+            </a>
+            <a href="buy-vs-rent-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">⚖️</span>
+              <div class="dropdown-item-text">
+                <strong>Buy vs Rent Calculator</strong>
+                <span>Compare financial impact of renting</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            <span>Property</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+        </div>
+
+        <a href="#" class="nav-link">Insights</a>
+        <a href="#" class="nav-link">Schemes</a>
+
+        <a href="tools.html" class="nav-link">Tools</a>
+
+        <a href="about.html" class="nav-link">About Us</a>
+      </nav>
+
+      <!-- Right Action Icons -->
+      <div class="nav-actions">
+        <button class="icon-btn" title="Saved Properties & Calculators" aria-label="Bookmarks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn profile-btn" title="User Profile" aria-label="Profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================= -->
+  <main class="page-container">
+
+    <!-- BREADCRUMBS -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="crumb-separator">&gt;</span>
+      <a href="#">Calculators</a>
+      <span class="crumb-separator">&gt;</span>
+      <span class="current-crumb">Affordability Check</span>
+    </nav>
+
+    <!-- HERO / TITLE SECTION WITH ILLUSTRATION -->
+    <section class="hero-banner">
+      <div class="hero-text">
+        <h1 class="hero-title">Affordability <span class="text-green-title">Check</span></h1>
+        <p class="hero-subtitle">
+          Check how much property you can afford and get a personalized budget recommendation based on your financial profile.
+        </p>
+      </div>
+
+      <!-- Hero Header Illustration (House, Trees, Calculator, Rupee Coin) -->
+      <div class="hero-illustration">
+        <svg viewBox="0 0 350 160" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
+          <!-- Ambient circles -->
+          <circle cx="85" cy="130" r="65" fill="#eaf7ed" opacity="0.6"/>
+          <circle cx="290" cy="115" r="50" fill="#f0fdf4" opacity="0.8"/>
+
+          <!-- Trees Left & Right -->
+          <rect x="35" y="105" width="5" height="28" rx="2" fill="#86efac"/>
+          <ellipse cx="37" cy="92" rx="14" ry="20" fill="#4ade80" opacity="0.85"/>
+          <rect x="325" y="112" width="5" height="22" rx="2" fill="#86efac"/>
+          <ellipse cx="327" cy="100" rx="11" ry="16" fill="#22c55e" opacity="0.75"/>
+
+          <!-- Modern Single Family House -->
+          <path d="M60 135V80L120 40L180 80V135H60Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M50 82L120 34L190 82" stroke="#86efac" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M58 82L120 38L182 82" stroke="#16a34a" stroke-width="2.5" stroke-linejoin="round"/>
+          <rect x="105" y="100" width="30" height="35" rx="3" fill="#15803d"/>
+          <circle cx="127" cy="118" r="2" fill="#ffffff"/>
+          <rect x="75" y="90" width="20" height="20" rx="2" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+          <path d="M85 90V110M75 100H95" stroke="#86efac" stroke-width="1.5"/>
+          <rect x="145" y="90" width="20" height="20" rx="2" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+          <path d="M155 90V110M145 100H165" stroke="#86efac" stroke-width="1.5"/>
+
+          <!-- Large 3D Green Calculator -->
+          <g transform="translate(195, 38)">
+            <rect x="0" y="0" width="68" height="102" rx="10" fill="#ffffff" stroke="#334155" stroke-width="2.5"/>
+            <!-- LCD Screen -->
+            <rect x="8" y="10" width="52" height="24" rx="4" fill="#15803d"/>
+            <rect x="12" y="18" width="32" height="3" rx="1.5" fill="#86efac"/>
+            <!-- Keypad Matrix -->
+            <rect x="8" y="42" width="13" height="11" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            <rect x="27" y="42" width="13" height="11" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            <rect x="46" y="42" width="13" height="11" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            
+            <rect x="8" y="58" width="13" height="11" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            <rect x="27" y="58" width="13" height="11" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            <rect x="46" y="58" width="13" height="11" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            
+            <rect x="8" y="74" width="13" height="11" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            <rect x="27" y="74" width="13" height="11" rx="2.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+            <rect x="46" y="74" width="13" height="20" rx="3" fill="#16a34a"/>
+            <path d="M50 82H55M50 86H55" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+
+          <!-- Floating Rupee Coin -->
+          <g transform="translate(275, 25)">
+            <circle cx="16" cy="16" r="14" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
+            <text x="16" y="21" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="bold" fill="#15803d" text-anchor="middle">₹</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         AFFORDABILITY CALCULATOR TWO-COLUMN MAIN GRID
+         ========================================================================= -->
+    <div class="calculator-grid affordability-grid">
+
+      <!-- LEFT COLUMN: YOUR FINANCIAL DETAILS INPUT PANEL -->
+      <aside class="panel-card property-details-panel">
+        
+        <div class="panel-header">
+          <h2 class="panel-title">Your Financial Details</h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <p class="panel-desc-sub">
+          Enter your monthly income, expenses and existing loans to know your affordable property range.
+        </p>
+
+        <form id="affordability-form" class="inputs-container" onsubmit="event.preventDefault();">
+          
+          <!-- INPUT 1: MONTHLY GROSS INCOME -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="afford-income-input" class="input-label">
+                Monthly Gross Income
+                <span class="info-tooltip-trigger" title="Your total monthly salary or business income before deductions">ⓘ</span>
+              </label>
+            </div>
+
+            <div class="input-box-with-icon-wrapper">
+              <span class="input-leading-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="3"></rect>
+                  <path d="M2 10h20"></path>
+                  <circle cx="16" cy="14" r="1.5"></circle>
+                </svg>
+              </span>
+              <input 
+                type="text" 
+                id="afford-income-input" 
+                class="currency-input input-with-icon" 
+                value="1,00,000" 
+                autocomplete="off"
+              />
+              <span class="input-adornment">₹</span>
+            </div>
+          </div>
+
+          <!-- INPUT 2: MONTHLY EXPENSES -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="afford-expenses-input" class="input-label">
+                Monthly Expenses
+                <span class="info-tooltip-trigger" title="Your household and lifestyle living expenses per month">ⓘ</span>
+              </label>
+            </div>
+
+            <div class="input-box-with-icon-wrapper">
+              <span class="input-leading-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+              </span>
+              <input 
+                type="text" 
+                id="afford-expenses-input" 
+                class="currency-input input-with-icon" 
+                value="40,000" 
+                autocomplete="off"
+              />
+              <span class="input-adornment">₹</span>
+            </div>
+          </div>
+
+          <!-- INPUT 3: EXISTING EMIS (TOTAL) -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="afford-emis-input" class="input-label">
+                Existing EMIs (Total)
+                <span class="info-tooltip-trigger" title="Total ongoing monthly loan payments (car, personal, credit card, etc.)">ⓘ</span>
+              </label>
+            </div>
+
+            <div class="input-box-with-icon-wrapper">
+              <span class="input-leading-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+              </span>
+              <input 
+                type="text" 
+                id="afford-emis-input" 
+                class="currency-input input-with-icon" 
+                value="10,000" 
+                autocomplete="off"
+              />
+              <span class="input-adornment">₹</span>
+            </div>
+          </div>
+
+          <!-- INPUT 4: MONTHLY SAVINGS (TOGGLE: AMOUNT / PERCENTAGE) -->
+          <div class="input-group">
+            <div class="savings-label-row">
+              <label for="afford-savings-input" class="input-label">
+                Monthly Savings
+                <span class="info-tooltip-trigger" title="Protected monthly savings — deducted before calculating loan affordability">ⓘ</span>
+              </label>
+              <div class="savings-toggle">
+                <button type="button" id="toggle-savings-amount" class="toggle-btn active">₹ Amount</button>
+                <button type="button" id="toggle-savings-pct" class="toggle-btn">% of Income</button>
+              </div>
+            </div>
+
+            <!-- Amount mode (default) -->
+            <div class="input-box-with-icon-wrapper" id="savings-amount-wrap">
+              <span class="input-leading-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </span>
+              <input 
+                type="text" 
+                id="afford-savings-input" 
+                class="currency-input input-with-icon" 
+                value="20,000" 
+                autocomplete="off"
+              />
+              <span class="input-adornment">₹</span>
+            </div>
+
+            <!-- Percentage mode (hidden by default) -->
+            <div class="input-box-with-icon-wrapper" id="savings-pct-wrap" style="display: none;">
+              <span class="input-leading-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="19" cy="5" r="3"></circle>
+                  <circle cx="5" cy="19" r="3"></circle>
+                  <line x1="5" y1="5" x2="19" y2="19"></line>
+                </svg>
+              </span>
+              <input 
+                type="number" 
+                id="afford-savings-pct-input" 
+                class="currency-input input-with-icon" 
+                value="20" 
+                min="0" max="100" step="1"
+                autocomplete="off"
+              />
+              <span class="input-adornment">%</span>
+            </div>
+
+            <!-- Computed savings display -->
+            <div class="savings-computed-display" id="savings-computed"></div>
+          </div>
+
+          <!-- LOAN PARAMETERS -->
+          <div class="loan-params-divider">
+            <div class="loan-params-title">Loan Parameters</div>
+            <div class="loan-params-row">
+              <div class="input-group">
+                <label for="afford-rate-input" class="input-label" style="font-size:0.78rem;">Interest Rate (%)</label>
+                <input 
+                  type="number" 
+                  id="afford-rate-input" 
+                  class="param-input" 
+                  value="8.5" 
+                  min="0.5" max="20" step="0.1"
+                />
+              </div>
+              <div class="input-group">
+                <label for="afford-tenure-input" class="input-label" style="font-size:0.78rem;">Tenure (Years)</label>
+                <input 
+                  type="number" 
+                  id="afford-tenure-input" 
+                  class="param-input" 
+                  value="20" 
+                  min="1" max="30" step="1"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- ACTION BUTTONS -->
+          <div class="form-actions-stack">
+            <button type="button" id="btn-check-affordability" class="btn-primary-action">
+              <span>Check Affordability</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+            <button type="button" id="btn-reset-affordability" class="btn-secondary-action">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+              </svg>
+              <span>Reset</span>
+            </button>
+          </div>
+
+          <!-- Security Trust Badge -->
+          <div class="security-trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Your data is secure and confidential.</span>
+          </div>
+
+        </form>
+
+      </aside>
+
+      <!-- RIGHT COLUMN: LOAN AFFORDABILITY RESULTS -->
+      <section class="panel-card results-summary-panel">
+        
+        <div class="panel-header">
+          <h2 class="panel-title">Loan Affordability Results</h2>
+        </div>
+
+        <!-- HERO: MAXIMUM LOAN AMOUNT -->
+        <div class="affordability-hero-result-card">
+          <div class="afford-check-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+
+          <div class="afford-hero-text">
+            <h3 class="afford-hero-status" id="stat-hero-status">Maximum Loan You Can Afford</h3>
+            <span class="afford-hero-sublabel" id="stat-hero-sublabel">At 8.50% for 20 years</span>
+            <div class="afford-hero-price-range" id="stat-hero-loan">₹ 14.4 L</div>
+          </div>
+        </div>
+
+        <!-- 4 STAT CARDS ROW -->
+        <div class="affordability-stats-grid">
+          
+          <!-- Stat 1: Available Income -->
+          <div class="afford-stat-card">
+            <div class="afford-card-top-row">
+              <div class="afford-card-icon-badge green-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  <line x1="12" y1="19" x2="12" y2="23"></line>
+                  <line x1="8" y1="23" x2="16" y2="23"></line>
+                </svg>
+              </div>
+              <span class="afford-stat-label">Available Income</span>
+            </div>
+            <div class="afford-stat-main-val" id="stat-available-income">₹ 30,000</div>
+            <div class="afford-stat-subtext">After expenses, EMIs & savings</div>
+          </div>
+
+          <!-- Stat 2: Max Affordable New EMI -->
+          <div class="afford-stat-card">
+            <div class="afford-card-top-row">
+              <div class="afford-card-icon-badge blue-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <span class="afford-stat-label">Max Affordable EMI</span>
+            </div>
+            <div class="afford-stat-main-val text-blue" id="stat-max-emi">₹ 12,000 <span class="unit-inline">/mo</span></div>
+            <div class="afford-stat-subtext">40% of Available Income</div>
+          </div>
+
+          <!-- Stat 3: Total EMI After Loan -->
+          <div class="afford-stat-card">
+            <div class="afford-card-top-row">
+              <div class="afford-card-icon-badge purple-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+              </div>
+              <span class="afford-stat-label">Total EMI After Loan</span>
+            </div>
+            <div class="afford-stat-main-val" id="stat-total-emi">₹ 22,000 <span class="unit-inline">/mo</span></div>
+            <div class="afford-stat-subtext">Existing + New EMI</div>
+          </div>
+
+          <!-- Stat 4: Final Remaining Income -->
+          <div class="afford-stat-card">
+            <div class="afford-card-top-row">
+              <div class="afford-card-icon-badge amber-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <span class="afford-stat-label">Final Remaining</span>
+            </div>
+            <div class="afford-stat-main-val text-amber" id="stat-final-remaining">₹ 18,000</div>
+            <div class="afford-stat-subtext">Disposable after all obligations</div>
+          </div>
+
+        </div>
+
+        <!-- STABILITY TIP BANNER -->
+        <div class="affordability-stability-banner">
+          <span class="bulb-icon">💡</span>
+          <p class="stability-banner-text">
+            The new loan EMI is capped at 40% of your available income (after expenses, existing EMIs, and savings). This ensures financial stability.
+          </p>
+        </div>
+
+        <!-- BREAKDOWN ROW: DONUT + WATERFALL TABLE -->
+        <div class="affordability-breakdown-split-row">
+          
+          <!-- LEFT: INCOME ALLOCATION DONUT CHART & LEGEND -->
+          <div class="allocation-chart-card">
+            <h3 class="breakup-section-title">Income Breakdown</h3>
+
+            <div class="allocation-chart-inner-flex">
+              
+              <!-- SVG Donut Chart (5 slices) -->
+              <div class="donut-chart-container small-donut">
+                <svg viewBox="0 0 160 160" class="donut-svg" id="allocation-donut-svg">
+                  <circle cx="80" cy="80" r="58" class="chart-track-bg"/>
+                  <circle cx="80" cy="80" r="58" id="slice-new-emi" class="chart-segment slice-base-color"/>
+                  <circle cx="80" cy="80" r="58" id="slice-existing-emi" class="chart-segment slice-reg-color"/>
+                  <circle cx="80" cy="80" r="58" id="slice-expenses" class="chart-segment slice-amber-color"/>
+                  <circle cx="80" cy="80" r="58" id="slice-savings" class="chart-segment slice-purple-color"/>
+                  <circle cx="80" cy="80" r="58" id="slice-remaining" class="chart-segment slice-gray-color"/>
+                </svg>
+
+                <div class="donut-inner-content">
+                  <div class="donut-center-title">Income</div>
+                  <div class="donut-center-sub">Breakdown</div>
+                </div>
+              </div>
+
+              <!-- Allocation Legend List -->
+              <div class="allocation-legend-list">
+                
+                <div class="alloc-list-item">
+                  <div class="alloc-label-dot-wrap">
+                    <span class="legend-dot dot-base"></span>
+                    <span class="alloc-item-name">New Home EMI</span>
+                  </div>
+                  <div class="alloc-item-val" id="alloc-new-emi-val">₹ 12,000 (12%)</div>
+                </div>
+
+                <div class="alloc-list-item">
+                  <div class="alloc-label-dot-wrap">
+                    <span class="legend-dot dot-registration"></span>
+                    <span class="alloc-item-name">Existing EMIs</span>
+                  </div>
+                  <div class="alloc-item-val" id="alloc-existing-emi-val">₹ 10,000 (10%)</div>
+                </div>
+
+                <div class="alloc-list-item">
+                  <div class="alloc-label-dot-wrap">
+                    <span class="legend-dot dot-amber"></span>
+                    <span class="alloc-item-name">Expenses</span>
+                  </div>
+                  <div class="alloc-item-val" id="alloc-expenses-val">₹ 40,000 (40%)</div>
+                </div>
+
+                <div class="alloc-list-item">
+                  <div class="alloc-label-dot-wrap">
+                    <span class="legend-dot dot-purple"></span>
+                    <span class="alloc-item-name">Savings</span>
+                  </div>
+                  <div class="alloc-item-val" id="alloc-savings-val">₹ 20,000 (20%)</div>
+                </div>
+
+                <div class="alloc-list-item">
+                  <div class="alloc-label-dot-wrap">
+                    <span class="legend-dot dot-gray"></span>
+                    <span class="alloc-item-name">Remaining</span>
+                  </div>
+                  <div class="alloc-item-val" id="alloc-remaining-val">₹ 18,000 (18%)</div>
+                </div>
+
+                <div class="alloc-total-row">
+                  <span class="alloc-total-label">Gross Income</span>
+                  <span class="alloc-total-val" id="alloc-total-income">₹ 1,00,000</span>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <!-- RIGHT: DETAILED INCOME WATERFALL BREAKDOWN -->
+          <div class="meaning-callout-card">
+            <div class="meaning-card-header">
+              <h4 class="meaning-card-title">Detailed Breakdown</h4>
+              <div class="meaning-target-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+              </div>
+            </div>
+
+            <div class="waterfall-breakdown">
+              <div class="waterfall-row">
+                <span class="wf-label">Gross Monthly Income</span>
+                <span class="wf-value" id="bk-gross-income">₹ 1,00,000</span>
+              </div>
+              <div class="waterfall-row wf-deduction">
+                <span class="wf-label">Monthly Expenses</span>
+                <span class="wf-value" id="bk-expenses">− ₹ 40,000</span>
+              </div>
+              <div class="waterfall-row wf-deduction">
+                <span class="wf-label">Existing EMIs</span>
+                <span class="wf-value" id="bk-existing-emi">− ₹ 10,000</span>
+              </div>
+              <div class="waterfall-row wf-deduction">
+                <span class="wf-label">Planned Monthly Savings</span>
+                <span class="wf-value" id="bk-savings">− ₹ 20,000</span>
+              </div>
+              <div class="waterfall-row wf-subtotal">
+                <span class="wf-label">Available Income</span>
+                <span class="wf-value" id="bk-available-income">₹ 30,000</span>
+              </div>
+              <div class="waterfall-row wf-meta">
+                <span class="wf-label">× 40% Affordability Rule</span>
+                <span class="wf-value"></span>
+              </div>
+              <div class="waterfall-row">
+                <span class="wf-label">Max Affordable New EMI</span>
+                <span class="wf-value" id="bk-max-emi">₹ 12,000 /mo</span>
+              </div>
+              <div class="waterfall-row wf-meta">
+                <span class="wf-label">Rate & Tenure</span>
+                <span class="wf-value" id="bk-rate-tenure">8.50% · 20 yrs</span>
+              </div>
+              <div class="waterfall-row wf-highlight">
+                <span class="wf-label">Maximum Loan Eligible</span>
+                <span class="wf-value" id="bk-max-loan">₹ 14.4 L</span>
+              </div>
+              <div class="waterfall-row" style="margin-top: 4px;">
+                <span class="wf-label">Total Monthly EMI</span>
+                <span class="wf-value" id="bk-total-emi">₹ 22,000 /mo</span>
+              </div>
+              <div class="waterfall-row">
+                <span class="wf-label">Final Remaining Income</span>
+                <span class="wf-value" id="bk-final-remaining">₹ 18,000</span>
+              </div>
+              <div class="waterfall-row">
+                <span class="wf-label">Monthly Savings (Protected)</span>
+                <span class="wf-value" id="bk-monthly-savings">₹ 20,000</span>
+              </div>
+            </div>
+
+            <a href="index.html" class="view-emi-options-link" style="margin-top: 12px;">
+              <span>View EMI Options</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- =========================================================================
+         BOTTOM PRO TIP BLUE BANNER
+         ========================================================================= -->
+    <div class="pro-tip-banner">
+      <div class="pro-tip-left">
+        <div class="pro-tip-star-badge">
+          <svg viewBox="0 0 24 24" fill="#3b82f6" stroke="#3b82f6" stroke-width="1">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <div class="pro-tip-text-wrap">
+          <h4 class="pro-tip-title">Pro Tip</h4>
+          <p class="pro-tip-desc">
+            Reducing existing EMIs or extending the loan tenure significantly increases the loan amount you're eligible for — without affecting your savings.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         BOTTOM DISCLAIMER NOTICE BANNER
+         ========================================================================= -->
+    <div class="bottom-notice-banner">
+      <div class="notice-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+      </div>
+      <p class="notice-text">
+        <strong>Note:</strong> All calculations are estimates. Please verify with your lender for exact values.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       COMPACT SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-compact-container">
+      <div class="footer-compact-top">
+        <!-- Brand -->
+        <a href="index.html" class="footer-brand">
+          <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="footer-brand-img" />
+        </a>
+
+        <!-- Quick Nav Calculators -->
+        <nav class="footer-compact-nav" aria-label="Calculators">
+          <a href="index.html">EMI</a>
+          <a href="true-cost-calculator.html">True Cost</a>
+          <a href="affordability-calculator.html">Affordability</a>
+          <a href="rental-roi-calculator.html">Rental ROI</a>
+          <a href="buy-vs-rent-calculator.html">Buy vs Rent</a>
+          <a href="risk-analysis-calculator.html">Risk Analysis</a>
+          <a href="tools.html">Tools</a>
+          <a href="about.html">About Us</a>
+        </nav>
+
+        <!-- Back to top -->
+        <button type="button" class="footer-compact-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+          <span>Top</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="footer-compact-bottom">
+        <p class="footer-compact-copy">
+          © 2026 Your Home. Calculations are estimates for reference only.
+        </p>
+        <div class="footer-compact-links">
+          <a href="about.html">About Us</a>
+          <span>•</span>
+          <a href="#">Privacy</a>
+          <span>•</span>
+          <a href="#">Terms</a>
+          <span>•</span>
+          <a href="mailto:support@yourhome.in">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Affordability Calculation Logic Script -->
+  <script src="affordability.js"></script>
+
+</body>
+</html>
