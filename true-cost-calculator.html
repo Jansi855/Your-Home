@@ -11,6 +11,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="logo-icon.svg" />
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -24,16 +27,7 @@
       
       <!-- Brand Logo -->
       <a href="index.html" class="brand">
-        <div class="brand-logo-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
-            <path d="M9 21V12h6v9"/>
-          </svg>
-        </div>
-        <div class="brand-text-wrap">
-          <span class="brand-name">Your Home</span>
-          <span class="brand-tagline">Plan • Analyze • Invest</span>
-        </div>
+        <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="brand-logo-img" />
       </a>
 
       <!-- Navigation Links -->
@@ -105,14 +99,9 @@
         <a href="#" class="nav-link">Insights</a>
         <a href="#" class="nav-link">Schemes</a>
 
-        <div class="nav-dropdown">
-          <a href="#" class="nav-link">
-            <span>Tools</span>
-            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </a>
-        </div>
+        <a href="tools.html" class="nav-link">Tools</a>
 
-        <a href="#" class="nav-link">About Us</a>
+        <a href="about.html" class="nav-link">About Us</a>
       </nav>
 
       <!-- Right Action Icons -->
@@ -644,6 +633,55 @@
     </div>
 
   </main>
+
+  <!-- =========================================================================
+       COMPACT SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-compact-container">
+      <div class="footer-compact-top">
+        <!-- Brand -->
+        <a href="index.html" class="footer-brand">
+          <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="footer-brand-img" />
+        </a>
+
+        <!-- Quick Nav Calculators -->
+        <nav class="footer-compact-nav" aria-label="Calculators">
+          <a href="index.html">EMI</a>
+          <a href="true-cost-calculator.html">True Cost</a>
+          <a href="affordability-calculator.html">Affordability</a>
+          <a href="rental-roi-calculator.html">Rental ROI</a>
+          <a href="buy-vs-rent-calculator.html">Buy vs Rent</a>
+          <a href="risk-analysis-calculator.html">Risk Analysis</a>
+          <a href="tools.html">Tools</a>
+          <a href="about.html">About Us</a>
+        </nav>
+
+        <!-- Back to top -->
+        <button type="button" class="footer-compact-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+          <span>Top</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="footer-compact-bottom">
+        <p class="footer-compact-copy">
+          © 2026 Your Home. Calculations are estimates for reference only.
+        </p>
+        <div class="footer-compact-links">
+          <a href="about.html">About Us</a>
+          <span>•</span>
+          <a href="#">Privacy</a>
+          <span>•</span>
+          <a href="#">Terms</a>
+          <span>•</span>
+          <a href="mailto:support@yourhome.in">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- True Cost Calculation Logic Script -->
   <script src="true-cost.js"></script>

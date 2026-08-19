@@ -358,6 +358,24 @@ document.addEventListener('DOMContentLoaded', () => {
     btnToggleSchedule.querySelector('svg').style.transform = 'rotate(0deg)';
   });
 
+  // 3D Card Tilt Effect on Hover for Metric and Panel Cards
+  const tiltElements = document.querySelectorAll('.metric-card, .sub-card');
+  tiltElements.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -5;
+      const rotateY = ((x - centerX) / centerX) * 5;
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)';
+    });
+  });
+
   // Initial calculation and slider fill setup
   updateSliderFill(loanAmountSlider);
   updateSliderFill(interestRateSlider);
