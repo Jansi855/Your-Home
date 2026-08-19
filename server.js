@@ -600,6 +600,7 @@ app.post('/api/calculate/buy-vs-rent', (req, res) => {
 
 app.get('/tools', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'tools.html'));
+});
 // --------------------------------------------------------------------------
 // HTML CALCULATOR ROUTES (Your-Home Original Calculators)
 // --------------------------------------------------------------------------
@@ -617,6 +618,8 @@ app.get(['/rental-roi', '/rental-roi-calculator.html'], (req, res) => {
 
 app.get('/about', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'about.html'));
+});
+
 app.get(['/affordability', '/affordability-calculator.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'affordability-calculator.html'));
 });
@@ -627,6 +630,8 @@ app.get(['/risk-analysis', '/risk-analysis-calculator.html'], (req, res) => {
 
 app.get('/about-us', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'about.html'));
+});
+
 app.get(['/buy-vs-rent', '/buy-vs-rent-calculator.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'buy-vs-rent-calculator.html'));
 });
