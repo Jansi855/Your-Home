@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Home - Rental ROI Calculator | Plan • Analyze • Invest</title>
+  <meta name="description" content="Estimate rental income, expenses and returns to know how good your property investment can be with Your Home's Rental ROI Calculator." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="logo-icon.svg" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP NAVIGATION BAR
+       ========================================================================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand">
+        <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="brand-logo-img" />
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        
+        <!-- Dropdown with all 6 Calculators -->
+        <div class="nav-dropdown active" id="nav-calc-dropdown">
+          <a href="#" class="nav-link dropdown-toggle">
+            <span>Calculators</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <span class="active-indicator"></span>
+
+          <!-- Dropdown Menu items -->
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">
+              <span class="dropdown-item-icon">💰</span>
+              <div class="dropdown-item-text">
+                <strong>EMI Calculator</strong>
+                <span>Calculate loan payments & interest</span>
+              </div>
+            </a>
+            <a href="true-cost-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">🏷️</span>
+              <div class="dropdown-item-text">
+                <strong>True Cost Calculator</strong>
+                <span>Stamp duty, GST & hidden costs</span>
+              </div>
+            </a>
+            <a href="affordability-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">📊</span>
+              <div class="dropdown-item-text">
+                <strong>Affordability Check</strong>
+                <span>Know how much home you can afford</span>
+              </div>
+            </a>
+            <a href="rental-roi-calculator.html" class="dropdown-item active-item">
+              <span class="dropdown-item-icon">📈</span>
+              <div class="dropdown-item-text">
+                <strong>Rental ROI Calculator</strong>
+                <span>Estimate rental returns & yields</span>
+              </div>
+            </a>
+            <a href="risk-analysis-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">🛡️</span>
+              <div class="dropdown-item-text">
+                <strong>Risk Analysis</strong>
+                <span>Property & builder risk scoring</span>
+              </div>
+            </a>
+            <a href="buy-vs-rent-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">⚖️</span>
+              <div class="dropdown-item-text">
+                <strong>Buy vs Rent Calculator</strong>
+                <span>Compare financial impact of renting</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            <span>Property</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+        </div>
+
+        <a href="#" class="nav-link">Insights</a>
+        <a href="#" class="nav-link">Schemes</a>
+
+        <a href="tools.html" class="nav-link">Tools</a>
+
+        <a href="about.html" class="nav-link">About Us</a>
+      </nav>
+
+      <!-- Right Action Icons -->
+      <div class="nav-actions">
+        <button class="icon-btn" title="Saved Properties & Calculators" aria-label="Bookmarks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn profile-btn" title="User Profile" aria-label="Profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================= -->
+  <main class="page-container">
+
+    <!-- BREADCRUMBS -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="crumb-separator">&gt;</span>
+      <a href="#">Calculators</a>
+      <span class="crumb-separator">&gt;</span>
+      <span class="current-crumb">Rental ROI Calculator</span>
+    </nav>
+
+    <!-- HERO / TITLE SECTION WITH ILLUSTRATION -->
+    <section class="hero-banner">
+      <div class="hero-text">
+        <h1 class="hero-title">Rental ROI <span class="text-green-title">Calculator</span></h1>
+        <p class="hero-subtitle">
+          Estimate rental income, expenses and returns to know how good your property investment can be.
+        </p>
+      </div>
+
+      <!-- Hero Header Illustration (Apartment Towers, Rent Sign, Bar Chart, Rupee Coin) -->
+      <div class="hero-illustration">
+        <svg viewBox="0 0 350 160" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
+          <!-- Background soft ambient circles -->
+          <circle cx="85" cy="130" r="65" fill="#eaf7ed" opacity="0.6"/>
+          <circle cx="300" cy="115" r="50" fill="#f0fdf4" opacity="0.8"/>
+
+          <!-- Trees Left & Right -->
+          <rect x="25" y="105" width="5" height="28" rx="2" fill="#86efac"/>
+          <ellipse cx="27" cy="92" rx="14" ry="20" fill="#4ade80" opacity="0.8"/>
+          <rect x="325" y="112" width="5" height="22" rx="2" fill="#86efac"/>
+          <ellipse cx="327" cy="100" rx="11" ry="16" fill="#22c55e" opacity="0.75"/>
+
+          <!-- Modern Apartment Building Complex -->
+          <!-- Building Left Small -->
+          <path d="M50 135V90L75 68L100 90V135H50Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+          <path d="M45 92L75 64L105 92" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+          <rect x="68" y="105" width="14" height="30" rx="2" fill="#15803d"/>
+          <rect x="58" y="96" width="9" height="11" rx="1.5" fill="#dcfce7" stroke="#86efac"/>
+          <rect x="83" y="96" width="9" height="11" rx="1.5" fill="#dcfce7" stroke="#86efac"/>
+
+          <!-- Main Highrise Apartment Building Center -->
+          <rect x="95" y="45" width="80" height="90" rx="4" fill="#ffffff" stroke="#334155" stroke-width="2.5"/>
+          <!-- Windows Matrix -->
+          <g fill="#dcfce7" stroke="#86efac" stroke-width="1.2">
+            <rect x="103" y="55" width="10" height="11" rx="1.5"/>
+            <rect x="119" y="55" width="10" height="11" rx="1.5"/>
+            <rect x="135" y="55" width="10" height="11" rx="1.5"/>
+            <rect x="151" y="55" width="10" height="11" rx="1.5"/>
+
+            <rect x="103" y="73" width="10" height="11" rx="1.5"/>
+            <rect x="119" y="73" width="10" height="11" rx="1.5"/>
+            <rect x="135" y="73" width="10" height="11" rx="1.5"/>
+            <rect x="151" y="73" width="10" height="11" rx="1.5"/>
+
+            <rect x="103" y="91" width="10" height="11" rx="1.5"/>
+            <rect x="119" y="91" width="10" height="11" rx="1.5"/>
+            <rect x="135" y="91" width="10" height="11" rx="1.5"/>
+            <rect x="151" y="91" width="10" height="11" rx="1.5"/>
+          </g>
+          <!-- Entrance -->
+          <rect x="127" y="112" width="16" height="23" rx="2" fill="#15803d"/>
+
+          <!-- RENT Sign Board -->
+          <g transform="translate(182, 100)">
+            <rect x="11" y="12" width="4" height="24" fill="#64748b"/>
+            <rect x="0" y="0" width="26" height="16" rx="3" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+            <text x="13" y="11" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="bold" fill="#15803d" text-anchor="middle">RENT</text>
+          </g>
+
+          <!-- Ascending Bar Chart with Green Growth Trend Arrow -->
+          <g transform="translate(215, 60)">
+            <!-- Bar 1 -->
+            <rect x="0" y="52" width="12" height="23" rx="2" fill="#86efac"/>
+            <!-- Bar 2 -->
+            <rect x="17" y="38" width="12" height="37" rx="2" fill="#4ade80"/>
+            <!-- Bar 3 -->
+            <rect x="34" y="22" width="12" height="53" rx="2" fill="#22c55e"/>
+            <!-- Bar 4 -->
+            <rect x="51" y="5" width="12" height="70" rx="2" fill="#15803d"/>
+
+            <!-- Upward Curving Trend Arrow -->
+            <path d="M-4 62 C 20 45, 45 30, 68 -2" stroke="#16a34a" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <polygon points="66,-8 76,-2 70,7" fill="#16a34a"/>
+          </g>
+
+          <!-- Floating Rupee Coin -->
+          <g transform="translate(298, 48)">
+            <circle cx="16" cy="16" r="15" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+            <circle cx="16" cy="16" r="11" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+            <text x="16" y="21" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="bold" fill="#15803d" text-anchor="middle">₹</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         RENTAL ROI CALCULATOR TWO-COLUMN MAIN GRID
+         ========================================================================= -->
+    <div class="calculator-grid rental-roi-grid">
+
+      <!-- LEFT COLUMN: PROPERTY & INVESTMENT DETAILS INPUT PANEL -->
+      <aside class="panel-card property-details-panel">
+        
+        <div class="panel-header">
+          <h2 class="panel-title">Property & Investment Details</h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <form id="roi-form" class="inputs-container" onsubmit="event.preventDefault();">
+          
+          <!-- INPUT 1: PROPERTY PRICE -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="roi-price-input" class="input-label">Property Price (₹)</label>
+            </div>
+
+            <div class="input-box-wrapper">
+              <input 
+                type="text" 
+                id="roi-price-input" 
+                class="currency-input" 
+                value="50,00,000" 
+                autocomplete="off"
+              />
+              <span class="input-adornment">₹</span>
+            </div>
+
+            <div class="slider-wrapper">
+              <input 
+                type="range" 
+                id="roi-price-slider" 
+                class="range-slider" 
+                min="1000000" 
+                max="50000000" 
+                step="50000" 
+                value="5000000" 
+              />
+            </div>
+
+            <div class="slider-minmax-row">
+              <span>₹ 10,00,000</span>
+              <span>₹ 5,00,00,000</span>
+            </div>
+          </div>
+
+          <!-- INPUT 2: TOTAL INVESTMENT -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="roi-investment-input" class="input-label">Total Investment (₹)</label>
+            </div>
+
+            <div class="input-box-wrapper">
+              <input 
+                type="text" 
+                id="roi-investment-input" 
+                class="currency-input" 
+                value="12,00,000" 
+                autocomplete="off"
+              />
+              <span class="input-adornment">₹</span>
+            </div>
+            <span class="input-hint-text">Down Payment, Registration, etc.</span>
+          </div>
+
+          <!-- INPUT 3: LOAN AMOUNT -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="roi-loan-input" class="input-label">Loan Amount (₹)</label>
+            </div>
+
+            <div class="input-box-wrapper">
+              <input 
+                type="text" 
+                id="roi-loan-input" 
+                class="currency-input" 
+                value="38,00,000" 
+                autocomplete="off"
+              />
+              <span class="input-adornment">₹</span>
+            </div>
+          </div>
+
+          <!-- INPUT 4: INTEREST RATE -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="roi-interest-input" class="input-label">
+                Interest Rate (% p.a.)
+                <span class="info-tooltip-trigger" title="Expected home loan interest rate">ⓘ</span>
+              </label>
+            </div>
+
+            <div class="input-box-wrapper">
+              <input 
+                type="number" 
+                id="roi-interest-input" 
+                class="numeric-input" 
+                step="0.05" 
+                min="1" 
+                max="20" 
+                value="8.50" 
+                autocomplete="off"
+              />
+              <span class="input-adornment">%</span>
+            </div>
+          </div>
+
+          <!-- INPUT 5: LOAN TENURE -->
+          <div class="input-group">
+            <div class="input-label-row">
+              <label for="roi-tenure-select" class="input-label">Loan Tenure</label>
+            </div>
+
+            <div class="custom-select-wrapper">
+              <select id="roi-tenure-select" class="custom-select">
+                <option value="5">5 Years</option>
+                <option value="10">10 Years</option>
+                <option value="15">15 Years</option>
+                <option value="20" selected>20 Years</option>
+                <option value="25">25 Years</option>
+                <option value="30">30 Years</option>
+              </select>
+              <div class="select-chevron">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- ACTION BUTTONS -->
+          <div class="form-actions-stack">
+            <button type="button" id="btn-calc-roi" class="btn-primary-action">
+              <span>Calculate ROI</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+            <button type="button" id="btn-reset-roi" class="btn-secondary-action">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+              </svg>
+              <span>Reset</span>
+            </button>
+          </div>
+
+        </form>
+
+      </aside>
+
+      <!-- RIGHT COLUMN: RENTAL ROI SUMMARY PANEL -->
+      <section class="panel-card results-summary-panel">
+        
+        <div class="panel-header">
+          <h2 class="panel-title">Rental ROI Summary</h2>
+        </div>
+
+        <!-- TOP 5 METRIC STAT CARDS ROW -->
+        <div class="roi-stats-grid">
+          
+          <!-- Stat 1: Annual Rental Income -->
+          <div class="roi-stat-card">
+            <span class="roi-card-label">Annual Rental Income</span>
+            <div class="roi-card-main-val text-green" id="stat-annual-rent">₹ 4,20,000</div>
+            <div class="roi-card-subtext" id="stat-monthly-rent">Monthly: ₹ 35,000</div>
+            <div class="roi-card-icon-wrap icon-green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="3"></rect>
+                <path d="M2 10h20"></path>
+                <circle cx="16" cy="14" r="1.5"></circle>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Stat 2: Gross Rental Yield -->
+          <div class="roi-stat-card">
+            <span class="roi-card-label">Gross Rental Yield</span>
+            <div class="roi-card-main-val text-blue" id="stat-gross-yield">8.40%</div>
+            <div class="roi-card-subtext">on Property Price</div>
+            <div class="roi-card-icon-wrap icon-blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Stat 3: Net Rental Yield -->
+          <div class="roi-stat-card">
+            <span class="roi-card-label">Net Rental Yield</span>
+            <div class="roi-card-main-val text-purple" id="stat-net-yield">5.72%</div>
+            <div class="roi-card-subtext">on Property Price</div>
+            <div class="roi-card-icon-wrap icon-purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Stat 4: Cash on Cash Return -->
+          <div class="roi-stat-card">
+            <span class="roi-card-label">Cash on Cash Return</span>
+            <div class="roi-card-main-val text-amber" id="stat-cash-return">16.80%</div>
+            <div class="roi-card-subtext">on Total Investment</div>
+            <div class="roi-card-icon-wrap icon-amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Stat 5: Payback Period -->
+          <div class="roi-stat-card">
+            <span class="roi-card-label">Payback Period</span>
+            <div class="roi-card-main-val text-green" id="stat-payback-period">11.9 Years</div>
+            <div class="roi-card-subtext">(Approx.)</div>
+            <div class="roi-card-icon-wrap icon-green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- MIDDLE ROW: INCOME & EXPENSES OVERVIEW + ROI OVER TIME CHART -->
+        <div class="roi-analysis-split-row">
+          
+          <!-- LEFT: INCOME & EXPENSES OVERVIEW -->
+          <div class="roi-income-expenses-card">
+            <h3 class="breakup-section-title">Income & Expenses Overview</h3>
+            
+            <div class="table-responsive">
+              <table class="income-expenses-table">
+                <thead>
+                  <tr>
+                    <th>Particulars</th>
+                    <th class="text-right">Amount (₹) / Year</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-medium text-green-dark">Gross Annual Rental Income</td>
+                    <td class="text-right font-semibold text-green" id="row-gross-rent">₹ 4,20,000</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-muted">(-) Maintenance (5%)</td>
+                    <td class="text-right font-medium text-body" id="row-maintenance">- ₹ 21,000</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-muted">(-) Property Tax</td>
+                    <td class="text-right font-medium text-body" id="row-prop-tax">- ₹ 15,000</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-muted">(-) Insurance</td>
+                    <td class="text-right font-medium text-body" id="row-insurance">- ₹ 6,000</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-muted">(-) Vacancy Loss (5%)</td>
+                    <td class="text-right font-medium text-body" id="row-vacancy">- ₹ 21,000</td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-muted">(-) Loan EMI</td>
+                    <td class="text-right font-medium text-danger" id="row-loan-emi">- ₹ 3,02,400</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr class="net-income-row">
+                    <td class="font-bold">Net Annual Rental Income</td>
+                    <td class="text-right font-bold text-green" id="row-net-income">₹ 54,600</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+
+            <div class="table-subnote">
+              <span class="info-icon-small">ⓘ</span>
+              <span>All values are approximate and may vary.</span>
+            </div>
+          </div>
+
+          <!-- RIGHT: ROI OVER TIME CHART -->
+          <div class="roi-trend-chart-card">
+            
+            <div class="chart-header-row">
+              <h3 class="breakup-section-title">ROI Over Time</h3>
+              
+              <!-- Chart Legend -->
+              <div class="chart-inline-legend">
+                <div class="legend-chip">
+                  <span class="legend-line line-green"></span>
+                  <span>Cumulative Investment</span>
+                </div>
+                <div class="legend-chip">
+                  <span class="legend-line line-blue"></span>
+                  <span>Cumulative Net Rental Income</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SVG Line Graph Container -->
+            <div class="roi-svg-chart-container">
+              <svg viewBox="0 0 450 200" class="roi-line-chart-svg" id="roi-line-chart-svg">
+                <!-- Grid Lines (Horizontal) -->
+                <line x1="45" y1="20" x2="430" y2="20" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="45" y1="45" x2="430" y2="45" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="45" y1="70" x2="430" y2="70" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="45" y1="95" x2="430" y2="95" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="45" y1="120" x2="430" y2="120" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="45" y1="145" x2="430" y2="145" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="45" y1="170" x2="430" y2="170" stroke="#cbd5e1" stroke-width="1"/>
+
+                <!-- Y-Axis Labels -->
+                <text x="38" y="24" class="chart-axis-label" text-anchor="end">₹ 70L</text>
+                <text x="38" y="49" class="chart-axis-label" text-anchor="end">₹ 60L</text>
+                <text x="38" y="74" class="chart-axis-label" text-anchor="end">₹ 50L</text>
+                <text x="38" y="99" class="chart-axis-label" text-anchor="end">₹ 40L</text>
+                <text x="38" y="124" class="chart-axis-label" text-anchor="end">₹ 30L</text>
+                <text x="38" y="149" class="chart-axis-label" text-anchor="end">₹ 20L</text>
+                <text x="38" y="174" class="chart-axis-label" text-anchor="end">₹ 0</text>
+
+                <!-- X-Axis Labels -->
+                <text x="45" y="190" class="chart-axis-label" text-anchor="middle">0</text>
+                <text x="141" y="190" class="chart-axis-label" text-anchor="middle">5</text>
+                <text x="237" y="190" class="chart-axis-label" text-anchor="middle">10</text>
+                <text x="333" y="190" class="chart-axis-label" text-anchor="middle">15</text>
+                <text x="429" y="190" class="chart-axis-label" text-anchor="middle">20</text>
+                <text x="237" y="200" class="chart-axis-label font-bold" text-anchor="middle">Years</text>
+
+                <!-- Data Trend Line 1: Cumulative Investment (Green) -->
+                <path id="chart-path-investment" d="M 45 170 L 141 140 L 237 110 L 333 75 L 429 45" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+                
+                <!-- Data Trend Line 2: Cumulative Net Rental Income (Blue) -->
+                <path id="chart-path-rental" d="M 45 170 L 141 155 L 237 140 L 333 115 L 429 80" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+
+                <!-- Interactive Data Point Dots -->
+                <circle cx="45" cy="170" r="3.5" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+                <circle cx="141" cy="140" r="3.5" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+                <circle cx="237" cy="110" r="3.5" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+                <circle cx="333" cy="75" r="3.5" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+                <circle cx="429" cy="45" r="3.5" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+
+                <circle cx="45" cy="170" r="3.5" fill="#ffffff" stroke="#3b82f6" stroke-width="2"/>
+                <circle cx="141" cy="155" r="3.5" fill="#ffffff" stroke="#3b82f6" stroke-width="2"/>
+                <circle cx="237" cy="140" r="3.5" fill="#ffffff" stroke="#3b82f6" stroke-width="2"/>
+                <circle cx="275" cy="132" r="4.5" fill="#ffffff" stroke="#3b82f6" stroke-width="2.5"/>
+                <circle cx="333" cy="115" r="3.5" fill="#ffffff" stroke="#3b82f6" stroke-width="2"/>
+                <circle cx="429" cy="80" r="3.5" fill="#ffffff" stroke="#3b82f6" stroke-width="2"/>
+
+                <!-- Tooltip Callout Card at Year 12 -->
+                <g transform="translate(230, 72)" class="chart-tooltip-group">
+                  <rect x="0" y="0" width="115" height="38" rx="4" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2" filter="drop-shadow(0 2px 5px rgba(0,0,0,0.06))"/>
+                  <text x="8" y="12" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="bold" fill="#334155">Year 12</text>
+                  <text x="8" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#64748b">Cumulative Net Rental Income</text>
+                  <text x="8" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="bold" fill="#0f172a" id="tooltip-rent-val">₹ 6,55,200</text>
+                  <line x1="45" y1="38" x2="45" y2="60" stroke="#94a3b8" stroke-width="1" stroke-dasharray="2 2"/>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Bottom Break-even Callout Banner -->
+            <div class="breakeven-banner">
+              <div class="breakeven-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
+                </svg>
+              </div>
+              <span class="breakeven-text">Your investment breaks even in approx. <strong id="breakeven-years-val">11.9 years</strong></span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- BOTTOM 2 CARDS: KEY INSIGHTS & TIPS TO IMPROVE ROI -->
+        <div class="info-callouts-grid roi-bottom-grid">
+          
+          <!-- Card 1: Key Insights -->
+          <div class="info-card key-insights-card">
+            <h4 class="info-card-title">Key Insights</h4>
+            
+            <div class="insights-columns-row">
+              
+              <!-- Insight 1 -->
+              <div class="insight-item">
+                <div class="insight-icon green-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+                <div class="insight-text-wrap">
+                  <h5 class="insight-heading">Good Yield</h5>
+                  <p class="insight-desc" id="insight-yield-desc">
+                    Net rental yield is <strong class="text-main">5.72%</strong> which is good for this location.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Insight 2 -->
+              <div class="insight-item">
+                <div class="insight-icon blue-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <div class="insight-text-wrap">
+                  <h5 class="insight-heading">Positive Cash Flow</h5>
+                  <p class="insight-desc" id="insight-cashflow-desc">
+                    You earn <strong class="text-main">₹ 54,600</strong> annually after all expenses and EMI.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Insight 3 -->
+              <div class="insight-item">
+                <div class="insight-icon amber-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 14 14"></polyline>
+                  </svg>
+                </div>
+                <div class="insight-text-wrap">
+                  <h5 class="insight-heading">Long-term Wealth</h5>
+                  <p class="insight-desc">
+                    Property value appreciation can increase your returns.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Card 2: Tips to Improve ROI -->
+          <div class="info-card tips-improve-roi-card">
+            <div class="tips-content-flex">
+              
+              <div class="tips-left-text">
+                <div class="info-card-header">
+                  <div class="info-icon-badge yellow-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ca8a04" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9 18h6"></path>
+                      <path d="M10 22h4"></path>
+                      <path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"></path>
+                    </svg>
+                  </div>
+                  <h4 class="info-card-title">Tips to Improve ROI</h4>
+                </div>
+
+                <div class="tips-vertical-list">
+                  <div class="checklist-item">
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Choose properties in high rental demand areas.</span>
+                  </div>
+                  <div class="checklist-item">
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Keep maintenance cost low and property well-maintained.</span>
+                  </div>
+                  <div class="checklist-item">
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Consider furnishing to increase rental income.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Target / Bullseye Illustration -->
+              <div class="target-illustration-wrap">
+                <svg viewBox="0 0 80 80" fill="none" class="target-svg">
+                  <circle cx="40" cy="40" r="32" stroke="#bbf7d0" stroke-width="3"/>
+                  <circle cx="40" cy="40" r="22" stroke="#86efac" stroke-width="3"/>
+                  <circle cx="40" cy="40" r="12" stroke="#22c55e" stroke-width="3"/>
+                  <circle cx="40" cy="40" r="4" fill="#15803d"/>
+                  <!-- Target Arrow -->
+                  <path d="M58 22L72 8" stroke="#16a34a" stroke-width="3" stroke-linecap="round"/>
+                  <polygon points="56,24 62,18 56,18" fill="#16a34a"/>
+                  <polygon points="68,4 76,4 76,12" fill="#16a34a"/>
+                </svg>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- =========================================================================
+         BOTTOM DISCLAIMER NOTICE BANNER
+         ========================================================================= -->
+    <div class="bottom-notice-banner">
+      <div class="notice-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+      </div>
+      <p class="notice-text">
+        <strong>Note:</strong> This calculator provides estimation based on the details provided. Actual results may vary.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       COMPACT SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-compact-container">
+      <div class="footer-compact-top">
+        <!-- Brand -->
+        <a href="index.html" class="footer-brand">
+          <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="footer-brand-img" />
+        </a>
+
+        <!-- Quick Nav Calculators -->
+        <nav class="footer-compact-nav" aria-label="Calculators">
+          <a href="index.html">EMI</a>
+          <a href="true-cost-calculator.html">True Cost</a>
+          <a href="affordability-calculator.html">Affordability</a>
+          <a href="rental-roi-calculator.html">Rental ROI</a>
+          <a href="buy-vs-rent-calculator.html">Buy vs Rent</a>
+          <a href="risk-analysis-calculator.html">Risk Analysis</a>
+          <a href="tools.html">Tools</a>
+          <a href="about.html">About Us</a>
+        </nav>
+
+        <!-- Back to top -->
+        <button type="button" class="footer-compact-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+          <span>Top</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="footer-compact-bottom">
+        <p class="footer-compact-copy">
+          © 2026 Your Home. Calculations are estimates for reference only.
+        </p>
+        <div class="footer-compact-links">
+          <a href="about.html">About Us</a>
+          <span>•</span>
+          <a href="#">Privacy</a>
+          <span>•</span>
+          <a href="#">Terms</a>
+          <span>•</span>
+          <a href="mailto:support@yourhome.in">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Rental ROI Script -->
+  <script src="rental-roi.js"></script>
+
+</body>
+</html>
