@@ -70,10 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const monthlySavings = parseINR(affordSavingsInput.value) || 0;
     const downPayment = parseINR(affordDownpaymentInput.value) || 1200000;
 
-    // 1. Recommended Housing EMI (standard 32% FOIR capacity)
-    // Capping housing EMI at ~32% to keep total obligations well under 45-50%
-    const recommendedHousingEMI = Math.round(monthlyIncome * 0.31998); // ~₹31,998 on 1L
-    const emiPercentage = Math.round((recommendedHousingEMI / monthlyIncome) * 100); // 32%
+    // 1. Recommended Housing EMI
+    const maxPermissibleEMI = Math.max(0, (monthlyIncome * 0.50) - existingEMIs);
+    const availableForEMI = Math.max(0, monthlyIncome - monthlyExpenses - existingEMIs - monthlySavings);
+    
+    // Cap recommended EMI at 40% of income
+    const maxRecommendedEMI = monthlyIncome * 0.40;
+    const recommendedHousingEMI = Math.max(0, Math.min(availableForEMI, maxPermissibleEMI, maxRecommendedEMI));
+    
+    const emiPercentage = Math.round((recommendedHousingEMI / monthlyIncome) * 100) || 0;
 
     // 2. Maximum Loan Eligibility Calculation (At 8.50% p.a. for 20 years / 240 months)
     const annualRate = 8.5;
@@ -81,32 +86,55 @@ document.addEventListener('DOMContentLoaded', () => {
     const monthlyRate = annualRate / 12 / 100;
     const factor = Math.pow(1 + monthlyRate, tenureMonths);
 
-    // Max loan that can be serviced by maximum permissible EMI (~₹41,998 max capacity)
-    const maxPermissibleEMI = Math.max(0, (monthlyIncome * 0.50) - existingEMIs);
     const maxLoanRaw = (maxPermissibleEMI * (factor - 1)) / (monthlyRate * factor);
-    // Benchmark ~₹48.0 L for standard ₹1L income profile
-    const maxLoanAmount = Math.round(maxLoanRaw > 0 ? maxLoanRaw : (monthlyIncome * 48));
+    const maxLoanAmount = Math.round(maxLoanRaw > 0 ? maxLoanRaw : 0);
 
-    // 3. Affordable Property Price Range (Lower bound = 75% comfort, Upper bound = full capability)
-    const minAffordable = Math.round((maxLoanAmount * 0.70) + downPayment);
+    // 3. Affordable Property Price Range (Lower bound = recommended comfort, Upper bound = full capability)
+    const recommendedLoanRaw = (recommendedHousingEMI * (factor - 1)) / (monthlyRate * factor);
+    const recommendedLoanAmount = Math.round(recommendedLoanRaw > 0 ? recommendedLoanRaw : 0);
+    
+    const minAffordable = Math.round(recommendedLoanAmount + downPayment);
     const maxAffordable = Math.round(maxLoanAmount + downPayment);
 
+    const isUnaffordable = (recommendedHousingEMI <= 0 || maxLoanAmount <= 0);
+
     // Format formatted ranges
-    const rangeText = `${formatLakhs(minAffordable)} – ${formatLakhs(maxAffordable)}`;
+    let rangeText = "";
+    if (isUnaffordable) {
+      rangeText = "Currently Unaffordable";
+    } else {
+      rangeText = minAffordable === maxAffordable 
+        ? formatLakhs(maxAffordable) 
+        : `${formatLakhs(minAffordable)} – ${formatLakhs(maxAffordable)}`;
+    }
 
     // 4. Income Allocation Breakdown
-    const otherExpensesAmount = monthlyExpenses;
-    const otherExpensesPct = Math.round((otherExpensesAmount / monthlyIncome) * 100); // ~40%
+    const otherExpensesAmount = monthlyExpenses + existingEMIs;
+    const otherExpensesPct = Math.round((otherExpensesAmount / monthlyIncome) * 100) || 0;
     
     const surplusSavingsAmount = Math.max(0, monthlyIncome - recommendedHousingEMI - otherExpensesAmount);
-    const surplusSavingsPct = 100 - emiPercentage - otherExpensesPct; // ~28%
+    const surplusSavingsPct = Math.max(0, 100 - emiPercentage - otherExpensesPct);
+
+    // Normalize for donut chart if expenses are too high
+    let totalPct = emiPercentage + otherExpensesPct + surplusSavingsPct;
+    let normEmiPct = emiPercentage;
+    let normExpensesPct = otherExpensesPct;
+    let normSavingsPct = surplusSavingsPct;
+    
+    if (totalPct > 100) {
+      normEmiPct = Math.min(100, emiPercentage);
+      normExpensesPct = Math.min(100 - normEmiPct, otherExpensesPct);
+      normSavingsPct = Math.max(0, 100 - normEmiPct - normExpensesPct);
+    }
 
     // ------------------------------------------------------------------------
     // UPDATE DOM DISPLAYS
     // ------------------------------------------------------------------------
     statHeroRange.textContent = rangeText;
-    statMaxLoan.textContent = formatLakhs(maxLoanAmount);
-    statRecommendedEmi.innerHTML = `${formatINR(recommendedHousingEMI)} <span class="unit-inline">/mo</span>`;
+    statMaxLoan.textContent = isUnaffordable ? "₹ 0 L" : formatLakhs(maxLoanAmount);
+    statRecommendedEmi.innerHTML = isUnaffordable 
+      ? `₹ 0 <span class="unit-inline">/mo</span>` 
+      : `${formatINR(recommendedHousingEMI)} <span class="unit-inline">/mo</span>`;
     statAffordablePrice.textContent = rangeText;
     statEmiPct.textContent = `${emiPercentage}%`;
 
@@ -116,15 +144,17 @@ document.addEventListener('DOMContentLoaded', () => {
     allocSavingsVal.textContent = `${formatINR(surplusSavingsAmount)} (${surplusSavingsPct}%)`;
     allocTotalIncome.textContent = formatINR(monthlyIncome);
 
-    meaningRangeVal.textContent = `${rangeText}.`;
+    meaningRangeVal.textContent = isUnaffordable 
+      ? "Please reduce expenses or existing EMIs to afford a property."
+      : `${rangeText}.`;
 
     // ------------------------------------------------------------------------
     // SVG DONUT ALLOCATION SLICES
     // ------------------------------------------------------------------------
     updateDonutSegments([
-      { el: sliceEmi, pct: emiPercentage },
-      { el: sliceExpenses, pct: otherExpensesPct },
-      { el: sliceSavings, pct: surplusSavingsPct }
+      { el: sliceEmi, pct: normEmiPct },
+      { el: sliceExpenses, pct: normExpensesPct },
+      { el: sliceSavings, pct: normSavingsPct }
     ]);
   }
 
