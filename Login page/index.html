@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Your Home</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         VIDEO BACKGROUND
+    ========================================== -->
+
+    <div class="video-background">
+
+        <video autoplay muted loop playsinline id="backgroundVideo">
+
+            <source src="video.mp4" type="video/mp4">
+
+            Your browser does not support HTML5 video.
+
+        </video>
+
+    </div>
+
+
+    <!-- Video Overlay -->
+
+    <div class="background-overlay"></div>
+
+
+
+    <!-- =========================================
+         MAIN LOGIN PAGE
+    ========================================== -->
+
+    <main class="login-page">
+
+        <div class="login-container">
+
+
+            <!-- =========================================
+                 LEFT SIDE
+            ========================================== -->
+
+            <section class="welcome-section">
+
+                <div class="welcome-content">
+
+
+                    <!-- Logo -->
+
+                    <div class="logo">
+
+                        <div class="logo-icon">
+
+                            <i class="fa-solid fa-house"></i>
+
+                        </div>
+
+                        <span>
+                            Your<span>Home</span>
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Welcome Heading -->
+
+                    <h1>
+                        Your
+                        <span>Home</span>
+                    </h1>
+
+
+
+                    <!-- Description -->
+
+                    <p class="welcome-description">
+
+                        Access your account to manage your property,
+                        track your investments and stay connected.
+
+                    </p>
+
+
+
+                    <!-- =================================
+                         BENEFITS
+                    ================================== -->
+
+                    <div class="benefits">
+
+
+                        <!-- Benefit 1 -->
+
+                        <div class="benefit-card">
+
+                            <div class="benefit-icon">
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                            </div>
+
+                            <div class="benefit-text">
+
+                                <h3>
+                                    Secure & Safe
+                                </h3>
+
+                                <p>
+                                    Your data is encrypted and
+                                    always protected.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Benefit 2 -->
+
+                        <div class="benefit-card">
+
+                            <div class="benefit-icon">
+
+                                <i class="fa-solid fa-house"></i>
+
+                            </div>
+
+                            <div class="benefit-text">
+
+                                <h3>
+                                    Smart Access
+                                </h3>
+
+                                <p>
+                                    Manage your properties
+                                    anytime, anywhere.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Benefit 3 -->
+
+                        <div class="benefit-card">
+
+                            <div class="benefit-icon">
+
+                                <i class="fa-solid fa-chart-line"></i>
+
+                            </div>
+
+                            <div class="benefit-text">
+
+                                <h3>
+                                    Everything in One Place
+                                </h3>
+
+                                <p>
+                                    Track, manage and grow
+                                    your investments.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Trust Message -->
+
+                    <div class="trust-message">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <span>
+                            Trusted by thousands of homeowners
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 RIGHT SIDE
+            ========================================== -->
+
+            <section class="form-section">
+
+                <div class="form-container">
+
+
+                    <!-- Heading -->
+
+                    <div class="form-header">
+
+                        <h2>
+                            Login
+                        </h2>
+
+                        <p>
+                            Welcome back! Please login to your account.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         LOGIN FORM
+                    ================================== -->
+
+                    <form id="loginForm">
+
+
+                        <!-- EMAIL -->
+
+                        <div class="input-group">
+
+                            <label for="email">
+                                Email
+                            </label>
+
+                            <div class="input-box">
+
+                                <input type="email" id="email" placeholder="Enter your email" autocomplete="email"
+                                    required>
+
+                                <!-- Email icon on RIGHT -->
+
+                                <span class="email-icon">
+
+                                    <i class="fa-regular fa-envelope"></i>
+
+                                </span>
+
+                            </div>
+
+                            <small id="emailError" class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- PASSWORD -->
+
+                        <div class="input-group">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <div class="input-box">
+
+                                <input type="password" id="password" placeholder="Enter your password"
+                                    autocomplete="current-password" required>
+
+
+                                <!-- Password eye on RIGHT -->
+
+                                <button type="button" id="togglePassword" class="eye-btn" aria-label="Show password">
+
+                                    <i class="fa-regular fa-eye"></i>
+
+                                </button>
+
+                            </div>
+
+                            <small id="passwordError" class="error-message"></small>
+
+                        </div>
+
+
+
+                        <!-- Remember + Forgot -->
+
+                        <div class="form-options">
+
+
+                            <label class="remember-me">
+
+                                <input type="checkbox" id="rememberMe" name="rememberMe">
+
+                                <span class="custom-checkbox"></span>
+
+                                <span>
+                                    Remember me
+                                </span>
+
+                            </label>
+
+
+
+                            <a href="#" class="forgot-password" id="forgotPassword">
+                                Forgot password?
+                            </a>
+
+                        </div>
+
+
+
+                        <!-- Login Message -->
+
+                        <div class="login-message" id="loginMessage"></div>
+
+
+
+                        <!-- LOGIN BUTTON -->
+
+                        <button type="submit" class="login-button" id="loginButton">
+
+                            <span class="button-content" id="loginText">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                <span>
+                                    Login
+                                </span>
+
+                            </span>
+
+
+                            <span class="loading-spinner" id="loadingSpinner"></span>
+
+                        </button>
+
+                    </form>
+
+
+
+                    <!-- =================================
+                         DIVIDER
+                    ================================== -->
+
+                    <div class="divider">
+
+                        <span></span>
+
+                        <p>
+                            or continue with
+                        </p>
+
+                        <span></span>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         SOCIAL LOGIN
+                    ================================== -->
+
+                    <div class="social-login">
+
+
+                        <!-- Google -->
+
+                        <button type="button" class="social-button" id="googleLogin">
+
+                            <span class="google-icon">
+                                G
+                            </span>
+
+                            <span>
+                                Google
+                            </span>
+
+                        </button>
+
+
+
+                        <!-- Microsoft -->
+
+                        <button type="button" class="social-button" id="microsoftLogin">
+
+                            <span class="microsoft-icon">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </span>
+
+                            <span>
+                                Microsoft
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         REGISTER
+                    ================================== -->
+
+                    <div class="register-section">
+
+                        <span>
+                            Don't have an account?
+                        </span>
+
+                        <a href="register.html" id="registerLink">
+                            Register
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+
+
+
+
+    <!-- =========================================
+     FOOTER
+========================================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-copyright">
+            © 2026 YourHome
+        </div>
+
+        <div class="footer-links">
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <span>•</span>
+
+            <a href="terms.html">
+                Terms &amp; Conditions
+            </a>
+
+            <span>•</span>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>
