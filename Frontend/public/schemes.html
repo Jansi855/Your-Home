@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Government Schemes - Your Home | Housing Subsidies & Benefits</title>
+  <meta name="description" content="Explore government schemes and benefits for home buyers and real estate investors: PMAY Urban, PMAY Gramin, CLSS, Home Loan Tax Benefits under 80C & 24(b), and stamp duty rebates." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="logo-icon.svg" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="schemes-page-body">
+
+  <!-- =========================================================================
+       TOP NAVIGATION BAR
+       ========================================================================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="brand" aria-label="Your Home Homepage">
+        <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="brand-logo-img" />
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="/" class="nav-link">Home</a>
+        
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            <span>Calculators</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+
+          <!-- Dropdown Menu items -->
+          <div class="dropdown-menu">
+            <a href="/" class="dropdown-item">
+              <span class="dropdown-item-icon">💰</span>
+              <div class="dropdown-item-text">
+                <strong>EMI Calculator</strong>
+                <span>Calculate loan payments & interest</span>
+              </div>
+            </a>
+            <a href="true-cost-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">🏷️</span>
+              <div class="dropdown-item-text">
+                <strong>True Cost Calculator</strong>
+                <span>Stamp duty, GST & hidden costs</span>
+              </div>
+            </a>
+            <a href="affordability-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">📊</span>
+              <div class="dropdown-item-text">
+                <strong>Affordability Check</strong>
+                <span>Know how much home you can afford</span>
+              </div>
+            </a>
+            <a href="rental-roi-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">📈</span>
+              <div class="dropdown-item-text">
+                <strong>Rental ROI Calculator</strong>
+                <span>Estimate rental returns & yields</span>
+              </div>
+            </a>
+            <a href="risk-analysis-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">🛡️</span>
+              <div class="dropdown-item-text">
+                <strong>Risk Analysis</strong>
+                <span>Property & builder risk scoring</span>
+              </div>
+            </a>
+            <a href="buy-vs-rent-calculator.html" class="dropdown-item">
+              <span class="dropdown-item-icon">⚖️</span>
+              <div class="dropdown-item-text">
+                <strong>Buy vs Rent Calculator</strong>
+                <span>Compare financial impact of renting</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">
+            <span>Property</span>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+        </div>
+
+        <a href="insights.html" class="nav-link">Insights</a>
+
+        <!-- Active Schemes Nav Item -->
+        <div class="nav-item-active-wrap">
+          <a href="schemes.html" class="nav-link active">Schemes</a>
+          <span class="active-indicator"></span>
+        </div>
+
+        <a href="tools.html" class="nav-link">Tools</a>
+        <a href="about.html" class="nav-link">About Us</a>
+      </nav>
+
+      <!-- Right Action Icons -->
+      <div class="nav-actions">
+        <button class="icon-btn" id="btn-bookmarks" title="Saved Schemes & Properties" aria-label="Bookmarks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <span class="badge-count" id="saved-badge" style="display:none;">0</span>
+        </button>
+
+        <button class="icon-btn profile-btn" id="btn-profile" title="User Profile" aria-label="Profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN SCHEMES PAGE CONTENT
+       ========================================================================= -->
+  <main class="page-container schemes-page-container">
+
+    <!-- Hero Header Row -->
+    <section class="schemes-header-wrapper">
+      <div class="schemes-header-left">
+        <h1 class="schemes-page-title">Government Schemes</h1>
+        <p class="schemes-page-subtitle">
+          Explore government schemes and benefits for home buyers and real estate investors.
+        </p>
+      </div>
+
+      <!-- Top Right Eligibility Widget -->
+      <div class="schemes-top-banner" id="top-eligibility-banner">
+        <div class="banner-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+          </svg>
+        </div>
+        <div class="banner-text-wrap">
+          <span class="banner-heading">Save more with the right scheme</span>
+          <span class="banner-subtext">Check your eligibility and unlock benefits</span>
+        </div>
+        <button class="btn-banner-action" id="btn-open-top-eligibility">Check Eligibility</button>
+      </div>
+    </section>
+
+    <!-- Category Tabs and Search Control Bar -->
+    <section class="schemes-control-bar">
+      <div class="schemes-tabs-list" role="tablist" aria-label="Scheme Categories">
+        <button class="scheme-tab-item active" data-category="all" role="tab" aria-selected="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          <span>All Schemes</span>
+          <span class="tab-badge-count" id="count-all">7</span>
+        </button>
+
+        <button class="scheme-tab-item" data-category="first-time" role="tab" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>First Time Home Buyer</span>
+          <span class="tab-badge-count" id="count-first-time">4</span>
+        </button>
+
+        <button class="scheme-tab-item" data-category="affordable" role="tab" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <span>Affordable Housing</span>
+          <span class="tab-badge-count" id="count-affordable">4</span>
+        </button>
+
+        <button class="scheme-tab-item" data-category="tax-benefits" role="tab" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="5" x2="5" y2="19"></line>
+            <circle cx="6.5" cy="6.5" r="2.5"></circle>
+            <circle cx="17.5" cy="17.5" r="2.5"></circle>
+          </svg>
+          <span>Tax Benefits</span>
+          <span class="tab-badge-count" id="count-tax-benefits">3</span>
+        </button>
+
+        <button class="scheme-tab-item" data-category="loan-finance" role="tab" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="21" x2="21" y2="21"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+            <polyline points="5 6 12 3 19 6"></polyline>
+            <line x1="4" y1="10" x2="4" y2="21"></line>
+            <line x1="20" y1="10" x2="20" y2="21"></line>
+            <line x1="8" y1="14" x2="8" y2="17"></line>
+            <line x1="12" y1="14" x2="12" y2="17"></line>
+            <line x1="16" y1="14" x2="16" y2="17"></line>
+          </svg>
+          <span>Loan & Finance</span>
+          <span class="tab-badge-count" id="count-loan-finance">4</span>
+        </button>
+      </div>
+
+      <!-- Live Search Box -->
+      <div class="schemes-search-wrapper">
+        <svg class="search-icon-inside" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="scheme-search-input" class="schemes-search-input" placeholder="Search schemes..." autocomplete="off" />
+        <button id="search-clear-btn" class="search-clear-btn" aria-label="Clear search">✕</button>
+      </div>
+    </section>
+
+    <!-- Schemes Cards Grid -->
+    <section class="schemes-cards-grid" id="schemes-cards-container">
+      
+      <!-- Card 1: PMAY Urban -->
+      <article class="scheme-card theme-green" data-id="pmay-urban" data-categories="first-time affordable loan-finance">
+        <div>
+          <div class="scheme-card-top">
+            <div class="scheme-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <path d="M9 22V12h6v10"></path>
+              </svg>
+            </div>
+            <div class="scheme-heading-group">
+              <h3 class="scheme-title">PMAY (Urban)</h3>
+              <span class="scheme-subtitle">Pradhan Mantri Awas Yojana (Urban)</span>
+            </div>
+          </div>
+
+          <span class="scheme-pill-badge">Affordable Housing</span>
+          <p class="scheme-description">Interest subsidy on home loan for eligible beneficiaries in urban areas.</p>
+
+          <div class="scheme-metrics-box">
+            <div class="scheme-metric-col">
+              <span class="metric-caption">Interest Subsidy</span>
+              <span class="metric-primary-val">Up to 6.5%</span>
+              <span class="metric-secondary-sub">on Home Loan</span>
+            </div>
+            <div class="scheme-metric-col">
+              <span class="metric-caption">Benefit Upto</span>
+              <span class="metric-primary-val">₹2.67 Lakh</span>
+              <span class="metric-secondary-sub">Direct Credit</span>
+            </div>
+          </div>
+
+          <div class="scheme-eligibility-row">
+            <div class="eligibility-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="eligibility-text-wrap">
+              <span class="eligibility-label">Who can apply?</span>
+              <span class="eligibility-target">Families with income up to ₹18 LPA</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-scheme-action" onclick="openSchemeDetail('pmay-urban')">
+          <span>View Details</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </article>
+
+      <!-- Card 2: Home Loan Tax Benefits -->
+      <article class="scheme-card theme-blue" data-id="tax-benefits" data-categories="tax-benefits first-time">
+        <div>
+          <div class="scheme-card-top">
+            <div class="scheme-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="16" y1="8" x2="8" y2="16"></line>
+                <circle cx="9" cy="9" r="1"></circle>
+                <circle cx="15" cy="15" r="1"></circle>
+              </svg>
+            </div>
+            <div class="scheme-heading-group">
+              <h3 class="scheme-title">Home Loan Tax Benefits</h3>
+              <span class="scheme-subtitle">Income Tax Act</span>
+            </div>
+          </div>
+
+          <span class="scheme-pill-badge">Tax Benefits</span>
+          <p class="scheme-description">Save tax on home loan principal and interest under Sec 80C & 24(b).</p>
+
+          <div class="scheme-metrics-box">
+            <div class="scheme-metric-col">
+              <span class="metric-caption">Deduction Upto</span>
+              <span class="metric-primary-val">₹1.5 Lakh</span>
+              <span class="metric-secondary-sub">on Principal (Sec 80C)</span>
+            </div>
+            <div class="scheme-metric-col">
+              <span class="metric-caption">Deduction Upto</span>
+              <span class="metric-primary-val">₹2 Lakh</span>
+              <span class="metric-secondary-sub">on Interest (Sec 24b)</span>
+            </div>
+          </div>
+
+          <div class="scheme-eligibility-row">
+            <div class="eligibility-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div class="eligibility-text-wrap">
+              <span class="eligibility-label">Who can apply?</span>
+              <span class="eligibility-target">Individual home loan borrowers</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-scheme-action" onclick="openSchemeDetail('tax-benefits')">
+          <span>View Details</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </article>
+
+      <!-- Card 3: PMAY Rural -->
+      <article class="scheme-card theme-orange" data-id="pmay-rural" data-categories="affordable">
+        <div>
+          <div class="scheme-card-top">
+            <div class="scheme-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M12 8v4"></path>
+                <path d="M12 16h.01"></path>
+              </svg>
+            </div>
+            <div class="scheme-heading-group">
+              <h3 class="scheme-title">PMAY (Rural)</h3>
+              <span class="scheme-subtitle">Pradhan Mantri Awas Yojana (Gramin)</span>
+            </div>
+          </div>
+
+          <span class="scheme-pill-badge">Affordable Housing</span>
+          <p class="scheme-description">Financial assistance for construction of pucca house in rural areas.</p>
+
+          <div class="scheme-metrics-box">
+            <div class="scheme-metric-col">
+              <span class="metric-caption">Assistance Upto</span>
+              <span class="metric-primary-val">₹1.20 Lakh</span>
+              <span class="metric-secondary-sub">per house</span>
+            </div>
+            <div class="scheme-metric-col">
+              <span class="metric-caption">Interest Subsidy</span>
+              <span class="metric-primary-val">3%</span>
+              <span class="metric-secondary-sub">on Loan Amount</span>
+            </div>
+          </div>
+
+          <div class="scheme-eligibility-row">
+            <div class="eligibility-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div class="eligibility-text-wrap">
+              <span class="eligibility-label">Who can apply?</span>
+              <span class="eligibility-target">Rural families with eligible income</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-scheme-action" onclick="openSchemeDetail('pmay-rural')">
+          <span>View Details</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </article>
+
+      <!-- Card 4: CLSS -->
+      <article class="scheme-card theme-purple" data-id="clss" data-categories="loan-finance affordable first-time">
+        <div>
+          <div class="scheme-card-top">
+            <div class="scheme-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="21" x2="21" y2="21"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <polyline points="5 6 12 3 19 6"></polyline>
+                <line x1="4" y1="10" x2="4" y2="21"></line>
+                <line x1="20" y1="10" x2="20" y2="21"></line>
+              </svg>
+            </div>
+            <div class="scheme-heading-group">
+              <h3 class="scheme-title">CLSS</h3>
+              <span class="scheme-subtitle">Credit Linked Subsidy Scheme</span>
+            </div>
+          </div>
+
+          <span class="scheme-pill-badge">Loan & Finance</span>
+          <p class="scheme-description">Interest subsidy for EWS / LIG home buyers.</p>
+
+          <div class="scheme-metrics-box">
+            <div class="scheme-metric-col">
+              <span class="metric-caption">Interest Subsidy</span>
+              <span class="metric-primary-val">Up to 6.5%</span>
+              <span class="metric-secondary-sub">on Home Loan</span>
+            </div>
+            <div class="scheme-metric-col">
+              <span class="metric-caption">Benefit Upto</span>
+              <span class="metric-primary-val">₹2.67 Lakh</span>
+              <span class="metric-secondary-sub">Lump-sum Subsidy</span>
+            </div>
+          </div>
+
+          <div class="scheme-eligibility-row">
+            <div class="eligibility-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div class="eligibility-text-wrap">
+              <span class="eligibility-label">Who can apply?</span>
+              <span class="eligibility-target">EWS / LIG category home buyers</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-scheme-action" onclick="openSchemeDetail('clss')">
+          <span>View Details</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </article>
+
+      <!-- Card 5: Section 80EEA Extra Deduction -->
+      <article class="scheme-card theme-teal" data-id="sec-80eea" data-categories="tax-benefits first-time">
+        <div>
+          <div class="scheme-card-top">
+            <div class="scheme-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </div>
+            <div class="scheme-heading-group">
+              <h3 class="scheme-title">Section 80EEA</h3>
+              <span class="scheme-subtitle">Affordable Housing Extra Deduction</span>
+            </div>
+          </div>
+
+          <span class="scheme-pill-badge">Tax Benefits</span>
+          <p class="scheme-description">Additional tax deduction of ₹1.5 Lakh on home loan interest for first-time buyers.</p>
+
+          <div class="scheme-metrics-box">
+            <div class="scheme-metric-col">
+              <span class="metric-caption">Extra Deduction</span>
+              <span class="metric-primary-val">₹1.5 Lakh</span>
+              <span class="metric-secondary-sub">Over Sec 24(b)</span>
+            </div>
+            <div class="scheme-metric-col">
+              <span class="metric-caption">Stamp Value Limit</span>
+              <span class="metric-primary-val">₹45 Lakh</span>
+              <span class="metric-secondary-sub">Affordable Cap</span>
+            </div>
+          </div>
+
+          <div class="scheme-eligibility-row">
+            <div class="eligibility-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div class="eligibility-text-wrap">
+              <span class="eligibility-label">Who can apply?</span>
+              <span class="eligibility-target">First-time buyers of affordable housing</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-scheme-action" onclick="openSchemeDetail('sec-80eea')">
+          <span>View Details</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </article>
+
+      <!-- Card 6: Women Stamp Duty Concession -->
+      <article class="scheme-card theme-green" data-id="women-stamp-duty" data-categories="tax-benefits first-time loan-finance">
+        <div>
+          <div class="scheme-card-top">
+            <div class="scheme-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="5"></circle>
+                <path d="M12 13v8"></path>
+                <path d="M9 18h6"></path>
+              </svg>
+            </div>
+            <div class="scheme-heading-group">
+              <h3 class="scheme-title">Women Duty Concession</h3>
+              <span class="scheme-subtitle">State Government Stamp Rebates</span>
+            </div>
+          </div>
+
+          <span class="scheme-pill-badge">Tax Benefits</span>
+          <p class="scheme-description">1% to 2% discount on property stamp duty when registered in female name or jointly.</p>
+
+          <div class="scheme-metrics-box">
+            <div class="scheme-metric-col">
+              <span class="metric-caption">Duty Discount</span>
+              <span class="metric-primary-val">1% – 2%</span>
+              <span class="metric-secondary-sub">on Registry Cost</span>
+            </div>
+            <div class="scheme-metric-col">
+              <span class="metric-caption">Avg Savings</span>
+              <span class="metric-primary-val">₹1 – 2.5 Lakh</span>
+              <span class="metric-secondary-sub">Instant Rebate</span>
+            </div>
+          </div>
+
+          <div class="scheme-eligibility-row">
+            <div class="eligibility-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="7" r="4"></circle>
+                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"></path>
+              </svg>
+            </div>
+            <div class="eligibility-text-wrap">
+              <span class="eligibility-label">Who can apply?</span>
+              <span class="eligibility-target">Female sole or co-owners</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-scheme-action" onclick="openSchemeDetail('women-stamp-duty')">
+          <span>View Details</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </article>
+
+      <!-- Card 7: State Housing Board Lotteries -->
+      <article class="scheme-card theme-purple" data-id="state-housing-boards" data-categories="affordable loan-finance">
+        <div>
+          <div class="scheme-card-top">
+            <div class="scheme-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <div class="scheme-heading-group">
+              <h3 class="scheme-title">Housing Board Lottery</h3>
+              <span class="scheme-subtitle">MHADA / DDA / KHB / CIDCO</span>
+            </div>
+          </div>
+
+          <span class="scheme-pill-badge">Affordable Housing</span>
+          <p class="scheme-description">Direct lottery allocation of subsidized, legally clear government residential flats.</p>
+
+          <div class="scheme-metrics-box">
+            <div class="scheme-metric-col">
+              <span class="metric-caption">Price Discount</span>
+              <span class="metric-primary-val">20% – 40%</span>
+              <span class="metric-secondary-sub">Below Market Price</span>
+            </div>
+            <div class="scheme-metric-col">
+              <span class="metric-caption">Allocation</span>
+              <span class="metric-primary-val">Draw of Lots</span>
+              <span class="metric-secondary-sub">100% Transparent</span>
+            </div>
+          </div>
+
+          <div class="scheme-eligibility-row">
+            <div class="eligibility-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div class="eligibility-text-wrap">
+              <span class="eligibility-label">Who can apply?</span>
+              <span class="eligibility-target">Resident citizens (EWS/LIG/MIG)</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-scheme-action" onclick="openSchemeDetail('state-housing-boards')">
+          <span>View Details</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </article>
+
+    </section>
+
+    <!-- Bottom Check Your Eligibility Large Banner -->
+    <section class="schemes-eligibility-card-banner">
+      <div class="banner-main-left">
+        <div class="banner-clipboard-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+            <polyline points="9 14 11 16 15 12"></polyline>
+          </svg>
+        </div>
+        <div class="banner-info-group">
+          <h2 class="banner-cta-title">Check Your Eligibility</h2>
+          <p class="banner-cta-sub">Answer a few questions to find schemes you are eligible for.</p>
+          <div class="banner-check-points">
+            <div class="check-point-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Takes less than 2 mins</span>
+            </div>
+            <div class="check-point-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>100% Free</span>
+            </div>
+            <div class="check-point-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Personalized Results</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-check-eligibility-main" id="btn-start-eligibility-wizard">
+        <span>Check Eligibility Now</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
+    </section>
+
+    <!-- Why Use Government Schemes Section -->
+    <section class="why-schemes-container">
+      <h3 class="why-schemes-title">Why Use Government Schemes?</h3>
+      <div class="why-schemes-grid">
+        
+        <div class="why-feature-item">
+          <div class="why-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+              <circle cx="12" cy="12" r="2"></circle>
+              <path d="M6 12h.01M18 12h.01"></path>
+            </svg>
+          </div>
+          <div class="why-feature-text">
+            <span class="why-feature-heading">Lower Your Costs</span>
+            <span class="why-feature-desc">Save on interest and taxes</span>
+          </div>
+        </div>
+
+        <div class="why-feature-item">
+          <div class="why-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
+          <div class="why-feature-text">
+            <span class="why-feature-heading">Secure Your Investment</span>
+            <span class="why-feature-desc">Government backed support</span>
+          </div>
+        </div>
+
+        <div class="why-feature-item">
+          <div class="why-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <line x1="9" y1="13" x2="15" y2="13"></line>
+              <line x1="12" y1="10" x2="12" y2="16"></line>
+            </svg>
+          </div>
+          <div class="why-feature-text">
+            <span class="why-feature-heading">Own Your Dream Home</span>
+            <span class="why-feature-desc">Affordable financing options</span>
+          </div>
+        </div>
+
+        <div class="why-feature-item">
+          <div class="why-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+          </div>
+          <div class="why-feature-text">
+            <span class="why-feature-heading">Easy & Transparent</span>
+            <span class="why-feature-desc">Simple process and clear benefits</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       SCHEME DETAILS MODAL DIALOG
+       ========================================================================= -->
+  <div class="scheme-modal-overlay" id="scheme-details-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="scheme-modal-box" id="modal-box-content">
+      <button class="modal-close-btn" id="modal-close-button" aria-label="Close modal">✕</button>
+      <div id="modal-dynamic-body">
+        <!-- Content dynamically injected by schemes.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       ELIGIBILITY CHECKER WIZARD MODAL
+       ========================================================================= -->
+  <div class="scheme-modal-overlay" id="eligibility-wizard-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="scheme-modal-box" style="max-width: 620px;">
+      <button class="modal-close-btn" id="wizard-close-button" aria-label="Close modal">✕</button>
+      
+      <div class="wizard-header" style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.3rem; font-weight: 800; color: #0f172a; margin-bottom: 0.3rem;">Check Scheme Eligibility</h3>
+        <p style="font-size: 0.85rem; color: #64748b;">Answer 3 quick questions to discover your maximum benefits.</p>
+      </div>
+
+      <!-- Step Progress Bar -->
+      <div class="wizard-step-progress">
+        <div class="wizard-progress-bar">
+          <div class="wizard-progress-fill" id="wizard-progress-fill" style="width: 33%;"></div>
+        </div>
+        <div class="wizard-step-node active" id="wizard-node-1">1</div>
+        <div class="wizard-step-node" id="wizard-node-2">2</div>
+        <div class="wizard-step-node" id="wizard-node-3">3</div>
+      </div>
+
+      <!-- Step 1: Income Details -->
+      <div class="wizard-step-view" id="wizard-step-1">
+        <label style="font-size: 0.88rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 0.6rem;">
+          Annual Household Net Income: <strong id="disp-wizard-income" style="color: #15803d;">₹ 6.0 Lakhs</strong>
+        </label>
+        <input type="range" min="100000" max="3000000" step="50000" value="600000" id="wizard-income-slider" class="form-range" style="width: 100%; margin-bottom: 1rem;" />
+        
+        <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #94a3b8; margin-bottom: 1.5rem;">
+          <span>₹ 1.0 Lakh</span>
+          <span>₹ 15.0 Lakh</span>
+          <span>₹ 30.0 Lakh+</span>
+        </div>
+
+        <label style="font-size: 0.88rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 0.4rem;">
+          Location Type:
+        </label>
+        <div class="wizard-choice-grid">
+          <div class="wizard-choice-card selected" data-choice="urban" onclick="selectLocationType('urban', this)">
+            <span class="wizard-choice-title">🏢 Urban City / Metro</span>
+            <span class="wizard-choice-desc">Municipal corporation / towns</span>
+          </div>
+          <div class="wizard-choice-card" data-choice="rural" onclick="selectLocationType('rural', this)">
+            <span class="wizard-choice-title">🌾 Rural / Gram Panchayat</span>
+            <span class="wizard-choice-desc">Villages & rural areas</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.75rem; display: flex; justify-content: flex-end;">
+          <button class="btn-primary" onclick="goToWizardStep(2)" style="padding: 0.7rem 1.5rem; font-size: 0.88rem;">
+            Next Step →
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Ownership & Buyer Profile -->
+      <div class="wizard-step-view" id="wizard-step-2" style="display:none;">
+        <label style="font-size: 0.88rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 0.4rem;">
+          Are you a first-time home buyer?
+        </label>
+        <div class="wizard-choice-grid" style="margin-bottom: 1.25rem;">
+          <div class="wizard-choice-card selected" data-choice="yes" onclick="selectFirstTime('yes', this)">
+            <span class="wizard-choice-title">✅ Yes, First Time</span>
+            <span class="wizard-choice-desc">Do not own any pucca house in India</span>
+          </div>
+          <div class="wizard-choice-card" data-choice="no" onclick="selectFirstTime('no', this)">
+            <span class="wizard-choice-title">🏠 Existing Owner</span>
+            <span class="wizard-choice-desc">Buying 2nd property / upgrading</span>
+          </div>
+        </div>
+
+        <label style="font-size: 0.88rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 0.4rem;">
+          Will a female member be the owner / co-owner?
+        </label>
+        <div class="wizard-choice-grid">
+          <div class="wizard-choice-card selected" data-choice="yes" onclick="selectFemaleOwner('yes', this)">
+            <span class="wizard-choice-title">👩 Yes, Female Co-Owner</span>
+            <span class="wizard-choice-desc">Eligible for stamp duty & CLSS rebate</span>
+          </div>
+          <div class="wizard-choice-card" data-choice="no" onclick="selectFemaleOwner('no', this)">
+            <span class="wizard-choice-title">👨 Male Sole Owner</span>
+            <span class="wizard-choice-desc">Standard state rates apply</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.75rem; display: flex; justify-content: space-between;">
+          <button class="btn-secondary" onclick="goToWizardStep(1)" style="padding: 0.7rem 1.25rem; font-size: 0.88rem;">
+            ← Back
+          </button>
+          <button class="btn-primary" onclick="goToWizardStep(3)" style="padding: 0.7rem 1.5rem; font-size: 0.88rem;">
+            Calculate Results 🚀
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: Personalized Results -->
+      <div class="wizard-step-view" id="wizard-step-3" style="display:none;">
+        <div style="text-align: center; padding: 1rem 0; margin-bottom: 1rem;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background: #f0fdf4; color: #16a34a; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 0.5rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width:26px; height:26px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <h4 style="font-size: 1.2rem; font-weight: 800; color: #0f172a;">You Are Eligible For Benefits!</h4>
+          <p style="font-size: 0.82rem; color: #64748b;">Based on your income and profile, here are your matched schemes:</p>
+        </div>
+
+        <!-- Matched Schemes Summary Box -->
+        <div id="wizard-matched-schemes-list" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 240px; overflow-y: auto; margin-bottom: 1.25rem;">
+          <!-- Dynamically populated -->
+        </div>
+
+        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 0.85rem 1rem; display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+          <span style="font-size: 0.82rem; font-weight: 700; color: #166534;">Estimated Total Potential Savings:</span>
+          <strong id="wizard-total-savings" style="font-size: 1.1rem; color: #15803d;">₹ 4.17 Lakhs+</strong>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+          <button class="btn-secondary" onclick="goToWizardStep(2)" style="padding: 0.7rem 1.25rem; font-size: 0.88rem;">
+            ← Edit Answers
+          </button>
+          <button class="btn-primary" onclick="closeEligibilityWizard()" style="padding: 0.7rem 1.5rem; font-size: 0.88rem;">
+            Done & Explore Schemes
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification element -->
+  <div id="schemes-toast" class="schemes-toast">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" style="width: 18px; height: 18px;">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toast-message">Scheme saved to bookmarks!</span>
+  </div>
+
+    <!-- =========================================================================
+         FOOTER DISCLAIMER BAR
+         ========================================================================= -->
+    <div class="footer-disclaimer-bar">
+      <div class="disclaimer-inner">
+        <div class="disclaimer-shield-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <polyline points="9 12 11 14 15 10"></polyline>
+          </svg>
+        </div>
+        <p class="disclaimer-text">
+          All scheme criteria and calculations are approximate and for reference only. Please confirm with your bank and official government portals for exact values.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       COMPACT SITE FOOTER (Black Background)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-compact-container">
+      <div class="footer-compact-top">
+        <!-- Brand -->
+        <a href="/" class="footer-brand" aria-label="Your Home Homepage">
+          <img src="logo.svg" alt="Your Home - Plan • Analyze • Invest" class="footer-brand-img" />
+        </a>
+
+        <!-- Quick Nav Calculators -->
+        <nav class="footer-compact-nav" aria-label="Calculators">
+          <a href="/">EMI</a>
+          <a href="true-cost-calculator.html">True Cost</a>
+          <a href="affordability-calculator.html">Affordability</a>
+          <a href="rental-roi-calculator.html">Rental ROI</a>
+          <a href="buy-vs-rent-calculator.html">Buy vs Rent</a>
+          <a href="risk-analysis-calculator.html">Risk Analysis</a>
+          <a href="insights.html">Insights</a>
+          <a href="schemes.html" class="footer-nav-active">Schemes</a>
+          <a href="tools.html">Tools</a>
+          <a href="about.html">About Us</a>
+        </nav>
+
+        <!-- Back to top -->
+        <button type="button" class="footer-compact-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+          <span>Top</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="footer-compact-bottom">
+        <p class="footer-compact-copy">
+          © 2026 Your Home. Calculations and subsidy estimates are for reference only.
+        </p>
+        <div class="footer-compact-links">
+          <a href="schemes.html">Schemes</a>
+          <span>•</span>
+          <a href="tools.html">Tools</a>
+          <span>•</span>
+          <a href="about.html">About Us</a>
+          <span>•</span>
+          <a href="#">Privacy</a>
+          <span>•</span>
+          <a href="#">Terms</a>
+          <span>•</span>
+          <a href="mailto:support@yourhome.in">Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="schemes.js"></script>
+</body>
+</html>

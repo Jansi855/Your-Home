@@ -482,7 +482,7 @@ export default function ToolModal({ tool, onClose }) {
                       <strong style={{ display: 'block', color: '#0F5237' }}>₹{tcData.breakup.stampDuty.amount.toLocaleString('en-IN')}</strong>
                     </div>
                     <div style={{ background: '#ffffff', padding: '10px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-                      <span>Registration ({tcData.breakup.registrationCharges.rate}%):</span>
+                      <span>Registry Charges ({tcData.breakup.registrationCharges.rate}%):</span>
                       <strong style={{ display: 'block', color: '#1D4ED8' }}>₹{tcData.breakup.registrationCharges.amount.toLocaleString('en-IN')}</strong>
                     </div>
                     <div style={{ background: '#ffffff', padding: '10px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
@@ -712,7 +712,7 @@ export default function ToolModal({ tool, onClose }) {
                       <strong style={{ color: '#0F5237', fontSize: '16px' }}>₹{sdData.breakup.stampDuty.amount.toLocaleString('en-IN')}</strong>
                     </div>
                     <div style={{ background: '#ffffff', padding: '12px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-                      <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>Registration Charges ({sdData.breakup.registrationCharges.rate}%)</div>
+                      <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>Registry Charges ({sdData.breakup.registrationCharges.rate}%)</div>
                       <strong style={{ color: '#1D4ED8', fontSize: '16px' }}>₹{sdData.breakup.registrationCharges.amount.toLocaleString('en-IN')}</strong>
                     </div>
                   </div>
